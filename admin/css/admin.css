@@ -1,0 +1,20 @@
+*{
+    font-family: myfont;
+    font-size: 16px;
+}
+@font-face{
+    font-family: myfont;
+    src: url(../../font/Poppins-Regular.ttf);
+}
+body{
+    background-color: rgb(255, 255, 255);
+    min-height: 95vh;
+    max-height: fit-content;
+    padding-bottom: 8vh;
+}
+.admin-body{
+    min-height: 95vh;
+    max-height: fit-content;
+}
+
+
