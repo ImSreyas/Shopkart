@@ -1,0 +1,46 @@
+.body1{
+    min-height: 95vh;
+    max-height: fit-content;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seller-request{
+    margin-top: -1%;
+    max-width: 95vw;
+    min-width: 35vw;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.message{
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+    transform: translateY(-.2rem);
+}
+.homepage-link{
+    margin: 0 auto;
+    width: 92%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    background-color: #3d4d54;
+    color: white;
+    transition: all 300ms ease-in-out;
+    border-radius: .4rem;
+    margin-top: 1rem;
+}
+.homepage-link:hover{
+    transform: translateY(-.4rem);
+    background-color: rgb(186,104,200);
+}
+.request-page-btn{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}

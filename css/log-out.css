@@ -1,0 +1,96 @@
+.body1{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logout-container{
+    margin: 0 5vw;
+    margin-top: -3vh;
+    padding: 4vh 10vw 7vh 10vw;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.4em;
+    /* box-shadow: .3rem .3rem 4rem rgb(115, 115, 115); */
+    transition: all 320ms ease-in-out;
+}
+/* .logout-container:hover{
+    transform: scale(1.03);
+} */
+.image-container{
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+}
+.logout-form{
+    width: 100%;
+}
+.yesno-container{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.confirmation-message{
+    text-align: center;
+    width: 35vw;
+    font-size: 1em;
+}
+.btn-confirm{
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    padding: 2.5% 8%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: .4em;
+    background-color: #3d4d54;
+    /* background-color: rgb(186,104,200); */
+    transition: all 200ms ease-in-out;
+    /* font-weight: 900; */
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    width: 48%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: .4em;
+    background-color: #3d4d54;
+    /* background-color: rgb(186,104,200); */
+    transition: all 300ms ease-in-out;
+    box-shadow: .3rem .3rem 2rem rgb(115, 115, 115);
+}
+.btn:hover{
+    background-color:rgb(186,104,200);
+    transform: translateY(-.25rem);
+}
+.btn-confirm:hover{
+    background-color:rgb(186,104,200);
+    transform: scale(1.03);
+}
+.noBtn{
+    display: block;
+    padding: auto 0;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* font-weight: 900; */
+}
+form{
+    width: 48%;
+}

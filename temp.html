@@ -1,0 +1,130 @@
+ <li><a href="index.php"><span class="small-box box1">HOME</span></a></li>
+                    <li><a href="search.php"><span class="small-box">CATEGORY</span></a></li>
+                    <li><a href="order.php"><span class="small-box">ORDER</span></a></li>
+                    <li><a href="profile.php"><span class="small-box">PROFILE</span></a></li>
+                    <li><a href="log-in.php"><span class="small-box1">LOG-IN</span></a></li>
+
+
+
+                   box-shadow: .3rem .3rem 1rem rgb(180, 180, 180);
+                   box-shadow: .3rem .3rem 2rem rgb(180, 180, 180);
+                   box-shadow: .3rem .3rem 3rem rgb(180, 180, 180);
+
+
+                   .menu{
+    background-color: rgb(24, 24, 24);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    border-bottom: 1.5mm solid rgb(24, 24, 24);
+    /* box-shadow: .1rem .1rem .8rem black ; */
+}
+.body1{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.sub-menu{
+    padding: 1%;
+}
+.sub-menu ul{
+    list-style-type: none;
+}
+.sub-menu ul li{
+    display: inline;
+}
+.sub-menu ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 700;  
+    font-size: medium;
+}
+.small-box{
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 1% 2% 1.2% 2%;
+    transition : all 200ms ease-in-out;
+}
+.small-box:hover{
+    /* border-bottom: 2px solid rgb(130,73,140); */
+    background-color: rgb(15, 15, 15);
+    color: rgb(130,73,140);
+    padding: 1% 2% 1.2% 2%;
+}
+.small-box1{
+    text-align: center;
+    padding: 1% 2% 1% 2%;
+    transition: color 200ms ease-in-out;
+}
+
+.small-box1:hover{
+    color: rgb(130,73,140);
+    padding: 1% 2% 1% 2%;
+}
+
+
+
+
+
+    box-shadow: .3rem .3rem 2rem rgb(115, 115, 115);
+    box-shadow: .3rem .3rem 4rem rgb(115, 115, 115);
+
+
+
+<script>
+            $(document).ready(function(){
+                $("#log-in").submit(function(event){
+                    event.preventDefault();
+                    let username = $("#username").val();
+                    let password = $("#password").val();
+
+                    $("form").load("lo.php" , {
+                        'username': username,
+                        'password': password
+                    });
+
+                });
+            });
+        </script>
+
+
+
+
+
+
+        <a class="dribbble" href="https://dribbble.com/shots/5878368-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+
+
+                            if ($res2->num_rows > 0) {
+                                while ($row = $res2->fetch_assoc()) {
+                                    $_SESSION['id'] = $row["id"];
+                                    $id = $_SESSION['id'];
+                                }
+                            }
+
+
+
+
+
+
+
+                            it is so important...it is used for scrolling image container
+
+                <script>
+                document.querySelectorAll(".slide")[0].setAttribute('data-active','')
+                const buttons = document.querySelectorAll(".move-btn")
+                buttons.forEach(button =>{
+                    button.addEventListener("click", ()=> {
+                        const offset = button.dataset.moveBtn == "next" ? 1 : -1
+                        const slides = document.querySelector("[data-slides]")
+                        const activeSlide = slides.querySelector("[data-active]")
+                        
+                        let newIndex = [...slides.children].indexOf(activeSlide) + offset
+                        if(newIndex < 0) newIndex = slides.children.length - 1
+                        if(newIndex >= slides.children.length) newIndex = 0
+                        
+                        slides.children[newIndex].dataset.active = true
+                        delete activeSlide.dataset.active
+                    })
+                })
+            </script>

@@ -1,0 +1,86 @@
+
+.main-container{
+    margin: 3% 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+}
+.button-container-inside form{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    height: 90%;
+    gap: 6%;
+}
+.button-container-inside div{
+    background-color: #3d4d54;
+    border-radius: 1.1em;
+    transition: all 300ms ease-in-out;
+    position: relative;
+    padding: 1% 4% ;
+    box-sizing: border-box;
+}
+.button-container-inside div:hover{
+    transform: translateY(-.4rem);
+    box-shadow: .0rem .0rem 1.2rem #5c7c91;
+}
+.button-container-inside div button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.animation-container-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    transform: translateY(-2.8rem);
+}
+
+
+.div1-header,.div2-header,.div3-header{
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+    transform: translateY(8%);
+}
+.btn-container3{
+    display: flex;
+    align-items: center;
+}
+.div3-header{
+    transform: translateY(0%);
+    font-size: 2.25em;
+    font-weight: 900;
+}
+
+
+.div1-content,.div2-content{
+    font-size: 2.25em;
+    color: white;
+    margin-left: 0%;
+    font-weight: 900;
+}
+
+
+@media (max-width : 600px){
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .animation-container-right{
+        transform: translateY(0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+

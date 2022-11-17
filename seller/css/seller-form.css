@@ -1,0 +1,144 @@
+.box5{
+    color: rgb(186,104,200);
+    transition: color 100ms linear;
+}
+.box5:hover{
+    color: rgb(130,73,140);
+}
+.div1-seller-form{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto 0 auto;
+    margin-bottom:0.8% ;
+    border-radius: 20px;
+    padding: 5% 10% 5% 10%;  
+    transition: all 200ms ease-in-out;
+    box-shadow: .3rem .3rem 4rem rgb(115, 115, 115);
+}
+.body3{
+    padding: 2% 0 0 0;
+    height: fit-content;
+}
+.selleracc{
+    padding:1%;
+    background-color: rgb( 165, 0, 245);
+    margin:0 24.1%;
+    border-radius: 12px 12px 12px 12px;
+    margin-bottom: 1.5%;
+}
+#sellername,#sellerlocation,#sellerlicense,#selleremail,#sellerphone1,#sellerphone2{
+    padding: 3%;
+    color: black;
+    width: 400px; 
+    border-radius: 6px;
+    margin-top: 1%;
+    border: 2px solid white;
+}
+#sellerCATEGORY{
+    width: 430px;
+    padding: 3%;
+    color: black;
+    width: 429.8px; 
+    border-radius: 6px;
+    margin-top: 1%;
+    border: 2px solid white;
+    outline: none;
+}
+#seller-image{
+    width: 368px;
+    margin-top: 1%;
+}
+#createacc{
+    margin-top: 6%;
+    width: 99.9%;
+    padding: 2%;
+    border-radius: 6px;
+    background-color: rgb(186,104,200);
+    color: white;
+}
+input[type ='file']{
+    padding-left: 50px;
+}
+.seller-image-label{
+    margin-top: -5%;
+}
+.text-black{
+    color: black;
+}
+.seller-image-wrapper{
+    position: relative;
+}
+.on-top-image-selecter{
+    position: absolute;
+    z-index: 10;
+    width: 430px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    margin-top: .6%;
+    opacity: 0;
+    cursor: pointer;
+}
+.cover-image-div{
+    display: flex;
+    position: absolute;
+    margin-left: 3px;
+    width: 100px;
+    height: 40px;
+    font-size: x-small;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px 0 0 7px;
+    color: white;
+}
+.cover-image-div2{
+    position: absolute;
+    left: 103px;
+    top: 15px;
+    height: 30px;
+    width: 44px;
+    background-color: white;
+    border-left: 1px solid rgb(194, 194, 194);
+}
+.cover-image-inside{
+    background-image: url('../../images/inbox-out1.svg');
+     background-size: contain;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    z-index: 12;
+    pointer-events: none;
+}
+label{
+    display: block;
+    width: 250px;
+}.wrap{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 5% 0;
+}
+.imag{
+    margin: 0 auto 0 0;
+}
+@media (max-width : 980px){
+    .wrap{
+        flex-direction: column;
+    }
+    .imag{
+        margin: 0 auto;
+        width: 100vw;
+    }
+    .ca-phn{
+        margin: 0 auto;
+    }
+    .imag-sub{
+        width: 65%;
+    }
+}
+
+

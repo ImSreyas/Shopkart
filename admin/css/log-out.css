@@ -1,0 +1,80 @@
+/* logout page start  */
+
+
+
+.main-logout-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-container{
+    padding: 10vh 12vw;
+    margin-top: -15vh;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    box-shadow: .3rem .3rem 4rem rgb(115, 115, 115);
+}
+.logout-form{
+    width: 100%;
+}
+.yesno-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.confirmation-message{
+    text-align: center;
+    width: 35vw;
+    font-size: 1.2em;
+}
+.btn-confirm{
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    padding: 2.5% 8%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    border-radius: .4em;
+    background-color: rgb(186,104,200);
+    transition: all 200ms ease-in-out;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    width: 48%;
+    text-align: center;
+    color: white;
+    border-radius: .4em;
+    background-color: rgb(186,104,200);
+    transition: all 200ms ease-in-out;
+    box-shadow: .3rem .3rem 2rem rgb(115, 115, 115);
+}
+.Button:hover,.btn:hover{
+    transform: scale(1.04);
+}
+.noBtn{
+    display: block;
+    padding: auto 0;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+form{
+    width: 48%;
+}
+/* logout page end  */
+
+
+

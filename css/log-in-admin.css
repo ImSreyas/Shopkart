@@ -1,0 +1,173 @@
+.box5{
+    color: rgb(186,104,200);
+    transition: color 100ms linear;
+}
+.box5:hover{
+    color: rgb(130,73,140);
+}
+.log-in-body{
+    margin-top: 5%;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width:fit-content;
+    height: fit-content;
+    margin: 0 auto 0 3rem;
+    padding: 4% 10%;
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+    box-shadow: .3rem .3rem 4rem rgb(115, 115, 115);
+}
+#username{
+    color: black;
+    width: 94.1%;
+    margin-top: 1.5%;
+    border: 2px solid white;
+}
+#password{
+    color: black;
+    width: 94.5%;
+    margin-top: 1.5%;
+    border: 2px solid white;
+}
+#log-in{
+    color: rgb(255, 255, 255);
+    background-color: rgb(186,104,200);
+    padding: 3% 150px;
+    margin-top: 7%;
+    border-radius: 5px;
+}
+.no-text-decoration{
+    text-decoration: none;
+}
+.padding-CAC{
+    text-align: center;
+    margin-top: 3em;
+    transition: all 200ms ease-in-out;
+    width: 348px;
+    padding-top: 1.5em;
+    font-size: .70rem;
+    border-top: 1px solid rgb(220, 220, 220);    
+}
+.link-fit-content{
+    color: rgb(186,104,200);
+    font-size: 1rem;
+    padding: 3px 0 3px 8px;
+    display: inline;
+    width: fit-content;
+    margin: 3% 0% 2% auto;
+    transition: all 200ms ease-in-out;
+}
+.link-fit-content:hover{
+   color: rgb(130,73,140);
+}
+label{
+    display: inline;
+}
+/*.body2{
+    background: fixed;
+    background-image: url(../images/abb.jpg);
+    background-repeat: repeat-x;
+}*/
+.forgot-pass-wrap{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 348px;
+    height: fit-content;
+}
+.forgot-pass-img{
+    background-image: url('../images/eye-crossed-2.svg');
+     background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: .33em 1em 0 0;
+    width: 1.2em;
+    height: 1.2em;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+.forgot-pass-img:focus{
+    outline: none;
+    animation: zoom-in-out1 500ms ease-in-out;
+}
+@keyframes zoom-in-out1{
+    0%{transform : scale(1);}
+    50%{transform : scale(1.2);}
+    100%{transform : scale(1);}
+}
+.forgot-password-click{
+    background-image: url('../images/eye-2.svg');
+     background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: .33em 1em 0 0;
+    width: 1.2em;
+    height: 1.2em;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.forgot-password-click:focus{
+    outline: none;
+    animation: zoom-in-out2 500ms ease-in-out;
+}
+@keyframes zoom-in-out2{
+    0%{transform : scale(1);}
+    50%{transform : scale(1.2);}
+    100%{transform : scale(1);}
+}
+.login-margin{
+    margin-left: 1rem;
+}
+.label{
+    font-size: .65rem;
+    color: rgb(186,104,200);
+}
+.main-menu a{
+    color: rgb(0, 0, 0);
+}
+.main-sub-menu ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    margin: 2rem 5rem 2rem auto;
+}
+.main-sub-menu ul li{
+    list-style: none;
+}
+.main-menu a:hover{
+    color: rgb(130,73,140);
+}
+.highlight{
+    color: rgb(186,104,200);
+}
+.imag{
+    margin: 0 auto 0 0;
+    display: flex;
+    justify-content: center;
+    height: 478px;
+}
+.imag-sub{
+    width: 100%;
+}
+.body2{
+    margin-top: 2%;
+}
+@media (max-width : 980px){
+    .body2{
+        flex-direction: column;
+    }
+    .imag{
+        margin: 0 auto;
+        width: 100vw;
+    }
+    .log-in-body{
+        margin: 0 auto;
+    }
+    .imag-sub{
+        width: 65%;
+    }
+}

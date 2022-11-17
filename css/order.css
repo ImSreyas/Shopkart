@@ -1,0 +1,29 @@
+.box3{
+    color: rgb(186,104,200);
+    transition: all 100ms linear;
+    background-color: rgb(24, 24, 24);
+    border-bottom: 2px solid rgb(186,104,200);
+    padding: 1% 2% 1% 2%;
+}
+.box3:hover{
+    color: rgb(130,73,140);
+    padding: 1% 2% 1% 2%;
+}
+.main-menu a{
+    color: rgb(0, 0, 0);
+}
+.main-sub-menu ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    margin: 2rem 5rem 2rem auto;
+}
+.main-sub-menu ul li{
+    list-style: none;
+}
+.main-menu a:hover{
+    color: rgb(130,73,140);
+}
+.highlight{
+    color: rgb(186,104,200);
+}

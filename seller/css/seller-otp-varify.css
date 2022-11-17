@@ -1,0 +1,112 @@
+.box5{
+    color: rgb(186,104,200);
+    transition: color 100ms linear;
+}
+.box5:hover{
+    color: rgb(130,73,140);
+}
+.otp-varify{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto 0 auto;
+    margin-bottom:0.8% ;
+    border-radius: 20px;
+    padding: 4% 10% 5% 10%;  
+    transition: all 200ms ease-in-out;
+    box-shadow: .3rem .3rem 4rem rgb(115, 115, 115);
+}
+.otp-varify-body{
+    padding: 0;
+    height: fit-content;
+}
+#otp{
+    padding:3% 8px;
+    color: black;
+    width: 300px;
+    border-radius: 5px; 
+    margin-top: 2%;  
+    border: 2px solid white;
+}
+#verify{
+    margin-top: 5%;
+    padding: 20% 0 0 0;
+    width: 100%;
+    border-radius: 5px;
+    padding: 3%;
+    background-color: rgb(186,104,200);
+    color: white;
+}
+.box5{
+    color: rgb(186,104,200);
+    transition: color 100ms linear;
+}
+.box5:hover{
+    color: rgb(130,73,140);
+}
+.edit-phone{
+    display: inline-block;
+    margin-left: 18%;
+    font-size: 70%;
+    padding: 5px 8px;
+    border-radius: 3px;
+    color: rgb(186,104,200);
+    transition: all 200ms ease-in-out;
+}
+.edit-phone:hover{
+    transform:scale(1.04);
+    background-color: rgb(186,104,200);
+    /* padding: 5px 8px;
+    border-radius: 3px; */
+    color: white;
+}
+.edit-email{
+    display: inline-block;
+    margin-left: 0;
+    font-size: 70%;
+    padding: 5px 8px;
+    border-radius: 3px;
+    color: rgb(186,104,200);
+    transition: all 200ms ease-in-out;    
+}
+.edit-email:hover{
+    transform: scale(1.04);
+    background-color: rgb(186,104,200);
+    /* padding: 5px 8px;
+    border-radius: 3px; */
+    color: white;
+}
+.wrong-otp{
+    color: red;
+    font-size: 80%;
+}
+.or{
+    font-size: 65%;
+    margin: 0 0 0 1%;
+    color: rgb(120, 120, 120);
+}
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0 7% 0;
+}
+.imag{
+    margin: 0 auto 0 0 ;
+}
+@media (max-width : 980px){
+    .wrap{
+        flex-direction: column;
+    }
+    .imag{
+        margin: 0 auto;
+        width: 100vw;
+    }
+    .ca-phn{
+        margin: 0 auto;
+    }
+    .imag-sub{
+        width: 65%;
+    }
+}

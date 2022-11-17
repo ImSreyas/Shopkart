@@ -1,0 +1,114 @@
+<?php
+session_start();
+include('../data-base/constant.php');
+if (!isset($_SESSION['customer-id'])) header('location:../log-in.php');
+if (isset($_SESSION['customer-id'])) $customer_id = $_SESSION['customer-id'];
+$seller_id = $_GET['id'];
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop-finder</title>
+    <link rel="stylesheet" type="text/CSS" href="../css/main.css">
+    <link rel="stylesheet" href="css/place-order.css">
+</head>
+
+<body class="my-body">
+
+
+    <!-- menu start -->
+
+    <!-- menu end -->
+
+
+    <!--body-->
+    <div class="body1 main-height">
+        <div class='product-list-main-container'>
+            <?php
+            $sum = 0;
+            $res109 = mysqli_query($conn, "select * from order_list where s_id='$seller_id' && c_id='$customer_id' order by id desc");
+            while ($row109 = $res109->fetch_assoc()) {
+                $final = $row109['id'];
+                break;
+            }
+            $sql469 = "select * from order_list where s_id='$seller_id' && c_id='$customer_id' && id='$final'";
+            $res469 = mysqli_query($conn, $sql469);
+            if ($res469->num_rows != 0) {
+                while ($row469 = $res469->fetch_assoc()) {
+
+                    $product_id = $row469['products'];
+                    $stock_amount = $row469['stock'];
+
+                    $res006 = mysqli_query($conn, "select * from product where p_id='$product_id'");
+
+                    while ($row006 = $res006->fetch_assoc()) {
+
+
+                        $product_name = $row006['name'];
+                        $product_price_total = $stock_amount * $row006['price'];
+                        $sum += $product_price_total;
+                        $product_price = $row006['price'];
+                        $product_weight_total = $stock_amount * $row006['weight'];
+                        $product_weight = $row006['weight'];
+
+                        echo "
+                    <div class='product-one-container'>
+                    <div class='product-name-container'>" . ucfirst($product_name) . "</div>
+                    <table>
+                    <tr><td>quantity</td><td class='stock-container'>" . $stock_amount . "</td></tr>
+                    <tr><td>weight</td><td><span class='total-weight'>" . $product_weight_total . "g</span><span class='net-weight'> ( " . $stock_amount . " x " . $product_weight . "g ) </span></td></tr>
+                    <tr><td>price</td><td><span class='product-price' id='price-total-individual' value='$product_price_total'>" . $product_price_total . "₹  </span><span class='product-net-container'>  ( " . $stock_amount . " x " . $product_price . "₹ )</span></td></tr>
+                    </table>
+                    </div>
+                    ";
+                    }
+                }
+                echo "<table><tr><td>TOTAL</td><td class='total_price_new'>" . $sum . "₹</td></tr></table>";
+            } else {
+                echo "
+            <div class='something-went-wrong-container'>something went wrong
+            </div>
+            ";
+            }
+
+            ?>
+        </div>
+        <div class='cancel-btn-middle'><button>cancel</button></div>
+        <form action="" method="POST">
+            <div class="location-container">
+                <?php
+                $res620 = mysqli_query($conn, "select location from customer where id='$customer_id'");
+                while ($row620 = $res620->fetch_assoc()) {
+                    $location = $row620['location'];
+                    break;
+                }
+                echo "<div class='location-header'>Location</div>";
+                echo "<div class='location-container-inside'><input type='text' name='location' id='location' value='$location' disabled required><br><button onclick='changeLocation();'>change</button></div>"
+                ?>
+
+            </div>
+            <script>
+                const changeLocation = () => {
+                    document.getElementById("location").removeAttribute("disabled")
+                    document.getElementById("location").style.borderBottom = "1px solid black"
+                }
+            </script>
+            <div class="delivery-method-main-container">
+                <div class="delivery-method-header">Delivery method</div>
+                <div class="delivery-method-body">
+                    <div>
+                    <input type="radio" name="del_method" id="del_method" value="1">
+                    <label for="del_method">Home delivery</label><br>
+                    </div>
+                    <div>
+                    <input type="radio" name="del_method" id="del_method" value="0">
+                    <label for="del_method">Pick up from shop</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--footer-->
+    <?php include('../elements/forgot-pass-footer.php') ?>
