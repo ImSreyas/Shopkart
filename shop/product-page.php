@@ -194,7 +194,7 @@ while($row129 = $res129->fetch_assoc()){
                             <input type='checkbox' class='checkbox' name='name".$id."' value='$id'>
 
                             <div class='stock-wrapper'>
-                            <label for'stockInput' class='stock-label'>stock : </label>
+                            <label for'stockInput' class='stock-label'>Quantity : </label>
                             <input type='number' class='stock-input' name='stock".$id."' id='stockInput' value='1' min='1' max='".$row['stock']."'>
                             </div>
 

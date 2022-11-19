@@ -148,6 +148,36 @@ input{
     padding: 1%;
     box-sizing: border-box;
 }
+.delivery-method-body input[disabled] + label{
+    opacity: .1;   
+}
+.delivery-method-body input[disabled]{
+    opacity: .14;
+}
+
+
+
+
+.buy-btn-container{
+    width: var(--child-width);
+}
+.buy-btn{
+    width: var(--child-width);
+    background-color: #303a41;
+    box-sizing: border-box;
+    border: none;
+    padding: 2.5%;
+    margin: 2.2% 0;
+    border-radius: .8em;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 300ms ease-in-out,background-color 300ms ease-in-out;
+}
+.buy-btn:hover{
+    cursor: pointer;
+    transform: translateY(-.3rem);
+    background-color: #293137;
+}
 
 @font-face {
     font-family: comfortaa;

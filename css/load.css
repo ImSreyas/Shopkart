@@ -175,11 +175,15 @@ body .dribble img {
     width: 100%;
     text-align: center;
     color: #50646d;
-    font-family: opensans;
-    font-size: 1.25rem;
+    font-family: comfortaa;
+    font-size: 1.15rem;
     font-weight: 800;
 }
 @font-face {
-    font-family: opensans;
-    src: url(../font/Nunito-Regular.ttf);
+    font-family: poppins;
+    src: url(../font/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: comfortaa;
+    src: url(../font/Comfortaa-VariableFont_wght.ttf);
 }

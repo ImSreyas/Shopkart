@@ -7,10 +7,13 @@
     <title>shop-finder</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/ORDER.css">
+    <link rel="stylesheet" href="css/load.css">
 </head>
 
 <body>
-
+<?php include('loader/loading-div.php'); ?>
+<script src="js/loading-div-too-slow.js"></script>
+<script>window.history.replaceState({},'','order.php')</script>
 
     <!-- menu start -->
     <nav class="nav-bar">

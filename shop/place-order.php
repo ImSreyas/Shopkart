@@ -25,6 +25,14 @@ $seller_id = $_GET['id'];
 
     <!--body-->
     <div class="body1 main-height">
+        <?php 
+        if(isset($_POST['buy'])){
+            $location_select = $_POST['location'];
+            $delivery_method = $_POST['del_method'];
+            $sql734 = mysqli_query($conn, "UPDATE order_list SET location='$location_select',delivery_stage='$delivery_method',active='1' WHERE c_id='$customer_id' && s_id='$seller_id'");
+            header('location:../order.php?from=order');
+        }
+        ?>
         <div class='product-list-main-container'>
             <?php
             $sum = 0;
@@ -85,7 +93,15 @@ $seller_id = $_GET['id'];
                     break;
                 }
                 echo "<div class='location-header'>Location</div>";
-                echo "<div class='location-container-inside'><input type='text' name='location' id='location' value='$location' disabled required><br><button onclick='changeLocation();'>change</button></div>"
+                echo "<div class='location-container-inside'>
+                <input type='text' name='location' id='location' value='$location' disabled required><br>
+                <button type='button' onclick='changeLocation();'>change</button>
+                </div>";
+                $res339 = mysqli_query($conn, "select home_delivery from seller where id=$seller_id");
+                while($row339 = $res339->fetch_assoc()){
+                    $delivery_status_d = $row339['home_delivery'];
+                    break;
+                }
                 ?>
 
             </div>
@@ -99,14 +115,17 @@ $seller_id = $_GET['id'];
                 <div class="delivery-method-header">Delivery method</div>
                 <div class="delivery-method-body">
                     <div>
-                    <input type="radio" name="del_method" id="del_method" value="1">
-                    <label for="del_method">Home delivery</label><br>
+                    <input type="radio" name="del_method" id="del_method2" value="0" checked>
+                    <label for="del_method2">Pick up from shop</label>
                     </div>
                     <div>
-                    <input type="radio" name="del_method" id="del_method" value="0">
-                    <label for="del_method">Pick up from shop</label>
+                    <input type="radio" name="del_method" id="del_method" value="1" <?php if($delivery_status_d == 0)echo "disabled" ?>>
+                    <label for="del_method">Home delivery</label><br>
                     </div>
                 </div>
+            </div>
+            <div class="buy-btn-container">
+                <button type="submit" name="buy" class="buy-btn" onclick="changeLocation();">buy</button>
             </div>
         </form>
     </div>

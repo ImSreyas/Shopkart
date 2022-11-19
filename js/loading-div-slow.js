@@ -2,7 +2,7 @@ const getParameter = (parameterName) =>{
     let parameter= new URLSearchParams( window.location.search )
     return parameter.get( parameterName )
 }
-const arr = ["logging_in","logging_out","deleting_seller"]
+const arr = ["logging_in","logging_out","deleting_seller",]
 const arr_val = ["Logging in...please wait","Logging out...please wait","Deleting account...please wait"]
 if(arr.includes(getParameter("from"))){
     document.getElementById("loader").style.display = "block"
