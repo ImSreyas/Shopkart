@@ -25,14 +25,7 @@ $seller_id = $_GET['id'];
 
     <!--body-->
     <div class="body1 main-height">
-        <?php 
-        if(isset($_POST['buy'])){
-            $location_select = $_POST['location'];
-            $delivery_method = $_POST['del_method'];
-            $sql734 = mysqli_query($conn, "UPDATE order_list SET location='$location_select',delivery_stage='$delivery_method',active='1' WHERE c_id='$customer_id' && s_id='$seller_id'");
-            header('location:../order.php?from=order');
-        }
-        ?>
+        
         <div class='product-list-main-container'>
             <?php
             $sum = 0;
@@ -50,6 +43,7 @@ $seller_id = $_GET['id'];
                     $stock_amount = $row469['stock'];
 
                     $res006 = mysqli_query($conn, "SELECT * FROM product WHERE p_id='$product_id'");
+
 
                     while ($row006 = $res006->fetch_assoc()) {
 
@@ -81,6 +75,19 @@ $seller_id = $_GET['id'];
             ";
             }
 
+            ?>
+            <?php 
+            if(isset($_POST['buy'])){
+                $location_select = $_POST['location'];
+                $delivery_method = $_POST['del_method'];
+                $res559 = mysqli_query($conn, "SELECT max(id) FROM order_list WHERE c_id='$customer_id' && s_id='$seller_id'");
+                $row559 = $res559->fetch_array();
+                $lar = $row559[0];
+                echo $lar;
+
+                $sql734 = mysqli_query($conn, "UPDATE order_list SET location='$location_select',delivery_stage='$delivery_method',total='$sum',active='1' WHERE c_id='$customer_id' && s_id='$seller_id' && id='$lar'");
+                header('location:../order.php?from=order');
+            }
             ?>
         </div>
         <form action="" method="POST">
