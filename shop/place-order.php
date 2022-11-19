@@ -36,12 +36,12 @@ $seller_id = $_GET['id'];
         <div class='product-list-main-container'>
             <?php
             $sum = 0;
-            $res109 = mysqli_query($conn, "select * from order_list where s_id='$seller_id' && c_id='$customer_id' order by id desc");
+            $res109 = mysqli_query($conn, "SELECT * FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' ORDER BY id DESC");
             while ($row109 = $res109->fetch_assoc()) {
                 $final = $row109['id'];
                 break;
             }
-            $sql469 = "select * from order_list where s_id='$seller_id' && c_id='$customer_id' && id='$final'";
+            $sql469 = "SELECT * FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' && id='$final'";
             $res469 = mysqli_query($conn, $sql469);
             if ($res469->num_rows != 0) {
                 while ($row469 = $res469->fetch_assoc()) {
@@ -49,7 +49,7 @@ $seller_id = $_GET['id'];
                     $product_id = $row469['products'];
                     $stock_amount = $row469['stock'];
 
-                    $res006 = mysqli_query($conn, "select * from product where p_id='$product_id'");
+                    $res006 = mysqli_query($conn, "SELECT * FROM product WHERE p_id='$product_id'");
 
                     while ($row006 = $res006->fetch_assoc()) {
 
@@ -83,8 +83,18 @@ $seller_id = $_GET['id'];
 
             ?>
         </div>
-        <div class='cancel-btn-middle'><button>cancel</button></div>
         <form action="" method="POST">
+
+
+            <?php 
+            if(isset($_POST['cancel_order'])){
+            $sql_cancel_order = mysqli_query($conn, "DELETE FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' && id='$final'");
+            header('location:product-page.php?id='.$seller_id);
+            }
+            ?>
+
+
+            <div class='cancel-btn-middle'><button type="submit" name='cancel_order'>cancel</button></div>
             <div class="location-container">
                 <?php
                 $res620 = mysqli_query($conn, "select location from customer where id='$customer_id'");
