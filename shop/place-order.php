@@ -85,7 +85,7 @@ $seller_id = $_GET['id'];
                 $lar = $row559[0];
                 echo $lar;
 
-                $sql734 = mysqli_query($conn, "UPDATE order_list SET location='$location_select',delivery_stage='$delivery_method',total='$sum',active='1' WHERE c_id='$customer_id' && s_id='$seller_id' && id='$lar'");
+                $sql734 = mysqli_query($conn, "UPDATE order_list SET location='$location_select',delivery='$delivery_method',total='$sum',active='1' WHERE c_id='$customer_id' && s_id='$seller_id' && id='$lar'");
                 header('location:../order.php?from=order');
             }
             ?>

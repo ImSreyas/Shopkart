@@ -242,10 +242,14 @@
 .product-list-main{
     height: fit-content;  
 }
+.product-head-container{
+    display: flex;
+    justify-content: center;
+}
 .products-head{
     font-size: 3rem;
     font-weight: 900;
-    padding: 2%;
+    padding: 1.5%;
     box-sizing: border-box;
     color: #202529;
 }
@@ -258,7 +262,7 @@
     height: fit-content;
 }
 .product-container{
-    padding: 2.5%;
+    padding: 3%;
     border-radius: .85em;
 }
 .product-container-parent{
@@ -383,6 +387,12 @@ input[type="checkbox"]:checked{
     .image-purchase-container{
         padding-top: 15vh;
         height: 35vh;
+    }
+    .product-list-container{
+        grid-template-columns: 1fr;
+    }
+    .stock-wrapper{
+        right: 5%;
     }
 }
 @media (max-width : 600px){ 

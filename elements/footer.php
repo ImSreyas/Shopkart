@@ -4,7 +4,7 @@
                 <span class="google">
             <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
                 </span>
-            </a>. Devoloped by Sreyas Satheesh and Ashik Asharaf.</p>
+            </a>. Devoloped by Sreyas Satheesh.</p>
             <br>
 
 

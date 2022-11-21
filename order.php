@@ -62,8 +62,7 @@
 
     <!--body-->
     <div class="body1 main-height">
-        <br>
-        <p>ORDER</p><br>
+       
     </div>
     <!--footer-->
     <?php include('elements/footer.php') ?>

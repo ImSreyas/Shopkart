@@ -151,7 +151,7 @@ while($row129 = $res129->fetch_assoc()){
                 }
             }else{
                 echo "<i class='no-shop-images'></i>";
-                // include('../animated/');
+                
                 echo "</li>";
             }
             ?>
@@ -181,7 +181,8 @@ while($row129 = $res129->fetch_assoc()){
 
             <section id="product-section">
                 <div class="product-list-main">
-                    <div class="products-head">Products</div>
+                    <div class="product-head-container">
+                    <div class="products-head">Products</div></div>
                     <form action="" method="POST">
                         <div class="product-list-container">
                             <?php
