@@ -13,10 +13,11 @@ body{
     border-radius: .7em;
     margin: 2% 0;
     color: white;
-    transition: transform 300ms ease-in-out,background-color 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 .pack-btn:hover{
     cursor: pointer;
-    transform: translateY(-.3rem);
-    background-color: #272e34;
+    /* transform: translateY(-.3rem); */
+    background-color: rgb(186 104 200);
+    box-shadow: 0 0 1rem #2f383f;
 }

@@ -11,6 +11,7 @@ mysqli_query($conn, "UPDATE order_list SET delivery_stage='1' WHERE id='$order_i
 <?php 
 if(isset($_POST['submit'])){
 mysqli_query($conn, "UPDATE order_list SET delivery_stage='2' WHERE id='$order_id' && c_id='$customer_id'");
+mysqli_query($conn, "UPDATE order_list SET delivery_stage='3' WHERE id='$order_id' && c_id='$customer_id' && delivery='0'");
 header('location:../seller-index.php');
 }
 ?>
