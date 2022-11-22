@@ -27,6 +27,9 @@ include('../data-base/constant.php');
             <a href="delivery.php" class="no-text-decoration">
                 <li class="delivery">delivery</li>
             </a>
+            <a href="list.php" class="no-text-decoration">
+                <li class="list">list</li>
+            </a>
             <a href="product.php" class="no-text-decoration">
                 <li class="product">product</li>
             </a>

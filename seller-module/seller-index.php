@@ -15,7 +15,6 @@ if(!isset($_SESSION['seller-id'])){
     <title>seller</title>
     <link rel="stylesheet" href="../css/load.css">
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
-    <link rel="stylesheet" type="text/CSS" href="css/product-page.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -32,6 +31,9 @@ if(!isset($_SESSION['seller-id'])){
             </a>
             <a href="delivery.php" class="no-text-decoration">
                 <li class="delivery">delivery</li>
+            </a>
+            <a href="list.php" class="no-text-decoration">
+                <li class="list">list</li>
             </a>
             <a href="product.php" class="no-text-decoration">
                 <li class="product">product</li>
@@ -56,7 +58,7 @@ if(!isset($_SESSION['seller-id'])){
             <?php 
             $check = 0;
             $double_check = 0;
-            $res551 = mysqli_query($conn,"SELECT * FROM order_list WHERE s_id='$seller_id' && active='1'");
+            $res551 = mysqli_query($conn,"SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='0' || delivery_stage='1'");
             while($row551 = $res551->fetch_assoc()){
                 if($check != $row551['id'] || $double_check != $row551['c_id']){
                     $double_check = $row551['c_id'];
@@ -75,7 +77,7 @@ if(!isset($_SESSION['seller-id'])){
 
 
                     echo "
-                    <a href='php/request_process.php' class='process-page-link'>
+                    <a href='php/request_process.php?oid=".$check."&cid=".$name."' class='process-page-link'>
                     <div class='child-container'>
                     <div class='name-container'>".ucfirst($name_new)."</div>
                     <div class='location-container'>".$location_new."</div>

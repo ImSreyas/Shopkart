@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $value = explode(',',$_POST['submit']);
     $a = $value[0];
     $b = $value[1];
-    mysqli_query($conn, "UPDATE order_list SET delivery_stage='3' WHERE c_id='$a' && id='$b'");
+    mysqli_query($conn, "UPDATE order_list SET delivery_stage='4' WHERE c_id='$a' && id='$b'");
 }
 ?>
 <!DOCTYPE html>
@@ -38,10 +38,10 @@ if(isset($_POST['submit'])){
                 <li class="request">request</li>
             </a>
             <a href="delivery.php" class="no-text-decoration">
-                <li class="delivery highlight">delivery</li>
+                <li class="delivery">delivery</li>
             </a>
             <a href="list.php" class="no-text-decoration">
-                <li class="list">list</li>
+                <li class="list highlight">list</li>
             </a>
             <a href="product.php" class="no-text-decoration">
                 <li class="product">product</li>
@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
             <?php 
             $check = 0;
             $double_check = 0;
-            $res551 = mysqli_query($conn,"SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='2'");
+            $res551 = mysqli_query($conn,"SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='3'");
             if($res551->num_rows != 0){
             while($row551 = $res551->fetch_assoc()){
                 if($check != $row551['id'] || $double_check != $row551['c_id']){
@@ -93,7 +93,7 @@ if(isset($_POST['submit'])){
                     <div class='total-money-container'>₹".$total_money."</div>
                     <div class='OFD-container'>
                     <form action='' method='POST'>
-                    <button type='submit' name='submit' class='OFD-btn' value='".$double_check.",".$check."'>Out for delivery</button>
+                    <button type='submit' name='submit' class='OFD-btn' value='".$double_check.",".$check."'>Delivered</button>
                     </form>
                     </div>
                     </div>

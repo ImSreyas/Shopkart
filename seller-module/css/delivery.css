@@ -1,0 +1,29 @@
+.child-container:hover{
+    transform: translateY(0px);
+    cursor: auto;
+}
+.OFD-container{
+    width: 100%;
+}
+.OFD-btn{
+    width: 100%;
+    border-radius: .6rem;
+    background-color: #303a41;
+    color: white;
+    border: none;
+    box-shadow: 0 0 .5rem #21282c;
+    font-size: 1rem;
+    padding: 3%;
+    transition: all 300ms ease-in-out;
+}
+.OFD-btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0 1rem #21282c;
+    background-color: rgb(186 104 200);
+}
+.no-result{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
