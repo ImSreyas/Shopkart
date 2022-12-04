@@ -19,7 +19,7 @@ if (!isset($_SESSION['seller-id'])) {
 </head>
 
 <body class="my-body">
-    <?php include('../loader/loading-div.php'); ?>
+    <?php include('../loader/loading-div.html'); ?>
     <script src="../js/loading-div-slow.js"></script>
     <script defer>
         history.replaceState({}, '', 'http://localhost/shop-finder/seller-module/seller-index.php')

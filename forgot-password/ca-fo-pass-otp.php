@@ -36,7 +36,7 @@
 
 <body class="my-body">
     <!--menu-->
-    <?php include('../nav-bar/nav.php'); ?>
+    <?php include('../nav-bar/nav.html'); ?>
     <!--body-->
     <div class="body1 otp-varify-body">
         <div class="wrap">

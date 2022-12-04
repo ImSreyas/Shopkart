@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="../customer/css/ca-pass.css">
 </head>
-<?php include('../nav-bar/nav.php'); ?>
+<?php include('../nav-bar/nav.html'); ?>
 <!--body-->
 <div class="body1 ca-phone-body">
     <div class="wrap">

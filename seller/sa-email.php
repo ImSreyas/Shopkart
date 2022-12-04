@@ -10,7 +10,7 @@
 
 <body class="my-body">
     <!--menu-->
-    <?php include('../nav-bar/nav.php'); ?>
+    <?php include('../nav-bar/nav.html'); ?>
     </div>
     <!--body-->
     <div class="body1 ca-phone-body">

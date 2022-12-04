@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php include('loader/loading-div.php'); ?>
+    <?php include('loader/loading-div.html'); ?>
     <script src="js/loading-div-too-slow.js"></script>
     <script>
         window.history.replaceState({}, '', 'order.php')

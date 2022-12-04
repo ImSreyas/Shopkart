@@ -10,7 +10,7 @@
 
 <body class="my-body">
     <!--menu-->
-    <?php include('../nav-bar/nav.php'); ?>
+    <?php include('../nav-bar/nav.html'); ?>
     <!--body-->
     <div class="body1 body3">
         <div class="wrap">

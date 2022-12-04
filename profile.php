@@ -12,7 +12,7 @@ include('data-base/constant.php');
 
 <body>
     <?php
-    include('loader/loading-div.php');
+    include('loader/loading-div.html');
     ?>
     <script src="js/loading-div-normal.js"></script>
     <!-- menu start -->

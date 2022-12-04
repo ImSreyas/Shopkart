@@ -20,7 +20,7 @@ if (!isset($_SESSION['seller-id'])) {
 
 <body class="my-body">
     <?php
-    include('../loader/loading-div.php');
+    include('../loader/loading-div.html');
     ?>
     <script src="../js/loading-div-normal.js"></script>
     <script defer>
@@ -122,7 +122,7 @@ if (!isset($_SESSION['seller-id'])) {
                                 <input type="text" class="product-name" name="product-name" placeholder="Product name" value="<?php echo $name; ?>" style="<?php if ($nameErr != "") echo 'border-bottom:2px solid red;'; ?>">
                                 <input type="text" class="product-sub-category" name="product-sub-category" placeholder="Product sub category" value="<?php echo $sub_category; ?>" style="<?php if ($sub_categoryErr != "") echo 'border-bottom:2px solid red;'; ?>">
                                 <select class="product-category" name="product-category" placeholder="Product category" value="<?php echo $category; ?>">
-                                    <?php include('../all/category-options/options.php'); ?>
+                                    <?php include('../all/category-options/options.html'); ?>
                                     <input type="number" class="product-price" name="product-price" placeholder="Product price" value="<?php echo $price; ?>" style="<?php if ($priceErr != "") echo 'border-bottom:2px solid red;'; ?>">
                                     <input type="number" class="product-weight" name="product-weight" placeholder="Unit weight in grams" value="<?php echo $weight; ?>" style="<?php if ($weightErr != "") echo 'border-bottom:2px solid red;'; ?>">
                                     <input type="number" class="product-stock" name="product-stock" placeholder="Stock" value="<?php echo $stock; ?>" style="<?php if ($stockErr != "") echo 'border-bottom:2px solid red;'; ?>">

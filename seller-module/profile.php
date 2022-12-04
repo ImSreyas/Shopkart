@@ -19,7 +19,7 @@ include("../data-base/constant.php");
 </head>
 
 <body class="my-body">
-    <?php include('../loader/loading-div.php'); ?>
+    <?php include('../loader/loading-div.html'); ?>
     <script src="../js/loading-div-normal.js"></script>
     <script>
         history.replaceState({}, '', '')
