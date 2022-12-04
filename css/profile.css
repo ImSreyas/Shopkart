@@ -12,7 +12,7 @@
     margin: 0 auto;
     width: 90%;
     height: fit-content;
-    background-color: #3d4d54;
+    background-color: #303a41;
     /* background-color: white; */
     padding: 3% 6% 4.7%;
     border-radius: 1em;
@@ -53,7 +53,7 @@
 }
 .location{
     /* font-family: opensans; */
-    color: #3d4d54;
+    color: #303a41;
     color: white;
     font-size: 1.2rem;
     padding: .6% 0;
@@ -72,7 +72,7 @@
 }
 .address{
     font-family: opensans;
-    color: #3d4d54;
+    color: #303a41;
     color: white;
     font-size: 1.2rem;
     padding: .6% 0;
@@ -90,7 +90,7 @@
 }
 .email{
     /* font-family: opensans; */
-    color: #3d4d54;
+    color: #303a41;
     color: white;
     font-size: 1.2rem;
     padding: .6% 0 ;
@@ -109,7 +109,7 @@
 }
 .phone1,.phone2{
     /* font-family: opensans; */
-    color: #3d4d54;
+    color: #303a41;
     color: white;
     font-size: 1.2rem;
     padding: .6% 0 0;
@@ -129,7 +129,7 @@
 }
 .pin{
     /* font-family: opensans; */
-    color: #3d4d54;
+    color: #303a41;
     color: white;
     font-size: 1.2rem;
     padding: .6% 0 0;
@@ -151,7 +151,7 @@
 
 
 .wrap-content{
-    background-color: #3d4d54;
+    background-color: #303a41;
     padding: 0 1% .5%;
     border-radius: .6rem;
     margin-bottom: 1rem;
@@ -198,7 +198,7 @@
 .profile-to-log-in-page-link-container{
     width: 80%;
     text-align: center;
-    background-color: #3d4d54;
+    background-color: #303a41;
     padding: 2.2% 0;
     border-radius: .5rem;
     transform: translateY(-2rem);
@@ -221,8 +221,8 @@
 }
 .fix{
     width: 35%;
-    background-color: #3d4d54;
-    box-shadow: .1em .1em 1em .1em #2b363a;
+    background-color: #303a41;
+    box-shadow: .1em .1em 1em .1em #232b2f;
     border-radius: .4rem;
     text-decoration: none;
     transition: all 300ms ease-in-out;
@@ -246,9 +246,9 @@
     cursor: pointer;
     border: 0;
     color: white;
-    background-color: #3d4d54;
+    background-color: #303a41;
     transition: all 300ms ease-in-out;
-    box-shadow: .1em .1em 1.5em .15em #2b363a;
+    box-shadow: .1em .1em 1.5em .15em #232b2f;
 }
 .update-button:hover{
     background-color: rgb(186,104,200);
@@ -256,18 +256,18 @@
 }
 input.ex-name{
     width: 90%;
-    background-color: #3d4d54;
+    background-color: #303a41;
     box-shadow: none;
     color: white;
     padding: 0;
     font-family: opensans;
     padding: 1.9% 0;
-    border-bottom: 2.6px solid #3d4d54;
+    border-bottom: 2.6px solid #303a41;
     
 }
 input.name{
     width: 70%;
-    background-color: #3d4d54;
+    background-color: #303a41;
     box-shadow: none;
     color: white;
     padding: 2% 5%;
@@ -283,9 +283,9 @@ input.name{
     cursor: pointer;
     border: 0;
     color: white;
-    background-color: #3d4d54;
+    background-color: #303a41;
     transition: all 300ms ease-in-out;
-    box-shadow: .1em .1em 1.5em .15em #2b363a;
+    box-shadow: .1em .1em 1.5em .15em #232b2f;
     display: none;
 }
 .clickable{
@@ -297,9 +297,9 @@ input.name{
     cursor: pointer;
     border: 0;
     color: white;
-    background-color: #3d4d54;
+    background-color: #303a41;
     transition: all 300ms ease-in-out;
-    box-shadow: .1em .1em 1.5em .15em #2b363a;
+    box-shadow: .1em .1em 1.5em .15em #232b2f;
 }
 .clickable:hover{
     background-color: rgb(186,104,200);
@@ -318,7 +318,7 @@ input.name{
 }
 .container-2-div-1,.container-2-div-2{
     height: 35%;
-    background-color: #3d4d54;
+    background-color: #303a41;
     border-radius: .5em;
     padding: 3% 5% 5% 10%;
     color: white;
@@ -381,7 +381,7 @@ input.name{
     background-position: center;
     bottom: 0%;
     right: 5%;
-    background-color: #3d4d54;
+    background-color: #303a41;
     background-color: rgb(186,104,200);
     /* background-color: white; */
     border-radius: 100px;

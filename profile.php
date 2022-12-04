@@ -302,53 +302,53 @@ include('data-base/constant.php');
 
             let wrap1 = document.getElementById("wrap1")
             wrap1.removeAttribute("disabled")
-            wrap1.style.backgroundColor = "#3d4d54"
+            wrap1.style.backgroundColor = "#303a41"
             wrap1.style.borderBottom = "2px solid #252f33"
             wrap1.style.borderRadius = "0"
-            wrap1.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap1.style.boxShadow = "0 0 0 0 #303a41"
 
             //$("edit-button").childern().foreach(v => v.removeAttribute("diabled))
             let wrap2 = document.getElementById("wrap2")
             wrap2.removeAttribute("disabled")
-            wrap2.style.backgroundColor = "#3d4d54"
+            wrap2.style.backgroundColor = "#303a41"
             wrap2.style.borderBottom = "2px solid #252f33"
             wrap2.style.borderRadius = "0"
-            wrap2.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap2.style.boxShadow = "0 0 0 0 #303a41"
 
             let wrap3 = document.getElementById("wrap3")
             wrap3.removeAttribute("disabled")
-            wrap3.style.backgroundColor = "#3d4d54"
+            wrap3.style.backgroundColor = "#303a41"
             wrap3.style.borderBottom = "2px solid #252f33"
             wrap3.style.borderRadius = "0"
-            wrap3.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap3.style.boxShadow = "0 0 0 0 #303a41"
 
             let wrap4 = document.getElementById("wrap4")
             wrap4.removeAttribute("disabled")
-            wrap4.style.backgroundColor = "#3d4d54"
+            wrap4.style.backgroundColor = "#303a41"
             wrap4.style.borderBottom = "2px solid #252f33"
             wrap4.style.borderRadius = "0"
-            wrap4.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap4.style.boxShadow = "0 0 0 0 #303a41"
 
             let wrap5 = document.getElementById("wrap5")
             wrap5.removeAttribute("disabled")
-            wrap5.style.backgroundColor = "#3d4d54"
+            wrap5.style.backgroundColor = "#303a41"
             wrap5.style.borderBottom = "2px solid #252f33"
             wrap5.style.borderRadius = "0"
-            wrap5.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap5.style.boxShadow = "0 0 0 0 #303a41"
 
             let wrap6 = document.getElementById("wrap6")
             wrap6.removeAttribute("disabled")
-            wrap6.style.backgroundColor = "#3d4d54"
+            wrap6.style.backgroundColor = "#303a41"
             wrap6.style.borderBottom = "2px solid #252f33"
             wrap6.style.borderRadius = "0"
-            wrap6.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap6.style.boxShadow = "0 0 0 0 #303a41"
 
             let wrap7 = document.getElementById("wrap7")
             wrap7.removeAttribute("disabled")
-            wrap7.style.backgroundColor = "#3d4d54"
+            wrap7.style.backgroundColor = "#303a41"
             wrap7.style.borderBottom = "2px solid #252f33"
             wrap7.style.borderRadius = "0"
-            wrap7.style.boxShadow = "0 0 0 0 #3d4d54"
+            wrap7.style.boxShadow = "0 0 0 0 #303a41"
 
 
 
