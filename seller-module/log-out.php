@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION['seller-id'])){
+if (!isset($_SESSION['seller-id'])) {
     header('location:../index.php');
 }
 ?>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['seller-id'])){
 
 
     <!--body-->
-     <div class="body1 main-height">
+    <div class="body1 main-height">
 
 
         <?php
@@ -59,7 +59,7 @@ if(!isset($_SESSION['seller-id'])){
 
         <div class="logout-container">
             <div class="image-container">
-                <?php include('../animated/customer-logout-confirmation.php'); ?>
+                <?php include('../animated/customer-logout-confirmation.html'); ?>
             </div>
             <div class="confirmation-message">
                 Are you sure you want to log out ...?

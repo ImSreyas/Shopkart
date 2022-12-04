@@ -67,7 +67,7 @@
             if ($username == "") {
                 $usernameErr = "*Fill the username";
             }
-            
+
             if ($flag == 1) {
                 if (md5($password) == $password_check) {
                     unset($_SESSION['username']);
@@ -75,9 +75,9 @@
 
 
                     $sql10 = "select * from seller where id=$id";
-                    $res10 = mysqli_query($conn , $sql10);
-                    while($row = $res10->fetch_assoc()){
-                        if($row['status']==1)$status=1;
+                    $res10 = mysqli_query($conn, $sql10);
+                    while ($row = $res10->fetch_assoc()) {
+                        if ($row['status'] == 1) $status = 1;
                     }
                     if ($status == 1) {
                         $_SESSION['seller-id'] = $id;
@@ -146,7 +146,7 @@
                     <a class="link-fit-content no-text-decoration small-font1" href="log-in-admin.php">log-in</a></span>
             </div>
         </div>
-        <?php include('animated/seller.php'); ?>
+        <?php include('animated/seller.html'); ?>
         <!-- <div class="imag">
                 <img src="images/Usability testing Customizable Isometric Illustrations _ Amico Style.png" class="imag-sub">
             </div> -->

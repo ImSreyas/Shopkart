@@ -89,7 +89,7 @@ if (!isset($_SESSION['seller-id'])) {
     }
     if (isset($_POST['remove'])) {
         $remove_id = $_POST['remove'];
-        mysqli_query($conn , "delete from product where p_id='$remove_id'");
+        mysqli_query($conn, "delete from product where p_id='$remove_id'");
     }
     ?>
     <div class="body1 main-height">
@@ -97,7 +97,7 @@ if (!isset($_SESSION['seller-id'])) {
 
 
             <div class="adding-product-animation-container">
-                <?php include('../animated/adding-product.php'); ?>
+                <?php include('../animated/adding-product.html'); ?>
             </div>
 
 
@@ -173,7 +173,7 @@ if (!isset($_SESSION['seller-id'])) {
                 <input type='number' placeholder='stock' name='stock' class='i-field'>
                 <button type='submit' name='add' value='" . $id . "' class='update-btn'>Update stock</button>
                 <button type='submit' name='remove' class='remove-btn' value='" . $id . "'>Remove</button>
-                <a href='product-update-page.php?id=".$id."' class='update-btn-small-link'><div class='update-product-small-btn'>Update</div></a>
+                <a href='product-update-page.php?id=" . $id . "' class='update-btn-small-link'><div class='update-product-small-btn'>Update</div></a>
                 </form>
                 </div>
               

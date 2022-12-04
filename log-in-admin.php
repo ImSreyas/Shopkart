@@ -123,7 +123,7 @@
                 </a>
             </div>
         </div>
-        <?php include('animated/adminlogin.php'); ?>
+        <?php include('animated/adminlogin.html'); ?>
     </div>
     <!--footer-->
     <?php include('elements/footer.php') ?>

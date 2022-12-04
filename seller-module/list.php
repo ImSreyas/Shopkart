@@ -1,15 +1,15 @@
-<?php 
+<?php
 session_start();
 include('../data-base/constant.php');
-if(!isset($_SESSION['seller-id'])){
+if (!isset($_SESSION['seller-id'])) {
     header('location:../index.php');
-}else{
+} else {
     $seller_id = $_SESSION['seller-id'];
 }
 ?>
 <?php
-if(isset($_POST['submit'])){
-    $value = explode(',',$_POST['submit']);
+if (isset($_POST['submit'])) {
+    $value = explode(',', $_POST['submit']);
     $a = $value[0];
     $b = $value[1];
     mysqli_query($conn, "UPDATE order_list SET delivery_stage='4' WHERE c_id='$a' && id='$b'");
@@ -63,51 +63,51 @@ if(isset($_POST['submit'])){
     <!--body-->
     <div class="body1 main-height">
         <div class="main-body-inside">
-            <?php 
+            <?php
             $check = 0;
             $double_check = 0;
-            $res551 = mysqli_query($conn,"SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='3'");
-            if($res551->num_rows != 0){
-            while($row551 = $res551->fetch_assoc()){
-                if($check != $row551['id'] || $double_check != $row551['c_id']){
-                    $double_check = $row551['c_id'];
-                    $check = $row551['id'];
-                    $name = $row551['c_id'];
-                    $location_new = $row551['location'];
-                    $total_money = $row551['total'];
-                    $del = ($row551['delivery']==0)? "Pick up from shop" : "Home delivery";
+            $res551 = mysqli_query($conn, "SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='3'");
+            if ($res551->num_rows != 0) {
+                while ($row551 = $res551->fetch_assoc()) {
+                    if ($check != $row551['id'] || $double_check != $row551['c_id']) {
+                        $double_check = $row551['c_id'];
+                        $check = $row551['id'];
+                        $name = $row551['c_id'];
+                        $location_new = $row551['location'];
+                        $total_money = $row551['total'];
+                        $del = ($row551['delivery'] == 0) ? "Pick up from shop" : "Home delivery";
 
 
-                    $res656 = mysqli_query($conn, "SELECT name FROM customer WHERE id='$name'");
-                    while($row552 = $res656->fetch_assoc()){
-                        $name_new = $row552['name'];
-                        break;
-                    }
+                        $res656 = mysqli_query($conn, "SELECT name FROM customer WHERE id='$name'");
+                        while ($row552 = $res656->fetch_assoc()) {
+                            $name_new = $row552['name'];
+                            break;
+                        }
 
 
-                    echo "
+                        echo "
                     <div class='child-container'>
-                    <div class='name-container'>".ucfirst($name_new)."</div>
-                    <div class='location-container'>".$location_new."</div>
-                    <div class='delivery-container'>".$del."</div>
-                    <div class='total-money-container'>₹".$total_money."</div>
+                    <div class='name-container'>" . ucfirst($name_new) . "</div>
+                    <div class='location-container'>" . $location_new . "</div>
+                    <div class='delivery-container'>" . $del . "</div>
+                    <div class='total-money-container'>₹" . $total_money . "</div>
                     <div class='OFD-container'>
                     <form action='' method='POST'>
-                    <button type='submit' name='submit' class='OFD-btn' value='".$double_check.",".$check."'>Delivered</button>
+                    <button type='submit' name='submit' class='OFD-btn' value='" . $double_check . "," . $check . "'>Delivered</button>
                     </form>
                     </div>
                     </div>
                     ";
+                    }
                 }
+                echo "</div>";
+            } else {
+                echo "</div>";
+                echo "<div class='no-result'>";
+                include('../animated/no-data-d.html');
+                echo "</div>";
             }
-            echo "</div>";
-        }else{
-            echo "</div>";
-            echo "<div class='no-result'>";
-            include('../animated/no-data-d.php');
-            echo "</div>";
-        }
-            
-        ?>
-    <!--footer-->
-    <?php include('../elements/forgot-pass-footer.php') ?>
+
+            ?>
+            <!--footer-->
+            <?php include('../elements/forgot-pass-footer.php') ?>

@@ -192,7 +192,7 @@
                     <input type="submit" id="createacc" value="Create">
                 </form>
             </div>
-            <?php include('../animated/formsa.php'); ?>
+            <?php include('../animated/formsa.hmtl'); ?>
             <!-- <div  class="page-number">
                 <div>
             <svg height="10" width="10">

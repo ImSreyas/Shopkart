@@ -81,7 +81,7 @@
             }
         }
         ?>
-        <?php include('animated/signinphone.php'); ?>
+        <?php include('animated/signinphone.html'); ?>
 
         <div class="log-in-body">
             <form action="" method="post" name="form">

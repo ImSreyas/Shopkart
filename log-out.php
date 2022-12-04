@@ -30,26 +30,26 @@
             <a href="log-out.php" class="no-text-decoration">
                 <li class="login highlight">log out</li>
             </a>
-            <?php 
-            if(isset($_SESSION['customer-id'])){
+            <?php
+            if (isset($_SESSION['customer-id'])) {
                 include('data-base/constant.php');
-                $id=$_SESSION['customer-id'];
-                $sql1= "select profile_image from customer where id=$id";
-                $res=mysqli_query($conn , $sql1);
-                while($row = $res->fetch_assoc()){
+                $id = $_SESSION['customer-id'];
+                $sql1 = "select profile_image from customer where id=$id";
+                $res = mysqli_query($conn, $sql1);
+                while ($row = $res->fetch_assoc()) {
                     echo "
                     <li class='sre-icon-list'>
                     <a href='profile.php' class='sre-icon-link'>
                     <div class='sre-main-small-image-container'>
                     <div class='sre-profile-image-small-container'>
-                    <img src='".$row['profile_image']."' class='sre-img'>
+                    <img src='" . $row['profile_image'] . "' class='sre-img'>
                     </div>
                     </div>
                     </a></li>
                     ";
                 }
             }
-             ?>
+            ?>
         </ul>
     </nav>
     <!-- menu end -->
@@ -68,7 +68,7 @@
 
         <div class="logout-container">
             <div class="image-container">
-                <?php include('animated/customer-logout-confirmation.php'); ?>
+                <?php include('animated/customer-logout-confirmation.html'); ?>
             </div>
             <div class="confirmation-message">
                 Are you sure you want to log out ...?

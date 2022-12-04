@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION['seller-id'])){
+if (!isset($_SESSION['seller-id'])) {
     header('location:../index.php');
 }
 include('../data-base/constant.php');
@@ -48,13 +48,13 @@ include('../data-base/constant.php');
 
 
     <!--body-->
-     <div class="body1 main-height">
+    <div class="body1 main-height">
 
 
         <?php
         if (isset($_POST['submit'])) {
-            $id=$_SESSION['seller-id'];
-            $sql858="delete from seller where id=$id";
+            $id = $_SESSION['seller-id'];
+            $sql858 = "delete from seller where id=$id";
             mysqli_query($conn, $sql858);
             $sql859 = "delete from seller_login where id=$id";
             mysqli_query($conn, $sql859);
@@ -65,7 +65,7 @@ include('../data-base/constant.php');
 
         <div class="logout-container">
             <div class="image-container">
-                <?php include('../animated/seller-account-delete.php'); ?>
+                <?php include('../animated/seller-account-delete.html'); ?>
             </div>
             <div class="confirmation-message">
                 Are you sure you want delete your account ...?

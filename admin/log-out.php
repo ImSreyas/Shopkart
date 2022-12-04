@@ -1,6 +1,6 @@
 <?php
-session_start(); 
-if($_SESSION['admin-id']!=1){
+session_start();
+if ($_SESSION['admin-id'] != 1) {
     header('location:../index.php');
 }
 ?>
@@ -23,7 +23,7 @@ if($_SESSION['admin-id']!=1){
 
 
     <?php
-    if(isset($_POST['submit'])){
+    if (isset($_POST['submit'])) {
         unset($_SESSION['admin-id']);
         header("location:../index.php?from=logging_out");
     }
@@ -63,7 +63,7 @@ if($_SESSION['admin-id']!=1){
 
         <div class="logout-container">
             <div class="image-container">
-                <?php include('../animated/customer-logout-confirmation.php'); ?>
+                <?php include('../animated/customer-logout-confirmation.html'); ?>
             </div>
             <div class="confirmation-message">
                 Are you sure you want to log out ...?

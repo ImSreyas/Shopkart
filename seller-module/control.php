@@ -91,7 +91,7 @@ include('../data-base/constant.php');
         if ($row['home_delivery'] == 0) $del = "Not available";
         else $del = "Available";
     }
-    if(isset($_POST['delete'])){
+    if (isset($_POST['delete'])) {
         header("location:delete-account.php");
     }
     ?>
@@ -117,7 +117,7 @@ include('../data-base/constant.php');
                 </form>
             </div>
             <div class="animation-container-right">
-                <?php include('../animated/seller-control-page.php'); ?>
+                <?php include('../animated/seller-control-page.html'); ?>
             </div>
         </div>
     </div>

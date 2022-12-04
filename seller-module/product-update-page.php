@@ -130,7 +130,7 @@ if (!isset($_SESSION['seller-id'])) {
                         $sql189 = "select image from product where p_id='$parameter'";
                         $res189 = mysqli_query($conn, $sql189);
                         while ($row189 = $res189->fetch_assoc()) {
-                            unlink('../img/product-images/'.$row189['image']);
+                            unlink('../img/product-images/' . $row189['image']);
                         }
 
                         move_uploaded_file($fileTempName, $fileDestination);
@@ -213,7 +213,7 @@ if (!isset($_SESSION['seller-id'])) {
             </div>
             <!-- image uploading container ending here -->
             <div class="adding-product-animation-container">
-                <?php include('../animated/product-update-page2.php'); ?>
+                <?php include('../animated/product-update-page2.html'); ?>
             </div>
 
         </div>
