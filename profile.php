@@ -361,4 +361,4 @@ include('data-base/constant.php');
             editBtn.classList.remove('hidden')
         }
     </script>
-    <?php include('elements/footer.php') ?>
+    <?php include('elements/footer.html') ?>

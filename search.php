@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 include('data-base/constant.php');
 ?>
 <!DOCTYPE html>
@@ -32,25 +32,25 @@ include('data-base/constant.php');
             "<a href='log-out.php' class='no-text-decoration'><li class='login'>log out</li></a>";
         echo $user;
         ?>
-        <?php 
-            if(isset($_SESSION['customer-id'])){
-                $id=$_SESSION['customer-id'];
-                $sql1= "select profile_image from customer where id=$id";
-                $res=mysqli_query($conn , $sql1);
-                while($row = $res->fetch_assoc()){
-                    echo "
+        <?php
+        if (isset($_SESSION['customer-id'])) {
+            $id = $_SESSION['customer-id'];
+            $sql1 = "select profile_image from customer where id=$id";
+            $res = mysqli_query($conn, $sql1);
+            while ($row = $res->fetch_assoc()) {
+                echo "
                     <li class='sre-icon-list'>
                     <a href='profile.php' class='sre-icon-link'>
                     <div class='sre-main-small-image-container'>
                     <div class='sre-profile-image-small-container'>
-                    <img src='".$row['profile_image']."' class='sre-img'>
+                    <img src='" . $row['profile_image'] . "' class='sre-img'>
                     </div>
                     </div>
                     </a></li>
                     ";
-                }
             }
-             ?>
+        }
+        ?>
 
     </ul>
 </nav>
@@ -107,4 +107,4 @@ include('data-base/constant.php');
     ?>
 </div>
 <!--footer-->
-<?php include('elements/footer.php') ?>
+<?php include('elements/footer.html') ?>

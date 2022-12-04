@@ -365,4 +365,4 @@ include("../data-base/constant.php");
     </div>
     <!-- body ends here  -->
     <!--footer-->
-    <?php include('../elements/forgot-pass-footer.php') ?>
+    <?php include('../elements/forgot-pass-footer.html') ?>

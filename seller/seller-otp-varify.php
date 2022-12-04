@@ -65,4 +65,4 @@
         </div>
 
         <!--footer-->
-        <?php include('elements/seller-footer.php') ?>
+        <?php include('elements/seller-footer.html') ?>

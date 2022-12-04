@@ -152,4 +152,4 @@
             </div> -->
     </div>
     <!--footer-->
-    <?php include('elements/footer.php') ?>
+    <?php include('elements/footer.html') ?>

@@ -25,7 +25,7 @@ $seller_id = $_GET['id'];
 
     <!--body-->
     <div class="body1 main-height">
-        
+
         <div class='product-list-main-container'>
             <?php
             $sum = 0;
@@ -76,8 +76,8 @@ $seller_id = $_GET['id'];
             }
 
             ?>
-            <?php 
-            if(isset($_POST['buy'])){
+            <?php
+            if (isset($_POST['buy'])) {
                 $location_select = $_POST['location'];
                 $delivery_method = $_POST['del_method'];
                 $res559 = mysqli_query($conn, "SELECT max(id) FROM order_list WHERE c_id='$customer_id' && s_id='$seller_id'");
@@ -93,10 +93,10 @@ $seller_id = $_GET['id'];
         <form action="" method="POST">
 
 
-            <?php 
-            if(isset($_POST['cancel_order'])){
-            $sql_cancel_order = mysqli_query($conn, "DELETE FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' && id='$final'");
-            header('location:product-page.php?id='.$seller_id);
+            <?php
+            if (isset($_POST['cancel_order'])) {
+                $sql_cancel_order = mysqli_query($conn, "DELETE FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' && id='$final'");
+                header('location:product-page.php?id=' . $seller_id);
             }
             ?>
 
@@ -115,7 +115,7 @@ $seller_id = $_GET['id'];
                 <button type='button' onclick='changeLocation();'>change</button>
                 </div>";
                 $res339 = mysqli_query($conn, "select home_delivery from seller where id=$seller_id");
-                while($row339 = $res339->fetch_assoc()){
+                while ($row339 = $res339->fetch_assoc()) {
                     $delivery_status_d = $row339['home_delivery'];
                     break;
                 }
@@ -132,12 +132,12 @@ $seller_id = $_GET['id'];
                 <div class="delivery-method-header">Delivery method</div>
                 <div class="delivery-method-body">
                     <div>
-                    <input type="radio" name="del_method" id="del_method2" value="0" checked>
-                    <label for="del_method2">Pick up from shop</label>
+                        <input type="radio" name="del_method" id="del_method2" value="0" checked>
+                        <label for="del_method2">Pick up from shop</label>
                     </div>
                     <div>
-                    <input type="radio" name="del_method" id="del_method" value="1" <?php if($delivery_status_d == 0)echo "disabled" ?>>
-                    <label for="del_method">Home delivery</label><br>
+                        <input type="radio" name="del_method" id="del_method" value="1" <?php if ($delivery_status_d == 0) echo "disabled" ?>>
+                        <label for="del_method">Home delivery</label><br>
                     </div>
                 </div>
             </div>
@@ -147,4 +147,4 @@ $seller_id = $_GET['id'];
         </form>
     </div>
     <!--footer-->
-    <?php include('../elements/forgot-pass-footer.php') ?>
+    <?php include('../elements/forgot-pass-footer.html') ?>

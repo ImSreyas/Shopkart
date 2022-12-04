@@ -81,4 +81,4 @@
             </div> -->
     </div>
     <!--footer-->
-    <?php include('elements/customer-footer.php') ?>
+    <?php include('elements/customer-footer.html') ?>

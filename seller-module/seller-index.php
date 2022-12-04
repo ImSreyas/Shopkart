@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 include('../data-base/constant.php');
-if(!isset($_SESSION['seller-id'])){
+if (!isset($_SESSION['seller-id'])) {
     header('location:../index.php');
-}else{
+} else {
     $seller_id = $_SESSION['seller-id'];
 }
 ?>
@@ -19,9 +19,11 @@ if(!isset($_SESSION['seller-id'])){
 </head>
 
 <body class="my-body">
-<?php include('../loader/loading-div.php'); ?>
-<script src="../js/loading-div-slow.js"></script>
-<script defer>history.replaceState({},'','http://localhost/shop-finder/seller-module/seller-index.php')</script>
+    <?php include('../loader/loading-div.php'); ?>
+    <script src="../js/loading-div-slow.js"></script>
+    <script defer>
+        history.replaceState({}, '', 'http://localhost/shop-finder/seller-module/seller-index.php')
+    </script>
 
     <!-- menu start -->
     <nav class="nav-bar">
@@ -55,42 +57,42 @@ if(!isset($_SESSION['seller-id'])){
     <!--body-->
     <div class="body1 main-height">
         <div class="main-body-inside">
-            <?php 
+            <?php
             $check = 0;
             $double_check = 0;
-            $res551 = mysqli_query($conn,"SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='0' || delivery_stage='1'");
-            while($row551 = $res551->fetch_assoc()){
-                if($check != $row551['id'] || $double_check != $row551['c_id']){
+            $res551 = mysqli_query($conn, "SELECT * FROM order_list WHERE s_id='$seller_id' && active='1' && delivery_stage='0' || delivery_stage='1'");
+            while ($row551 = $res551->fetch_assoc()) {
+                if ($check != $row551['id'] || $double_check != $row551['c_id']) {
                     $double_check = $row551['c_id'];
                     $check = $row551['id'];
                     $name = $row551['c_id'];
                     $location_new = $row551['location'];
                     $total_money = $row551['total'];
-                    $del = ($row551['delivery']==0)? "Pick up from shop" : "Home delivery";
+                    $del = ($row551['delivery'] == 0) ? "Pick up from shop" : "Home delivery";
 
 
                     $res656 = mysqli_query($conn, "SELECT name FROM customer WHERE id='$name'");
-                    while($row552 = $res656->fetch_assoc()){
+                    while ($row552 = $res656->fetch_assoc()) {
                         $name_new = $row552['name'];
                         break;
                     }
 
 
                     echo "
-                    <a href='php/request_process.php?oid=".$check."&cid=".$name."' class='process-page-link'>
+                    <a href='php/request_process.php?oid=" . $check . "&cid=" . $name . "' class='process-page-link'>
                     <div class='child-container'>
-                    <div class='name-container'>".ucfirst($name_new)."</div>
-                    <div class='location-container'>".$location_new."</div>
-                    <div class='delivery-container'>".$del."</div>
-                    <div class='total-money-container'>₹".$total_money."</div>
+                    <div class='name-container'>" . ucfirst($name_new) . "</div>
+                    <div class='location-container'>" . $location_new . "</div>
+                    <div class='delivery-container'>" . $del . "</div>
+                    <div class='total-money-container'>₹" . $total_money . "</div>
                     </div>
                     </a>
                     ";
                 }
             }
-            
+
             ?>
         </div>
     </div>
     <!--footer-->
-    <?php include('../elements/forgot-pass-footer.php') ?>
+    <?php include('../elements/forgot-pass-footer.html') ?>

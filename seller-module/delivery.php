@@ -110,4 +110,4 @@ if (isset($_POST['submit'])) {
 
             ?>
             <!--footer-->
-            <?php include('../elements/forgot-pass-footer.php') ?>
+            <?php include('../elements/forgot-pass-footer.html') ?>

@@ -220,4 +220,4 @@ if (!isset($_SESSION['seller-id'])) {
 
     </div>
     <!--footer-->
-    <?php include('../elements/forgot-pass-footer.php') ?>
+    <?php include('../elements/forgot-pass-footer.html') ?>
