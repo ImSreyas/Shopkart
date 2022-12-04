@@ -1,0 +1,41 @@
+.user-not-found{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100vw;
+    max-height: fit-content;
+    min-height: 95vh;
+}
+.user-not-found~.body1{
+    display: none;
+}
+.user-not-logged-in-container{
+    max-width: 95vw;
+    min-width: 37vw;
+    padding:2% 5% 5%;
+}
+.p-t-l-link{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white; 
+}
+.profile-to-log-in-page-link-container{
+    width: 80%;
+    text-align: center;
+    background-color: #3d4d54;
+    padding: 2.2% 0;
+    border-radius: .5rem;
+    transform: translateY(-2rem);
+    transition: all 300ms ease-in-out;
+}
+.profile-to-log-in-page-link-container:hover{
+    background-color: rgb(186,104,200);
+    transform: translateY(-2.4rem);
+}
+.question{
+    text-align: center;
+    transform: translateY(-3.5rem);
+}

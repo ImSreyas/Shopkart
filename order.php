@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -64,6 +65,21 @@
 
     <!--body-->
     <div class="body1 main-height">
+        <?php 
+        if (!isset($_SESSION['customer-id'])) {
+        echo "<div class='user-not-found'>
+            <div class='user-not-logged-in-container'>
+            ";
+        include('animated/user-not-logged-in.html');
+        echo "
+            <div class='question'>Please login to see the orders...!</div>
+            <a href='log-in.php' class='p-t-l-link'>
+            <div class='profile-to-log-in-page-link-container'>log in</div>
+            </a>
+            </div>
+            </div>";
+    }
+    ?>
 
     </div>
     <!--footer-->

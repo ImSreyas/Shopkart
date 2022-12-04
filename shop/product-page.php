@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
 
         <div class="image-purchase-container">
             <a href="#product-section" class="purchase-container-a">
-                <div class="purchase-product-container">
+                <div class="purchase-product-container" hidden>
                     <img src="" class="purchase-product-image-inside">
                     <div class="purchase">purchase</div>
                 </div>

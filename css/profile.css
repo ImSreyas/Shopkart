@@ -193,8 +193,7 @@
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: white;
-    
+    color: white; 
 }
 .profile-to-log-in-page-link-container{
     width: 80%;
