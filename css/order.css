@@ -8,7 +8,7 @@
     max-height: fit-content;
     min-height: 95vh;
 }
-.user-not-found~.body1{
+.user-not-found~.order-main-body{
     display: none;
 }
 .user-not-logged-in-container{
@@ -38,4 +38,76 @@
 .question{
     text-align: center;
     transform: translateY(-3.5rem);
+}
+
+/* ?main body contents  */
+.order-main-body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/* ?left side container  */
+.list-container-wrapper{
+    padding: 1% 2% 1% 5%;
+    box-sizing: border-box;
+    width: 100%;
+}
+.list-container{
+    width: 100%;
+}
+.options{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    padding: 3%;
+    background-color: #303a41;
+    height: 8.5rem;
+}
+.options>button{
+    width: 100%;
+    border: none;
+    padding: 2%;
+    background-color: transparent;
+    color: #808f96;
+    transition: color 250ms ease-in-out;
+    border-radius: 1.2rem;
+}
+.options>button:hover{
+    color: #e9e9e9;
+    cursor: pointer;
+}
+.options>button[marked='true']{
+    background-color: rgb(186,104,200);
+    color: white;
+}
+/* ?right side container  */
+.option-container{
+    height: 93vh;
+    width: 100%;
+    padding: 1% 5% 1% 2%;
+    box-sizing: border-box;
+}
+.order-list{
+    height: 100%;
+    background-color: #303a41;
+    border-radius: 1.4rem;
+}
+
+/* ?list container on the left side 2nd div  */
+.no-list-available{
+    box-sizing: border-box;
+    margin-top: 1.56vw;
+    height: 58vh;
+    border-radius: 1.3rem;
+    background-color: #303a41;
+}
+.no-list-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5%;
+    box-sizing: border-box;
 }

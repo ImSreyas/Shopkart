@@ -21,7 +21,7 @@
                 <li class="category ">search</li>
             </a>
             <a href="order.php" class="no-text-decoration">
-                <li class="order ">order</li>
+                <li class="order ">orders</li>
             </a>
             <a href="profile.php" class="no-text-decoration">
                 <li class="profile">profile</li>

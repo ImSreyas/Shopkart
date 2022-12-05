@@ -1,14 +1,16 @@
-<?php session_start(); 
+<?php session_start();
+$customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0 ;
 ?>
 <!DOCTYPE html>
 <html>
-
+    
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shop-finder</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/ORDER.css">
     <link rel="stylesheet" href="css/load.css">
+    <script src="jquery/jquery.js"></script>
 </head>
 
 <body>
@@ -27,8 +29,8 @@
             <a href="search.php" class="no-text-decoration">
                 <li class="category ">search</li>
             </a>
-            <a href="order.php" class="no-text-decoration">
-                <li class="order highlight">order</li>
+            <a href="order.php" class="no-text-decoration order-link">
+                <li class="order highlight">orders</li>
             </a>
             <a href="profile.php" class="no-text-decoration">
                 <li class="profile">profile</li>
@@ -65,22 +67,60 @@
 
     <!--body-->
     <div class="body1 main-height">
-        <?php 
+        <?php
         if (!isset($_SESSION['customer-id'])) {
-        echo "<div class='user-not-found'>
+            echo "<div class='user-not-found'>
             <div class='user-not-logged-in-container'>
             ";
-        include('animated/user-not-logged-in.html');
-        echo "
+            include('animated/user-not-logged-in.html');
+            echo "
             <div class='question'>Please login to see the orders...!</div>
             <a href='log-in.php' class='p-t-l-link'>
             <div class='profile-to-log-in-page-link-container'>log in</div>
             </a>
             </div>
             </div>";
-    }
-    ?>
+        }
+        ?>
+        
+        <!-- main body  -->
 
+        <div class="order-main-body">
+        <!-- ajax to call the list of orders from the server  -->
+        <script>
+            $.ajax({url:'php/orderList.php',type:'POST',data:{customer_id:<?php echo $customer_id ?>},success:(data, status)=>{
+                $("#listContainer").html(data)
+            }})
+            function getCode(item){
+                let allButtons = document.querySelector(".options").children
+                Array.prototype.forEach.call(allButtons, button=>{ 
+                    button.setAttribute("marked","false")
+                })
+                item.setAttribute("marked", "true")
+                $.ajax({url:'php/orderList.php',type:'POST',data:{button:item.value,customer_id:<?php echo $customer_id ?>},success:(data, status)=>{
+                    $("#listContainer").html(data)
+                }})
+            }
+        </script>
+            <!-- this container contains all the orders placed by the customer  -->
+            <div class="list-container-wrapper">
+                <div class="options">
+                    <button class="all" id="allButton" value="all" onclick="getCode(this)" marked="true">All</button>
+                    <button class="waiting" id="waitingButton" value="wait" onclick="getCode(this)" marked="false">Waiting</button>
+                    <button class="processing" id="processingButton" value="process" onclick="getCode(this)" marked="false">Processing</button>
+                    <button class="packed" id="packedButton" value="pack" onclick="getCode(this)" marked="false">Packed</button>
+                    <button class="out-for-delivery" id="ofdButton" value="ofd" onclick="getCode(this)" marked="false">Out for delivery</button>
+                    <button class="completed" id="completedButton" value="complete" onclick="getCode(this)" marked="false">Completed</button>
+                </div>
+            <div class="list-container" id="listContainer"><!-- incoming code will be here  --></div>
+            </div>
+            <!-- this container contains the options and selected purchase list and some other details  -->
+            <div class="option-container">
+                <div class="order-list" id="orderList">
+
+                </div>
+            </div>
+        </div>
     </div>
     <!--footer-->
     <?php include('elements/footer.html') ?>
