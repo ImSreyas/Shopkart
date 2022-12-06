@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         break;
     }
 
-    $sql334 = "select id from order_list where c_id='$customer_id' && s_id='$seller_id' order by id desc";
+    $sql334 = "SELECT id from order_list where c_id='$customer_id' && s_id='$seller_id' order by id desc";
     $res334 = mysqli_query($conn, $sql334);
 
     while ($row334 = $res334->fetch_assoc()) {
@@ -27,10 +27,16 @@ if (isset($_POST['submit'])) {
 
     for ($i = 1; $i <= $total_rows; $i++) {
         if (isset($_POST['name' . $i])) {
-            $product_name = $_POST['name' . $i];
+            $product_name = $_POST['name' . $i]; // todo:don't go to the ordering page when the selected stock is empty or 0
+            // if(isset($_POST['stock']))
             $stock = $_POST['stock' . $i];
-            $sql610 = "insert into order_list set id='$duplicate',c_id='$customer_id',s_id='$seller_id',products='$product_name',stock='$stock'";
+            // else continue;
+            $sql610 = "INSERT into order_list set id='$duplicate',c_id='$customer_id',s_id='$seller_id',products='$product_name',stock='$stock'";
             mysqli_query($conn, $sql610);
+            mysqli_query($conn, "UPDATE product SET stock = stock-$stock WHERE p_id=$product_name");
+            // $res444 = mysqli_query($conn, "SELECT stock FROM product WHERE p_id=$product_name");
+            // if($row444 = $res444->fetch_assoc())
+            // if($row444['stock']==0)mysqli_query($conn, "UPDATE product SET status=-1 WHERE p_id=$product_name");
             header("location:place-order.php?id=" . $seller_id);
         }
     }
@@ -193,13 +199,15 @@ if (isset($_POST['submit'])) {
                         $result153 = mysqli_query($conn, $sql153);
                         while ($row = $result153->fetch_assoc()) {
                             $id = $row['p_id'];
+                            if($row['stock']==0)$ia = 0;
+                            else $ia = 1;
                             echo "<div class='wrapper'>
 
                             <input type='checkbox' class='checkbox' name='name" . $id . "' value='$id'>
 
                             <div class='stock-wrapper'>
                             <label for'stockInput' class='stock-label'>Quantity : </label>
-                            <input type='number' class='stock-input' name='stock" . $id . "' id='stockInput' value='1' min='1' max='" . $row['stock'] . "'>
+                            <input type='number' class='stock-input' name='stock" . $id . "' id='stockInput' value='$ia' min='0' max='" . $row['stock'] . "'>
                             </div>
 
                             <div class='product-container-parent'>

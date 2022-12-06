@@ -83,13 +83,13 @@ if (!isset($_SESSION['seller-id'])) {
         $stock_value = $_POST['stock'];
         $stock_ = $_POST['add'];
         if ($stock_value != "") {
-            $sql10 = "update product set stock='$stock_value' where p_id='$stock_'";
+            $sql10 = "UPDATE product SET stock='$stock_value' WHERE p_id='$stock_'";
             mysqli_query($conn, $sql10);
         }
     }
     if (isset($_POST['remove'])) {
         $remove_id = $_POST['remove'];
-        mysqli_query($conn, "delete from product where p_id='$remove_id'");
+        mysqli_query($conn, "UPDATE product SET status=0 WHERE p_id='$remove_id'");
     }
     ?>
     <div class="body1 main-height">
