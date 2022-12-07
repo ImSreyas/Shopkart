@@ -11,6 +11,7 @@ html{
     font-family: myfont;
     letter-spacing: .2px;
     font-size: 100.5%;
+    box-sizing: border-box;
 }
 ::selection{
     background-color: rgb(245, 188, 255);

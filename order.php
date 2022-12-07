@@ -102,6 +102,14 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0 
                 }})
             }
         </script>
+        <script>
+            function selectedList(item){
+                Array.prototype.forEach.call(document.querySelector(".list-container").children, s=>{
+                    s.setAttribute("marked","false");
+                })
+                item.setAttribute("marked","true");
+            }
+        </script>
             <!-- this container contains all the orders placed by the customer  -->
             <div class="list-container-wrapper">
                 <div class="options">
@@ -112,6 +120,7 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0 
                     <button class="out-for-delivery" id="ofdButton" value="ofd" onclick="getCode(this)" marked="false">Out for delivery</button>
                     <button class="completed" id="completedButton" value="complete" onclick="getCode(this)" marked="false">Completed</button>
                 </div>
+                <div class="line"></div> <!-- it is a line between the two div's on the left side  -->
             <div class="list-container" id="listContainer"><!-- incoming code will be here  --></div>
             </div>
             <!-- this container contains the options and selected purchase list and some other details  -->
