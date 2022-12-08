@@ -59,9 +59,46 @@ Order status
 <div class='d d4' vs='false'><i></i>Out for delivery</div>
 <div class='d d5' vs='false'><i></i>Delivered</div>
 </div>
-</div>
-</div>
+</div>";
+if($delivery_stage == 4){
+    echo "
+    <div class='rate-shop-container'>
+        Rate shop
+        <div class='rate-shop-container-inside'>
+            <div class='rating-holder'>
+                <input type='checkbox' onclick='rateShop(this)' class='star1 starInput' diff='1'>
+                <input type='checkbox' onclick='rateShop(this)' class='star2 starInput' diff='2'>
+                <input type='checkbox' onclick='rateShop(this)' class='star2 starInput' diff='3'>
+                <input type='checkbox' onclick='rateShop(this)' class='star2 starInput' diff='4'> 
+                <input type='checkbox' onclick='rateShop(this)' class='star2 starInput' diff='5'>
+            </div>
+            <div id='rating-success-holder'></div>
+        </div>
+    </div>
+    ";
+}
+echo"</div>";
+echo "
+<script defer>
+        function rateShop(item){
+            let i = 0
+            let itemParent = item.parentElement
+            let starChildren = itemParent.children
+            Array.prototype.forEach.call(starChildren, s =>{
+                s.setAttribute('checked','false')
+            })
+            let noOfChild = itemParent.childElementCount
+            for(i = 0; i < noOfChild; i++ ){
+                starChildren[i].setAttribute('checked', 'true')
+                if(item == starChildren[i])break
+            }
+            $.ajax({url:'php/rate-shop.php', type:'POST', data:{rating:i+1, shop_id:$shop_id},success: (data) =>{
+                $('#rating-success-holder').html(data)
+            }})
+        }
+    </script>
 ";
+
 //-script go's here
 echo "
 <script defer>

@@ -154,7 +154,7 @@
 .user-not-logged-in-container{
     max-width: 95vw;
     min-width: 37vw;
-    padding:2% 5% 5%;
+    /* padding:2% 5% 5%; */
 }
 .p-t-l-link{
     display: flex;

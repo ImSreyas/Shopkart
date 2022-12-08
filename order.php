@@ -1,4 +1,5 @@
 <?php session_start();
+include('data-base/constant.php');
 $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
 ?>
 <!DOCTYPE html>
@@ -42,7 +43,6 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
             ?>
             <?php
             if (isset($_SESSION['customer-id'])) {
-                include('data-base/constant.php');
                 $id = $_SESSION['customer-id'];
                 $sql1 = "select profile_image from customer where id=$id";
                 $res = mysqli_query($conn, $sql1);
