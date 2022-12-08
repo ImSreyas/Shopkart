@@ -1,9 +1,9 @@
 <?php session_start();
-$customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0 ;
+$customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
 ?>
 <!DOCTYPE html>
 <html>
-    
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shop-finder</title>
@@ -82,51 +82,160 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0 
             </div>";
         }
         ?>
-        
+
         <!-- main body  -->
 
         <div class="order-main-body">
-        <!-- ajax to call the list of orders from the server  -->
-        <script>
-            $.ajax({url:'php/orderList.php',type:'POST',data:{customer_id:<?php echo $customer_id ?>},success:(data, status)=>{
-                $("#listContainer").html(data)
-            }})
-            function getCode(item){
-                let allButtons = document.querySelector(".options").children
-                Array.prototype.forEach.call(allButtons, button=>{ 
-                    button.setAttribute("marked","false")
+            <!-- // -js comes here  -->
+            <script>
+                // -ajax to call the list of orders from the server 
+                $.ajax({
+                    url: 'php/orderList.php',
+                    type: 'POST',
+                    data: {
+                        customer_id: <?php echo $customer_id ?>
+                    },
+                    success: (data) => {
+                        $("#listContainer").html(data)
+                    }
                 })
-                item.setAttribute("marked", "true")
-                $.ajax({url:'php/orderList.php',type:'POST',data:{button:item.value,customer_id:<?php echo $customer_id ?>},success:(data, status)=>{
-                    $("#listContainer").html(data)
-                }})
-            }
-        </script>
-        <script>
-            function selectedList(item){
-                Array.prototype.forEach.call(document.querySelector(".list-container").children, s=>{
-                    s.setAttribute("marked","false");
-                })
-                item.setAttribute("marked","true");
-            }
-        </script>
+
+                function getCode(item) {
+                    let allButtons = document.querySelector(".options").children
+                    Array.prototype.forEach.call(allButtons, button => {
+                        button.setAttribute("selected", "false")
+                    })
+                    item.setAttribute("selected", "true")
+                    $.ajax({
+                        url: 'php/orderList.php',
+                        type: 'POST',
+                        data: {
+                            button: item.value,
+                            customer_id: <?php echo $customer_id ?>
+                        },
+                        success: (data, status) => {
+                            $("#listContainer").html(data)
+                        }
+                    })
+                }
+                // -function that will call when an order is selected 
+                function selectedList(item) {
+                    Array.prototype.forEach.call(document.querySelector(".list-container").children, (s) => s.setAttribute("selected", "false"))
+                    item.setAttribute("selected", "true");
+                }
+                </script>
             <!-- this container contains all the orders placed by the customer  -->
             <div class="list-container-wrapper">
                 <div class="options">
-                    <button class="all" id="allButton" value="all" onclick="getCode(this)" marked="true">All</button>
-                    <button class="waiting" id="waitingButton" value="wait" onclick="getCode(this)" marked="false">Waiting</button>
-                    <button class="processing" id="processingButton" value="process" onclick="getCode(this)" marked="false">Processing</button>
-                    <button class="packed" id="packedButton" value="pack" onclick="getCode(this)" marked="false">Packed</button>
-                    <button class="out-for-delivery" id="ofdButton" value="ofd" onclick="getCode(this)" marked="false">Out for delivery</button>
-                    <button class="completed" id="completedButton" value="complete" onclick="getCode(this)" marked="false">Completed</button>
+                    <button class="all" id="allButton" value="all" onclick="getCode(this)" selected="true">All</button>
+                    <button class="waiting" id="waitingButton" value="wait" onclick="getCode(this)" selected="false">Waiting</button>
+                    <button class="processing" id="processingButton" value="process" onclick="getCode(this)" selected="false">Processing</button>
+                    <button class="packed" id="packedButton" value="pack" onclick="getCode(this)" selected="false">Packed</button>
+                    <button class="out-for-delivery" id="ofdButton" value="ofd" onclick="getCode(this)" selected="false">Out for delivery</button>
+                    <button class="completed" id="completedButton" value="complete" onclick="getCode(this)" selected="false">Completed</button>
                 </div>
                 <div class="line"></div> <!-- it is a line between the two div's on the left side  -->
-            <div class="list-container" id="listContainer"><!-- incoming code will be here  --></div>
+                <div class="list-container" id="listContainer">
+                    <!-- incoming code will be here  -->
+                </div>
             </div>
             <!-- this container contains the options and selected purchase list and some other details  -->
             <div class="option-container">
                 <div class="order-list" id="orderList">
+                        <div class="no-product-is-selected">
+                        <div class="shop-name-container-expanded">Shop name</div>
+                        <div class="product-list-name">Product list</div>
+                        <div class="single-product-details-container-parent">
+                            <div class="single-product-details-container">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>product</td>
+                                            <td>X
+                                                <span class="net-quantity">(NET)</span>
+                                            </td>
+                                            <td class="price-of-product">₹XXX</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
+                            <div class="single-product-details-container">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>product</td>
+                                            <td>X
+                                                <span class="net-quantity">(NET)</span>
+                                            </td>
+                                            <td class="price-of-product">₹XXX</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="single-product-details-container">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>product</td>
+                                            <td>X
+                                                <span class="net-quantity">(NET)</span>
+                                            </td>
+                                            <td class="price-of-product">₹XXX</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="single-product-details-container">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>product</td>
+                                            <td>X
+                                                <span class="net-quantity">(NET)</span>
+                                            </td>
+                                            <td class="price-of-product">₹XXX</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="single-product-details-container">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>product</td>
+                                            <td>X
+                                                <span class="net-quantity">(NET)</span>
+                                            </td>
+                                            <td class="price-of-product">₹XXX</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="single-product-details-container">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>product</td>
+                                            <td>X
+                                                <span class="net-quantity">(NET)</span>
+                                            </td>
+                                            <td class="price-of-product">₹XXX</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                        <div class="total-price-container">Total
+                            <div class="total-money-text">₹XXXX</div>
+                        </div>
+                    </div>
+                    <div class="not-selected-message">Select an order to see the details...!</div>
                 </div>
             </div>
         </div>

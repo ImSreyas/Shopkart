@@ -40,7 +40,7 @@ while ($row = $res->fetch_assoc()) {
         break;
     }
     echo "
-    <div class='single-order-container' onclick='selectedList(this);' marked='false'>
+    <div class='single-order-container' onclick='selectedList(this);' marked='false' id='$shop_id"."-"."$count'>
     <div class='shop-name-container'>".ucfirst($shop_name)."</div><div class='product-reference-parent'>";
     
     $productCountRemember = 1; 
@@ -78,6 +78,18 @@ while ($row = $res->fetch_assoc()) {
     $delivery_stage
     </div>
     </div>
+    ";
+
+    // -js for contents in the right side expanded list container
+    echo "
+    <script defer>
+    $('#$shop_id-$count').click(() =>{    
+        //-ajax call
+        $.ajax({url:'php/listExpand.php',type:'POST',data:{customer_id: $customer_id,shop_id: $shop_id,shop_name: '$shop_name',id: $count},success: (data) => {  
+            $('.order-list').html(data) //-place data comes from listExpand.php into order-list container
+        }})
+    })
+    </script>
     ";
 }
 if ($res->num_rows == 0 && $num == 100) {
