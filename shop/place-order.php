@@ -10,7 +10,7 @@ $seller_id = $_GET['id'];
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-finder</title>
+    <title>Shop</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" href="css/place-order.css">
 </head>

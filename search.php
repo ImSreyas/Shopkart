@@ -6,7 +6,7 @@ include('data-base/constant.php');
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-finder</title>
+    <title>Customer</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/search.css">
 </head>

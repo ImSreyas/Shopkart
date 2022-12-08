@@ -25,13 +25,13 @@
 } */
 #username{
     color: black;
-    width: 92.8%;
+    width: 100%;
     margin-top: 1.5%;
     border: 2px solid white;
 }
 #password{
     color: black;
-    width: 94.5%;
+    width: 100%;
     margin-top: 1.5%;
     border: 2px solid white;
 }
@@ -41,6 +41,7 @@
     padding: 3% 150px;
     margin-top: 7%;
     border-radius: 5px;
+    width: 100%;
 }
 .no-text-decoration{
     text-decoration: none;
@@ -49,7 +50,7 @@
     text-align: center;
     margin-top: 3em;
     transition: all 200ms ease-in-out;
-    width: 348px;
+    width: 100%;
     padding-top: 1.5em;
     font-size: .80rem;
     border-top: 1px solid rgb(220, 220, 220);
@@ -79,12 +80,12 @@ label{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 348px;
+    width: 100%;
     height: fit-content;
 }
 .forgot-pass-img{
     background-image: url('../images/eye-crossed-2.svg');
-     background-size: contain;
+    background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     margin: .33em 1em 0 0;

@@ -24,7 +24,7 @@
 }
 #user-pass,#user-pass2{
     color: black;
-    width: 300px;
+    width: 100%;
     border-radius: 5px; 
     margin-top: 2%;  
     border: 2px solid white;
@@ -58,9 +58,11 @@
 }
 .pass-note span{
     font-size: 80%;
+    width: 100%;
 }
 .note-above{
     font-size: 60%;
+    width: 100%;
 }
 label{
     display: block;
@@ -70,7 +72,7 @@ label{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
 }
 .forgot-pass-img{

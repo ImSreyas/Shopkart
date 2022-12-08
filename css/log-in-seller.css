@@ -18,17 +18,18 @@
 }
 #username{
     color: black;
-    width: 94.1%;
+    width: 100%;
     margin-top: 1.5%;
     border: 2px solid white;
 }
 #password{
     color: black;
-    width: 94.5%;
+    width: 100%;
     margin-top: 1.5%;
     border: 2px solid white;
 }
 #log-in{
+    width: 100%;
     color: rgb(255, 255, 255);
     background-color: rgb(186,104,200);
     padding: 3% 150px;

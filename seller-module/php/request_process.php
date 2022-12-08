@@ -8,11 +8,11 @@ $customer_id = $_GET['cid'];
 mysqli_query($conn, "UPDATE order_list SET delivery_stage='1' WHERE id='$order_id' && c_id='$customer_id'");
 ?>
 
-<?php 
-if(isset($_POST['submit'])){
-mysqli_query($conn, "UPDATE order_list SET delivery_stage='2' WHERE id='$order_id' && c_id='$customer_id'");
-mysqli_query($conn, "UPDATE order_list SET delivery_stage='3' WHERE id='$order_id' && c_id='$customer_id' && delivery='0'");
-header('location:../seller-index.php');
+<?php
+if (isset($_POST['submit'])) {
+    mysqli_query($conn, "UPDATE order_list SET delivery_stage='2' WHERE id='$order_id' && c_id='$customer_id'");
+    mysqli_query($conn, "UPDATE order_list SET delivery_stage='3' WHERE id='$order_id' && c_id='$customer_id' && delivery='0'");
+    header('location:../seller-index.php');
 }
 ?>
 
@@ -21,12 +21,14 @@ header('location:../seller-index.php');
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-finder</title>
+    <title>Seller</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../shop/css/place-order.css">
     <link rel="stylesheet" href="../css/request-process.css">
-    <script>window.history.replaceState({},'',window.location.href)</script>
+    <script>
+        window.history.replaceState({}, '', window.location.href)
+    </script>
 </head>
 
 <body class="my-body">
@@ -39,7 +41,7 @@ header('location:../seller-index.php');
 
     <!--body-->
     <div class="body1 main-height">
-        
+
         <div class='product-list-main-container'>
             <?php
             $sum = 0;
@@ -88,10 +90,11 @@ header('location:../seller-index.php');
         </div>
         <div class="packed-btn-container">
             <form action="" method="POST">
-            <button type="submit" class="pack-btn" name="submit">Packed</button>
+                <button type="submit" class="pack-btn" name="submit">Packed</button>
             </form>
         </div>
     </div>
     <!--footer-->
 </body>
+
 </html>

@@ -31,13 +31,13 @@
 #sellername,#sellerlocation,#sellerlicense,#selleremail,#sellerphone1,#sellerphone2{
     padding: 3%;
     color: black;
-    width: 400px; 
+    width: 100%; 
     border-radius: 6px;
     margin-top: 1%;
     border: 2px solid white;
 }
 #sellerCATEGORY{
-    width: 430px;
+    width: 100%;
     padding: 3%;
     color: black;
     width: 429.8px; 
@@ -47,12 +47,12 @@
     outline: none;
 }
 #seller-image{
-    width: 368px;
+    width: 100%;
     margin-top: 1%;
 }
 #createacc{
     margin-top: 6%;
-    width: 99.9%;
+    width: 100%;
     padding: 2%;
     border-radius: 6px;
     background-color: rgb(186,104,200);

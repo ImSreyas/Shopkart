@@ -4,7 +4,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-finder</title>
+    <title>Seller</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/seller-form.css">
 </head>
@@ -192,7 +192,7 @@
                     <input type="submit" id="createacc" value="Create">
                 </form>
             </div>
-            <?php include('../animated/formsa.hmtl'); ?>
+            <?php include('../animated/formsa.html'); ?>
             <!-- <div  class="page-number">
                 <div>
             <svg height="10" width="10">

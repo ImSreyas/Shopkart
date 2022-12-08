@@ -6,7 +6,7 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-finder</title>
+    <title>Customer</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/ORDER.css">
     <link rel="stylesheet" href="css/load.css">

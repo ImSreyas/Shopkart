@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop-finder</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="../seller-module/css/product.css">
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/product-page.css">
@@ -199,7 +199,7 @@ if (isset($_POST['submit'])) {
                         $result153 = mysqli_query($conn, $sql153);
                         while ($row = $result153->fetch_assoc()) {
                             $id = $row['p_id'];
-                            if($row['stock']==0)$ia = 0;
+                            if ($row['stock'] == 0) $ia = 0;
                             else $ia = 1;
                             echo "<div class='wrapper'>
 

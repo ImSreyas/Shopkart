@@ -19,13 +19,13 @@
 }
 #username{
     color: black;
-    width: 94.1%;
+    width: 100%;
     margin-top: 1.5%;
     border: 2px solid white;
 }
 #password{
     color: black;
-    width: 94.5%;
+    width: 100%;
     margin-top: 1.5%;
     border: 2px solid white;
 }
@@ -93,18 +93,19 @@ label{
     animation: zoom-in-out1 500ms ease-in-out;
 }
 @keyframes zoom-in-out1{
-    0%{transform : scale(1);}
-    50%{transform : scale(1.2);}
-    100%{transform : scale(1);}
+    0%{transform : scale(1)}
+    50%{transform : scale(1.2)}
+    100%{transform : scale(1)}
 }
 .forgot-password-click{
+    --size: 1.2em;
     background-image: url('../images/eye-2.svg');
-     background-size: contain;
+    background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     margin: .33em 1em 0 0;
-    width: 1.2em;
-    height: 1.2em;
+    width: var(--size);
+    height: var(--size);
     border: none;
     background-color: white;
     cursor: pointer;

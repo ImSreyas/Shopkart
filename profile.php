@@ -4,7 +4,7 @@ include('data-base/constant.php');
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>shop-finder</title>
+<title>Customer</title>
 <link rel="stylesheet" type="text/CSS" href="css/load.css">
 <link rel="stylesheet" type="text/CSS" href="css/main.css">
 <link rel="stylesheet" type="text/CSS" href="css/profile.css">

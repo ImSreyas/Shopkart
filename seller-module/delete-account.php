@@ -10,7 +10,7 @@ include('../data-base/constant.php');
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>seller</title>
+    <title>Seller</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="../css/log-out.css">
 </head>
