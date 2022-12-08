@@ -87,7 +87,7 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
 
         <div class="order-main-body">
             <!-- // -js comes here  -->
-            <script>
+            <script defer>
                 // -ajax to call the list of orders from the server 
                 $.ajax({
                     url: 'php/orderList.php',
