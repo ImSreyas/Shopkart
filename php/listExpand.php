@@ -4,7 +4,10 @@ $customer_id = $_POST['customer_id'];
 $shop_id = $_POST['shop_id'];
 $shop_name = $_POST['shop_name'];
 $id = $_POST['id'];
-
+//-rating selection
+$rating = mysqli_query($conn, "SELECT rating FROM rating WHERE c_id=$customer_id && s_id=$shop_id");
+$rating_row = $rating->fetch_assoc();
+$rating_value = $rating_row['rating'];
 // -MAIN CONTENT starts here 
 echo "
 <div class='cover-padding'>
@@ -92,9 +95,15 @@ echo "
                 starChildren[i].setAttribute('checked', 'true')
                 if(item == starChildren[i])break
             }
-            $.ajax({url:'php/rate-shop.php', type:'POST', data:{rating:i+1, shop_id:$shop_id},success: (data) =>{
+            $.ajax({url:'php/rate-shop.php', type:'POST', data:{rating:i+1, shop_id:$shop_id, customer_id:$customer_id},success: (data) =>{
                 $('#rating-success-holder').html(data)
             }})
+        }
+        let i = 0
+        let fullVal = Math.round($rating_value)
+        let starChildren = document.querySelector('.rating-holder').children
+        for(i = 0; i < fullVal; i++ ){
+            starChildren[i].setAttribute('checked', 'true')
         }
     </script>
 ";

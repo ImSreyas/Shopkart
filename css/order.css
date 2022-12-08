@@ -503,7 +503,7 @@ input{
     transform: translateY(calc(var(--size)/6.2));
 }
 .rate-shop-container-inside{
-    margin-top: .5rem;
+    margin-top: .7rem;
     width: 100%;
 }
 .rating-holder{
