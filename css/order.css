@@ -107,6 +107,7 @@
     padding: 4% 6%;
     overflow-y: scroll;
     transition: all 300ms ease-in-out;
+    position: relative;
 }
 .order-list::-webkit-scrollbar{
     display: none;
@@ -243,7 +244,7 @@
 .single-product-details-container-parent{
     border-left: 3px solid rgb(186,104,200);
     padding:1% 3.5%;
-    margin: 2% 0;
+    margin: 2% .5rem;
     width: 100%;
 }
 .product-list-name{
@@ -289,8 +290,9 @@
     background-image: url('../images/usd-circle.png');
     background-size: contain;
     background-repeat: no-repeat;
-    padding-right: .5rem;
-    transform: translateY(calc(var(--size)/6.2));
+    padding:0 .5rem 0 0;
+    transform: translateY(calc(var(--size)/6.2)) 
+    translateX(calc(var(--size)*.06));
 }
 .total-money-text{
     font-size: 3.1rem;
@@ -321,9 +323,11 @@ input{
     opacity: .08;
 }
 .not-selected-message{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 5%;
+    align-items: center;
 }
 .not-selected-message::before{
     --size:  1.25rem;
@@ -336,4 +340,122 @@ input{
     background-repeat: no-repeat;
     padding-right: .5rem;
     transform: translateY(calc(var(--size)/6.2));
+}
+/* ?delivery method  */
+.delivery-method-container{
+    padding-top: 1rem;
+    border-top: 1px solid #48545d;
+}
+.delivery-method-container::before{
+    --size:  1.25rem;
+    content: "";
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    background-image: url('../images/truck-side.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-right: .25rem;
+    transform: translateY(calc(var(--size)/6.2));
+}
+.delivery-method-text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1% 0 2% 0;
+}
+/* ?delivery status of product  */
+.delivery-stage-status-container{
+    padding: .8em 0 0 0;
+    border-top: 1px solid #48545d;
+    overflow: visible;
+}
+.delivery-stage-status-container::before{
+    --size:  1.25rem;
+    content: "";
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    background-image: url('../images/navigation.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-right: .25rem;
+    transform: translateY(calc(var(--size)/6.2));
+}
+.delivery-status-inside-container{
+    border-left: 3px solid rgb(186,104,200);
+    padding: .1rem .5rem;
+    margin: .5rem;
+    overflow: visible;
+}
+.d{
+    margin: .5rem;
+    font-size: .9rem;
+}
+.d[vs='true']{
+    background-color: rgb(186,104,200);
+    padding: .2rem .5rem;
+    width: fit-content;
+    border-radius: .2rem;
+    position: relative;
+    z-index: 10;
+}
+.d[vs='true']::before{
+    position: absolute;
+    --size:  1rem;
+    content: "";
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    background-color: rgb(186,104,200);
+    transform: translateX(calc(var(--size)*-.6)) 
+    rotate(45deg)
+    translateY(calc(var(--size)/5));
+    z-index: 5;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+.d[vs='false']{
+    background-color: #2a3238;
+    padding: .2rem .5rem;
+    width: fit-content;
+    border-radius: .2rem;
+    position: relative;
+    z-index: 10;
+}
+.d[vs='false']::before{
+    position: absolute;
+    --size:  1rem;
+    content: "";
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    background-color: #2a3238;
+    transform: translateX(calc(var(--size)*-.6)) 
+    rotate(45deg)
+    translateY(calc(var(--size)/5));
+    z-index: 5;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+/* ?circle  */
+.d>i{
+    --size:.8rem;
+    width: var(--size);
+    height: var(--size);
+    display: inline-block;
+    border-radius: 100rem;
+    background-color: rgb(186,104,200);
+    position: absolute;
+    z-index: 150;
+    transform: translateX(calc(var(--size)*-2.5))
+    translateY(calc(var(--size)*0.28));
+}
+/* ?padding div for right side order list  */
+.cover-padding{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 100;
+    overflow: scroll;
+}
+.cover-padding::-webkit-scrollbar{
+    display: none;
 }
