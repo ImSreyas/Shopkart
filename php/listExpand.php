@@ -78,11 +78,7 @@ if($delivery_stage == 4){
             <div id='rating-success-holder'></div>
         </div>
     </div>
-    ";
-}
-echo"</div>";
-echo "
-<script defer>
+    <script defer>
         function rateShop(item){
             let i = 0
             let itemParent = item.parentElement
@@ -99,15 +95,15 @@ echo "
                 $('#rating-success-holder').html(data)
             }})
         }
-        let i = 0
-        let fullVal = Math.round($rating_value)
-        let starChildren = document.querySelector('.rating-holder').children
-        for(i = 0; i < fullVal; i++ ){
-            starChildren[i].setAttribute('checked', 'true')
+        fullVal = Math.round($rating_value)
+        starChildren = document.querySelector('.rating-holder').children
+        for(j = 0; j < fullVal; j++ ){
+            starChildren[j].setAttribute('checked', 'true')
         }
     </script>
-";
-
+    ";
+}
+echo"</div>";
 //-script go's here
 echo "
 <script defer>
