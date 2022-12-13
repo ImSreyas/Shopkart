@@ -1,5 +1,5 @@
 @font-face{
-    font-family: myfont;
+    font-family: my-font;
     src: url(../font/Poppins-Regular.ttf);
 }
 html{
@@ -8,8 +8,8 @@ html{
 *{
     margin: 0;
     padding: 0;
-    font-family: myfont;
-    letter-spacing: .2px;
+    font-family: my-font;
+    letter-spacing: .1px;
     font-size: 100.5%;
     box-sizing: border-box;
 }

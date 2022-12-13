@@ -1,7 +1,12 @@
 <?php
 include('../data-base/constant.php');
 $button = null;
+$responsive = false;
 $customer_id = $_POST['customer_id'];
+//-responsive call checking
+if (isset($_POST['responsive'])) {
+    $responsive = true;
+}
 if (isset($_POST['button'])) {
     $button = $_POST['button'];
 }
@@ -30,7 +35,7 @@ $count = $c = 0;
 // -select all orders of the customer
 // ?also it will skip after when same id comes and same seller comes....  
 while ($row = $res->fetch_assoc()) {
-    if ($row['id'] == $count && $row['s_id'] == $c)continue;
+    if ($row['id'] == $count && $row['s_id'] == $c) continue;
     $total = $row['total'];
     $count = $row['id'];
     $shop_id = $c = $row['s_id'];
@@ -39,11 +44,28 @@ while ($row = $res->fetch_assoc()) {
         $shop_name = $row_1['shop_name'];
         break;
     }
+    //-responsive check
+    if ($responsive == true) {
+        echo "<script defer>
+        $.ajax({
+                url:'php/listExpand.php',
+                type:'POST',
+                data:{
+                    customer_id: $customer_id,
+                    shop_id: $shop_id,
+                    shop_name: '$shop_name',
+                    responsive: true,
+                    id: $count},
+                    success: (data) => {  
+                        $('#listContainer').append(data) //-place data comes from listExpand.php into order-list container
+                }})
+                </script>";
+    } else {
     echo "
-    <div class='single-order-container' onclick='selectedList(this);' marked='false' id='$shop_id"."-"."$count'>
-    <div class='shop-name-container'>".ucfirst($shop_name)."</div><div class='product-reference-parent'>";
-    
-    $productCountRemember = 1; 
+    <div class='single-order-container' onclick='selectedList(this);' marked='false' id='$shop_id" . "-" . "$count'>
+    <div class='shop-name-container'>" . ucfirst($shop_name) . "</div><div class='product-reference-parent'>";
+
+    $productCountRemember = 1;
     $queryToExecute = ($num == 100) ? "SELECT * FROM order_list WHERE id=$count && c_id=$customer_id && active=1" : "SELECT * FROM order_list WHERE id=$count && c_id=$customer_id && delivery_stage=$num && active=1";
     $res1 = mysqli_query($conn, $queryToExecute);
     // -select a single order individually (id : 111 222 3 44 11 11 2 333 4444 1 22 3 444)
@@ -52,9 +74,9 @@ while ($row = $res->fetch_assoc()) {
         $res2 = mysqli_query($conn, "SELECT name FROM product where p_id = $product_id");
         // -select individual products 
         while ($row_3 = $res2->fetch_assoc()) {
-            if($productCountRemember == 4)break;
+            if ($productCountRemember == 4) break;
             $product_name = $row_3['name'];
-            if($productCountRemember == 3)$product_name = "...";
+            if ($productCountRemember == 3) $product_name = "...";
             echo "<div class='product-reference'>
             $product_name
             </div>";
@@ -62,13 +84,31 @@ while ($row = $res->fetch_assoc()) {
         }
     }
     // *delivery stage setting process 
-    switch($row['delivery_stage']){
-        case 0 : $delivery_stage = "Waiting";$color = "low-visibility";break;
-        case 1 : $delivery_stage = "Processing";$color = "blue";break;
-        case 2 : $delivery_stage = "Packed";$color = "orange";break;
-        case 3 : $delivery_stage = "Out for delivery";$color = "yellow";break;
-        case 4 : $delivery_stage = "Delivered";$color = "green";break;
-        default : $delivery_stage = "canceled";$color = "red";break;
+    switch ($row['delivery_stage']) {
+        case 0:
+            $delivery_stage = "Waiting";
+            $color = "low-visibility";
+            break;
+        case 1:
+            $delivery_stage = "Processing";
+            $color = "blue";
+            break;
+        case 2:
+            $delivery_stage = "Packed";
+            $color = "orange";
+            break;
+        case 3:
+            $delivery_stage = "Out for delivery";
+            $color = "yellow";
+            break;
+        case 4:
+            $delivery_stage = "Delivered";
+            $color = "green";
+            break;
+        default:
+            $delivery_stage = "canceled";
+            $color = "red";
+            break;
     }
     // *delivery stage setting process is over 
     echo "</div>
@@ -91,6 +131,7 @@ while ($row = $res->fetch_assoc()) {
     })
     </script>
     ";
+}
 }
 if ($res->num_rows == 0 && $num == 100) {
     echo "
