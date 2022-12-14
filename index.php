@@ -73,7 +73,7 @@
                 <div class="category-container">Grocery</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
-                <div class="category-container">Vegitable Shop</div>
+                <div class="category-container">Vegetable Shop</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Meat</div>
@@ -91,7 +91,7 @@
                 <div class="category-container">Digital Electronics</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
-                <div class="category-container">Home Appliences</div>
+                <div class="category-container">Home Appliances</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Mobile Phones</div>

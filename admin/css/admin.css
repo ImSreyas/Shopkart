@@ -16,5 +16,8 @@ body{
     min-height: 95vh;
     max-height: fit-content;
 }
+nav{
+    color: black;
+}
 
 

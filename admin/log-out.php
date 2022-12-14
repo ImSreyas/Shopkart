@@ -33,9 +33,6 @@ if ($_SESSION['admin-id'] != 1) {
     <!-- menu -->
     <nav class="nav-bar">
         <ul>
-            <a href="admin.php" class="no-text-decoration">
-                <li class="index">request</li>
-            </a>
             <a href="manage-seller.php" class="no-text-decoration">
                 <li class="category">manage seller</li>
             </a>

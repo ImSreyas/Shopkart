@@ -6,9 +6,13 @@
     gap: 2rem;
 }
 .btn-container{
-    padding: 1rem 6.5vw;
+    padding: 0.3rem 6.5vw 1.4rem 6.5vw;
     display: flex;
     justify-content: flex-end;
+    position: sticky;
+    top: 3.8rem;
+    background-color: white;
+    z-index: 10;
 }
 .users-btn,
 .removed-btn{
@@ -30,6 +34,8 @@
     background-color: rgb(186 104 200);
 }
 .customer-card-container{
+    display: grid;
+    grid-template-rows: 1.1fr 1fr;
     width: 100%;
     background-color: #303a41;
     padding: 1rem 2rem;
@@ -41,6 +47,7 @@
     display: grid;
     grid-template-columns: 1fr 1.8fr;
     gap: .5rem;
+    /* height: 8rem; */
 }
 .profile-container{
     height: 8rem;
@@ -80,6 +87,7 @@ img{
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding-block: .4rem;
+    /* height: calc(100% - 8rem); */
 }
 .customer-details-container
 .label{
@@ -113,7 +121,7 @@ img{
     background-color: #252d32;
     color: white;
     border: none;
-    padding-block: .7rem;
+    padding-block: .75rem;
     border-radius: 6rem;
     transition: background-color 300ms ease-in-out;
 }
