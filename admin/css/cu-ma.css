@@ -1,6 +1,7 @@
 .body{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows:min-content;
     margin-inline: 4vw;
     gap: 2rem;
 }
@@ -37,11 +38,11 @@
     font-weight: 500;
 }
 .profile-and-name-container{
-    display: flex;
-    gap: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: .5rem;
 }
 .profile-container{
-    width: 30%;
     height: 8rem;
     border-radius: 1.5rem;
     overflow: hidden;
@@ -58,7 +59,7 @@ img{
 .name{
     border-left: 3px solid rgb(186 104 200); 
     padding-inline: .8rem;
-    margin: .35rem;
+    margin: .2rem 0 0 .4rem;
     font-size: 2.1rem;
     font-weight: 900;
 }
@@ -112,11 +113,32 @@ img{
     background-color: #252d32;
     color: white;
     border: none;
-    padding-block: .6rem;
+    padding-block: .7rem;
     border-radius: 6rem;
     transition: background-color 300ms ease-in-out;
 }
 .remove-btn:hover{
     cursor: pointer;
     background-color: rgb(186 104 200);
+}
+.body:has(.animation){
+    grid-template-columns: 1fr;
+}
+.animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.animation
+svg{
+    max-width: 36vw;
+    min-width: 25rem;
+}
+
+
+@media (width <= 900px){
+    .body{
+        grid-template-columns: 1fr;
+    }
 }

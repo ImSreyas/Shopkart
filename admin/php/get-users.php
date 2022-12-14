@@ -1,6 +1,16 @@
 <?php 
 include('../../data-base/constant.php');
-$customer_details = mysqli_query($conn, "SELECT * FROM customer WHERE removed=false");
+
+$value = $_POST['wh'];
+$ex = ($value == 1) 
+? "SELECT * FROM customer WHERE removed=false" 
+: "SELECT * FROM customer WHERE removed=true";
+$customer_details = mysqli_query($conn, $ex);
+if($customer_details->num_rows == 0){ 
+    echo "<div class='animation'>";
+    include('../../animated/no-user.html');
+    echo"</div>";
+}
 while($customer = $customer_details->fetch_assoc()){
     $customer_id = $customer['id'];
     $customer_name = $customer['name'];
@@ -8,6 +18,14 @@ while($customer = $customer_details->fetch_assoc()){
     $customer_phone_one = $customer['phone1'];
     $customer_phone_two = $customer['phone2'];
     $customer_profile_image = $customer['profile_image'];
+
+    if($value == 1){
+        $f_name = "removeUser(this)";
+        $content = "Remove";
+    } else {
+        $f_name = "undoRemove(this)";
+        $content = "Undo";
+    }
 
     echo "
     <div class='customer-card-container'>
@@ -30,7 +48,7 @@ while($customer = $customer_details->fetch_assoc()){
                 </div>
             </div>
             <div class='remove-btn-container'>
-                <button class='remove-btn' onclick='removeUser(this);' id='$customer_id'>Remove</button>
+                <button class='remove-btn' onclick=$f_name id='$customer_id'>$content</button>
             </div>
         </div>
     </div>

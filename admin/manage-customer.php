@@ -52,21 +52,35 @@ if ($_SESSION['admin-id'] != 1) {
             if(value == 1){
                 document.querySelector(".users-btn").setAttribute("selected",true)
                 document.querySelector(".removed-btn").setAttribute("selected",false)
+                getUsers(1)
             } else {
                 document.querySelector(".users-btn").setAttribute("selected",false)
                 document.querySelector(".removed-btn").setAttribute("selected",true)
+                getUsers(2)
             }
-            
+
         }
-        getUsers()
-        function getUsers(){
+        getUsers(1)
+        function getUsers(value){
+            if(value == 1){
             $.ajax({
                 url:'php/get-users.php',
                 type:'POST',
+                data: {wh: value},
                 success: (data) => {
                     $(".body").html(data)
                 }
             })
+        } else {
+            $.ajax({
+                url:'php/get-users.php',
+                type:'POST',
+                data: {wh: value},
+                success: (data) => {
+                    $(".body").html(data)
+                }
+            })
+        }
         }
         function removeUser(item){
             const id = item.getAttribute("id");
@@ -75,10 +89,20 @@ if ($_SESSION['admin-id'] != 1) {
                 type:'POST',
                 data: {id : id},
                 success: () => {
-                    getUsers()
+                    getUsers(1)
                 }
             })
-            
+        }
+        function undoRemove(item){
+            const id = item.getAttribute("id");
+            $.ajax({
+                url:'php/undo-remove.php',
+                type:'POST',
+                data: {id : id},
+                success: () => {
+                    getUsers(2)
+                }
+            })
         }
     </script>
 </body>
