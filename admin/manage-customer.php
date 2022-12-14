@@ -14,6 +14,8 @@ if ($_SESSION['admin-id'] != 1) {
     <title>Admin</title>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/cu-ma.css">
+    <script src='../jquery/jquery.js'></script>
 </head>
 
 <body class="real-body">
@@ -38,9 +40,46 @@ if ($_SESSION['admin-id'] != 1) {
         </ul>
     </nav>
     <!-- body -->
+    <div class="btn-container">
+        <button class="users-btn" selected=true onclick="btnClicked(1)">Users</button>
+        <button class="removed-btn" selected=false onclick="btnClicked(2)">Removed</button>
+    </div>
     <div class="body admin-body">
 
     </div>
+    <script>
+        function btnClicked(value){
+            if(value == 1){
+                document.querySelector(".users-btn").setAttribute("selected",true)
+                document.querySelector(".removed-btn").setAttribute("selected",false)
+            } else {
+                document.querySelector(".users-btn").setAttribute("selected",false)
+                document.querySelector(".removed-btn").setAttribute("selected",true)
+            }
+            
+        }
+        getUsers()
+        function getUsers(){
+            $.ajax({
+                url:'php/get-users.php',
+                type:'POST',
+                success: (data) => {
+                    $(".body").html(data)
+                }
+            })
+        }
+        function removeUser(item){
+            const id = item.getAttribute("id");
+            $.ajax({
+                url:'php/remove-user.php',
+                type:'POST',
+                data: {id : id},
+                success: () => {
+                    getUsers()
+                }
+            })
+            
+        }
+    </script>
 </body>
-
 </html>

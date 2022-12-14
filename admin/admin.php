@@ -72,25 +72,25 @@ if ($_SESSION['admin-id'] != 1) {
 
         if ($res->num_rows > 0) {
             while ($row = $res->fetch_assoc()) {
-                $comma = ($row['phone2'] == "0") ? "" : " , ";
+                $comma = ($row['phone2'] == "0" || $row['phone2'] == "") ? "" : " , ";
                 $phn_2 = ($row['phone2'] == "0") ? "" : $row['phone2'];
 
                 echo "
                 <div class='request-container'>
                     <div class='seller-img-container'>
                     <img class='img-inside' src='../" . $row['cover_img'] . "'></div>
-                    <div class='seller_details'>
                     <div class='shop-name'>" . ucfirst($row['shop_name']) . "</div>
+                    <div class='seller-details'>
                     <div class='shop-license-no'>" . $row['license_no'] . "</div>
                     <div class='shop-location'>" . $row['location'] . "</div>
                     <div class='shop-category'>" . $row['category'] . "</div>
                     <div class='shop-email'>" . $row['email'] . "</div>
                     <div class='shop-phone1'>" . $row['phone1'] . $comma . $phn_2 . "</div>
+                    </div>
                     <form action='' method='POST'>
                     <input type='submit' class='accept' value='Accept' name='" . $row['id'] . "'><br>
                     <input type='submit' class='reject' value='Reject' name='" . $row['id'] . "'>
                     </form>
-                    </div>
                 </div>
                 ";
             }

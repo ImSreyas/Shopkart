@@ -21,9 +21,6 @@
     /* box-shadow: .3rem .3rem 4rem rgb(115, 115, 115); */
     transition: all 320ms ease-in-out;
 }
-/* .logout-container:hover{
-    transform: scale(1.03);
-} */
 .image-container{
     width: 100%;
     display: flex; 
@@ -38,6 +35,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    height: 2.8rem;
 }
 .confirmation-message{
     text-align: center;
@@ -48,12 +46,12 @@
     font-size: 1.1em;
     cursor: pointer;
     border: none;
-    padding: 2.5% 8%;
+    padding: 3% 8%;
     width: 100%;
     height: 100%;
     text-align: center;
     color: rgb(255, 255, 255);
-    border-radius: .4em;
+    border-radius: 4rem;
     background-color: #3d4d54;
     /* background-color: rgb(186,104,200); */
     transition: all 200ms ease-in-out;
@@ -69,7 +67,7 @@
     width: 48%;
     text-align: center;
     color: rgb(255, 255, 255);
-    border-radius: .4em;
+    border-radius: 4rem;
     background-color: #3d4d54;
     /* background-color: rgb(186,104,200); */
     transition: all 300ms ease-in-out;
