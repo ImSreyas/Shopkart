@@ -16,7 +16,7 @@ if ($seller_list->num_rows > 0) {
         $seller_profile_image = $seller['cover_img'];
 
         echo " 
-        <div class='seller-card-request-container'>
+        <div class='seller-card-request-container' show=true>
             <div class='profile-and-name-container'>
                 <div class='profile-container'>
                     <img src='../$seller_profile_image'>
@@ -33,6 +33,7 @@ if ($seller_list->num_rows > 0) {
                         <div class='l-no'>$license_number</div>
                         <div>$seller_location</div>
                         <div>$seller_category</div>
+                        <div>$email</div>
                         <div>$seller_phone_one</div>
                         <div>$seller_phone_two</div>
                     </div>

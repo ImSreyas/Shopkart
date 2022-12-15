@@ -37,7 +37,7 @@ while($seller = $seller_details->fetch_assoc()){
     }
 
     echo "
-    <div class='seller-card-container'>
+    <div class='seller-card-container' show=true>
         <div class='profile-and-name-container'>
             <div class='profile-container'>
                 <img src='../$seller_profile_image'>

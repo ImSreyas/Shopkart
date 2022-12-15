@@ -28,7 +28,7 @@ while($customer = $customer_details->fetch_assoc()){
     }
 
     echo "
-    <div class='customer-card-container'>
+    <div class='customer-card-container' show=true>
         <div class='profile-and-name-container'>
             <div class='profile-container'>
                 <img src='../$customer_profile_image'>

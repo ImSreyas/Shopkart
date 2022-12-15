@@ -1,25 +1,34 @@
+@import url('../../search-bar/css/search-bar.css');
 .body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows:min-content;
     margin-inline: 4vw;
     gap: 2rem;
+    /* position: relative; */
 }
-.btn-container{
-    padding: 0.3rem 6.5vw 1.4rem 6.5vw;
+.btn-container-wrapper{
+    padding: 0.3rem 6vw 1.4rem;
     display: flex;
-    justify-content: flex-end;
-    position: sticky;
-    top: 3.8rem;
+    justify-content: space-between;
+    /* position: sticky;
+    top: 3.8rem; */
     background-color: white;
     z-index: 10;
+}
+.search-bar-wrapper{
+    width: 44vw;
+}
+.btn-container{
+    display: flex;
+    height: 3.4rem;
 }
 .users-btn,
 .removed-btn{
     margin-inline: .2rem;
     padding: .6rem 2rem;
     background-color: #303a41;
-    border-radius: 5rem;
+    border-radius: 50rem;
     border: none;
     color: white;
     transition: background-color 250ms ease-in-out;
@@ -35,7 +44,7 @@
 }
 .customer-card-container{
     display: grid;
-    grid-template-rows: 1.1fr 1fr;
+    grid-template-rows: 52.5% 47.5%;
     width: 100%;
     background-color: #303a41;
     padding: 1rem 2rem;
@@ -45,7 +54,7 @@
 }
 .profile-and-name-container{
     display: grid;
-    grid-template-columns: 1fr 1.8fr;
+    grid-template-columns: 36% 64%;
     gap: .5rem;
     /* height: 8rem; */
 }
@@ -85,9 +94,8 @@ img{
 }
 .details-and-remove-btn-container{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 60% 40%;
     padding-block: .4rem;
-    /* height: calc(100% - 8rem); */
 }
 .customer-details-container
 .label{
@@ -110,11 +118,13 @@ img{
     margin-left: .45rem;
     padding-inline: .8rem;
     border-left: 3px solid rgb(186 104 200);
+    word-wrap: break-word;
 }
 .remove-btn-container{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    width: 100%;
 }
 .remove-btn{
     width: 100%;
@@ -144,9 +154,33 @@ svg{
     min-width: 25rem;
 }
 
+.customer-card-container[show=false]{
+    display: none;
+}
+.customer-card-container[show=true]{
+    display: block;
+}
+
 
 @media (width <= 900px){
     .body{
         grid-template-columns: 1fr;
+    }
+    .btn-container-wrapper{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 100%;
+        gap: .5rem;
+        padding-inline: 4vw;
+    }
+    .search-bar-wrapper{
+        width: 100%;
+    }
+    .btn-container{
+        width: 100%;
+    }
+    .btn-container
+    button{
+        width: 100%;
     }
 }

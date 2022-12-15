@@ -1,0 +1,71 @@
+:root{
+    --size: 100%;
+}
+.search-bar-container{
+    width: 100%;
+    height: var(--size);
+    display: flex;
+    gap: .2rem;
+    position: relative;
+}
+.search-bar{
+    width: 100%;
+    height: 100%;
+    padding:0 2rem;
+    background-color: #303a41;
+    color: white;
+    border: none;
+    border-radius: 50rem;
+    outline: none;
+    font-size: 1.04rem;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+.search-bar::placeholder{
+    color: #4c5c67;
+}
+.search-icon{
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50rem;
+    background-color: rgb(186 104 200);
+    background-image: url('../../images/search.png');
+    background-size: calc(var(--size)*.35);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.search-icon:hover{
+    cursor: pointer;
+}
+.search-icon[focused=true]{
+    animation: searchBarClicked 400ms linear;
+}
+.search-clear{
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    aspect-ratio: 1.2/1;
+    background-color: #303a41;
+    background-image: url('../../images/search-remove.png');
+    background-size: calc(var(--size)*.26);
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 3.6rem;
+    border-radius: 50rem;
+}
+.search-clear:hover{
+    cursor: pointer;
+}
+.search-clear[focused=true]{
+    animation: clear 400ms linear;
+}
+@keyframes searchBarClicked {
+    0%{background-color: rgb(186 104 200)}
+    50%{background-color: rgb(110, 64, 117)}
+    100%{background-color: rgb(186 104 200)}
+}
+@keyframes clear {
+    0%{background-color: #303a41}
+    50%{background-color: #5b6872}
+    100%{background-color: #303a41}
+}

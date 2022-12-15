@@ -1,0 +1,25 @@
+<div class="search-bar-container">
+    <input type="text" onkeyup="search(this)" class="search-bar" placeholder="search...">
+    <div class="search-clear" onclick="clearField()"></div>
+    <div class="search-icon"></div> 
+</div>
+<script>
+    let icon = document.querySelector(".search-icon")
+    icon.addEventListener("click", () =>{
+        icon.setAttribute('focused',true)
+        setTimeout(()=>{
+            icon.setAttribute('focused',false)
+        },400)
+    })
+    let clear = document.querySelector(".search-clear")
+    clear.addEventListener("click", () =>{
+        clear.setAttribute('focused',true)
+        setTimeout(()=>{
+            clear.setAttribute('focused',false)
+        },400)
+    })
+    function clearField(){
+        document.querySelector(".search-bar").value = null
+        document.querySelector(".search-bar").focus()
+    }
+</script>
