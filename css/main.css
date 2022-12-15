@@ -290,3 +290,9 @@ label{
     color: black;
 
 }
+div[show=false]{
+    display: none;
+}
+div[show=true]{
+    display: block;
+}

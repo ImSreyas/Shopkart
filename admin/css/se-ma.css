@@ -82,17 +82,3 @@
     cursor: pointer;
     background-color: rgb(186 104 200);
 }
-
-.seller-card-container[show=false]{
-    display: none;
-}
-.seller-card-container[show=true]{
-    display: block;
-}
-.seller-card-request-container[show=false]{
-    display: none;
-}
-.seller-card-request-container[show=true]{
-    display: block;
-    /* background-color: red; */
-}

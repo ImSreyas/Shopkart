@@ -154,14 +154,6 @@ svg{
     min-width: 25rem;
 }
 
-.customer-card-container[show=false]{
-    display: none;
-}
-.customer-card-container[show=true]{
-    display: block;
-}
-
-
 @media (width <= 900px){
     .body{
         grid-template-columns: 1fr;
