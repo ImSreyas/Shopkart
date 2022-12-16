@@ -159,3 +159,17 @@ option:hover{
 .search-bar::placeholder{
     content: "Lazy search...";
 }
+
+/* -overriding show attribute  */
+div.category-options-container[show1=false],
+div.sort-options-container[show1=false]{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 60ms ease-in-out;
+}
+div.category-options-container[show1=true],
+div.sort-options-container[show1=true]{
+    visibility: visible;
+    opacity: 1;
+    transition: all 120ms ease-in-out;
+}

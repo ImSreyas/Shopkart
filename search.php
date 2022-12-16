@@ -11,9 +11,11 @@ include('data-base/constant.php');
     <link rel="stylesheet" type="text/CSS" href="css/search.css">
     <script src="javaScript/getShops.js" defer></script>
     <script src="jquery/jquery.js"></script>
+    <?php include('loader/loading-div.html') ?>
+    <script src="js/loading-div-real.js"></script>
 </head>
 
-
+<body>
 <!-- menu start -->
 <nav class="nav-bar">
     <ul>
@@ -68,7 +70,7 @@ include('data-base/constant.php');
     <div class="btn-container">
         <div class="btn-container-inside">
             <button class="sort-btn" onclick="btnClicked(0)">Rating</button>
-            <div show='false' class="sort-options-container" id='s1'>
+            <div show1='false' class="sort-options-container" id='s1'>
                 <option>Rating</option>
                 <option>Alphabetical</option>
                 <option>Review</option>
@@ -77,7 +79,7 @@ include('data-base/constant.php');
         </div>
         <div class="btn-container-inside">
             <button class="filter-btn" onclick="btnClicked(1)">All</button>
-            <div show='false' class="category-options-container" id='s2'>
+            <div show1='false' class="category-options-container" id='s2'>
                 <option>All</option>
                 <?php include('all/category-options/options.html') ?>
             </div>

@@ -52,18 +52,18 @@ function btnClicked(value){
     const container1 = document.querySelector(".sort-options-container")
     const container2 = document.querySelector(".category-options-container")
     if(value == 0){
-        if(container1.getAttribute("show") === 'true')
-        container1.setAttribute("show", false) 
+        if(container1.getAttribute("show1") === 'true')
+        container1.setAttribute("show1", false) 
         else {
-        container1.setAttribute("show", true)
-        container2.setAttribute("show", false)
+        container1.setAttribute("show1", true)
+        container2.setAttribute("show1", false)
         }
     } else {
-        if(container2.getAttribute("show") === 'true')
-        container2.setAttribute("show", false)
+        if(container2.getAttribute("show1") === 'true')
+        container2.setAttribute("show1", false)
         else{
-        container1.setAttribute("show", false)
-        container2.setAttribute("show", true)
+        container1.setAttribute("show1", false)
+        container2.setAttribute("show1", true)
         }
     }
 }

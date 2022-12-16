@@ -23,10 +23,10 @@
     color: white; 
 }
 .profile-to-log-in-page-link-container{
-    width: 80%;
+    width: 90%;
     text-align: center;
-    background-color: #3d4d54;
-    padding: 2.2% 0;
+    background-color: #303a41;
+    padding: 3% 0;
     border-radius: 50rem;
     transform: translateY(-2rem);
     transition: all 300ms ease-in-out;
