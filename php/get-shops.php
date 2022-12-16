@@ -2,11 +2,14 @@
 include('../data-base/constant.php');
 $sort_filter = $_POST['sort'];
 $category_filter = $_POST['category'];
-$customer_id = $_POST['id'];
-
+$customer_id = (isset($_SESSION['customer-id']))
+? $_SESSION['customer-id']
+: 0;
+if($customer_id != 0){
 $customer_location = mysqli_query($conn, "SELECT location FROM customer WHERE id=$customer_id");
 $customer_location = $customer_location->fetch_assoc();
 $customer_location = $customer_location['location'];
+}
 
 $category_filter = ($category_filter == "All")
 ? ""

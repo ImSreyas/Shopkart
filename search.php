@@ -72,7 +72,7 @@ include('data-base/constant.php');
                 <option>Rating</option>
                 <option>Alphabetical</option>
                 <option>Review</option>
-                <option>My location</option>
+                <option class="my-location-option">My location</option>
             </div>
         </div>
         <div class="btn-container-inside">
@@ -84,7 +84,7 @@ include('data-base/constant.php');
         </div>
     </div>
 </div>
-<div class="body body1 main-height home" customer-id='<?php echo $_SESSION['customer-id'] ?>'>
+<div class="body body1 main-height home" customer-id='<?php if(isset($_SESSION['customer-id']))echo $_SESSION['customer-id'];else echo "0" ?>'>
 </div>
 <!--footer-->
 <?php include('elements/footer.html') ?>

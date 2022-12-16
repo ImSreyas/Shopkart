@@ -5,6 +5,7 @@ searchBar.setAttribute("placeholder", 'Lazy search...')
 //*getting the CUSTOMER ID 
 let customerId = document.querySelector(".body1")
 customerId = customerId.getAttribute("customer-id")
+if(customerId == 0) document.querySelector(".my-location-option").style.display = "none"
 
 //-search functionalities : START
 function search(item){
@@ -111,7 +112,7 @@ function getShops(sort, category){
     $.ajax({
         url:'php/get-shops.php',
         type:'POST',
-        data: {sort: sort,category: category,id: customerId},
+        data: {sort: sort,category: category},
         success: (data) => {
             $(".body").html(data)
         }

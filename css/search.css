@@ -132,14 +132,14 @@ button::after{
     position: absolute;
     background-color: rgb(186 104 200);
     color: white;
-    padding: .8rem 1.2rem;
+    padding: .65rem 1.1rem;
     border-radius: 1.8rem;
     top: calc(100% + .5rem);
     right: 0;
     z-index: 50;
 }
 .category-options-container{
-    height: 16.75rem;
+    height: 16.5rem;
     overflow-y: scroll;
 }
 .category-options-container::-webkit-scrollbar{
