@@ -39,7 +39,7 @@ html{
     background-color: rgb(115, 115, 115);
 }
 .nav-bar{
-    z-index: 1;
+    z-index: 1001;
     position: sticky;
     top: -1.2vw;
     background-color: rgba(255, 255, 255,1);
@@ -290,9 +290,11 @@ label{
     color: black;
 
 }
-div[show=false]{
+div[show=false],
+a[show=false]{
     display: none;
 }
-div[show=true]{
+div[show=true],
+a[show=true]{
     display: block;
 }

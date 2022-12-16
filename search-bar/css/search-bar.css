@@ -1,9 +1,9 @@
 :root{
-    --size: 100%;
+    --full-size: 100%;
 }
 .search-bar-container{
     width: 100%;
-    height: var(--size);
+    height: 100%;
     display: flex;
     gap: .2rem;
     position: relative;
@@ -30,7 +30,7 @@
     border-radius: 50rem;
     background-color: rgb(186 104 200);
     background-image: url('../../images/search.png');
-    background-size: calc(var(--size)*.35);
+    background-size: calc(var(--full-size)*.35);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -47,7 +47,7 @@
     aspect-ratio: 1.2/1;
     background-color: #303a41;
     background-image: url('../../images/search-remove.png');
-    background-size: calc(var(--size)*.26);
+    background-size: calc(var(--full-size)*.26);
     background-position: center;
     background-repeat: no-repeat;
     right: 3.6rem;

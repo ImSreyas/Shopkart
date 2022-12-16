@@ -13,7 +13,7 @@ if (!isset($_SESSION['seller-id'])) {
     <title>Seller</title>
     <link rel="stylesheet" href="../css/load.css">
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
-    <link rel="stylesheet" type="text/CSS" href="css/product-page.css">
+    <!-- <link rel="stylesheet" type="text/CSS" href="css/product-page.css"> -->
     <link rel="stylesheet" type="text/CSS" href="css/product.css">
 
 </head>
@@ -141,7 +141,7 @@ if (!isset($_SESSION['seller-id'])) {
 
         <div class="product-list-main-container">
             <?php
-            $sql153 = "select * from product order by name";
+            $sql153 = "SELECT * from product WHERE status='1' order by name";
             $result153 = mysqli_query($conn, $sql153);
             while ($row = $result153->fetch_assoc()) {
                 $id = $row['p_id'];

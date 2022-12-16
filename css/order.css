@@ -27,7 +27,7 @@
     text-align: center;
     background-color: #3d4d54;
     padding: 2.2% 0;
-    border-radius: .5rem;
+    border-radius: 50rem;
     transform: translateY(-2rem);
     transition: all 300ms ease-in-out;
 }
@@ -439,7 +439,7 @@ input{
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 .d[vs='false']{
-    background-color: #2a3238;
+    background-color: #222930;
     padding: .2rem .5rem;
     width: fit-content;
     border-radius: .2rem;
@@ -453,7 +453,7 @@ input{
     display: inline-block;
     width: var(--size);
     height: var(--size);
-    background-color: #2a3238;
+    background-color: #222930;
     transform: translateX(calc(var(--size)*-.6)) 
     rotate(45deg)
     translateY(calc(var(--size)/5));

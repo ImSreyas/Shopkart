@@ -174,10 +174,11 @@ body .dribble img {
     margin-top: 4%;
     width: 100%;
     text-align: center;
-    color: #50646d;
-    font-family: comfortaa;
+    color: #475860;
+    /* color: rgb(205, 118, 220); */
+    font-family: poppins;
     font-size: 1.15rem;
-    font-weight: 800;
+    font-weight: 500;
 }
 @font-face {
     font-family: poppins;

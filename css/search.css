@@ -1,139 +1,161 @@
-.main-menu a{
-    color: rgb(0, 0, 0);
+@import url('../admin/css/se-ma.css');
+:root{
+    --standard-size: 1rem;
+    --size: 1.1rem;
+    --primary-dark: #222930;
 }
-.main-sub-menu ul{
+.body1{
+    margin-block: 0;
+}
+.details-and-remove-btn-container{
+    grid-template-columns: 1fr;
+}
+.rating-container{
+    width: fit-content;
+    background-color: white;
+    border-radius: 50rem;
+    padding: .13rem .8rem .08rem;
+}
+.rating{
+    font-weight: 900;
+}
+.shop-container-link{
+    text-decoration: none;
+    height: 100%;
+}
+.star-container{
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    transform: translateY(calc(var(--size)*.09));
+}
+.star-container
+svg{
+    object-fit: contain;
+    width: var(--size);
+    height: var(--size);
+}
+.rating-green{
+    --color: rgb(13, 201, 0);
+    fill: var(--color);
+    color: var(--color);
+}
+.rating-yellow{
+    --color: rgb(255, 174, 0);
+    fill: var(--color);
+    color: var(--color);
+}
+.rating-red{
+    --color: rgb(255, 0, 0);
+    fill: var(--color);
+    color: var(--color);
+}
+.total-rating{
+    display: inline-block;
+    font-size: calc(var(--standard-size)*.7);
+    color: black;
+    transform: translateY(calc(var(--standard-size)*-.1));
+    font-weight: 600;
+}
+.details
+div{
+    width: fit-content;
+    display: inline-block;
+    margin-block: .25rem;
+}
+.details>
+span{
+    background-color: var(--primary-dark);
+    width: 5rem;
+    height: 1rem;
+    padding: .2rem .75rem;
+    border-radius: .25rem;
+    font-size: .95rem;
+    position: relative;
+    margin-left: .8rem;
+}
+.details>span::before{
+    display: inline-block;
+    content: "";
+    width: calc(var(--standard-size)*.7);
+    aspect-ratio: 1/1;
+    background-color: var(--primary-dark);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-.25rem,-50%) rotate(45deg);
+}
+.btn-container{
     display: flex;
     justify-content: flex-end;
-    gap: 3vw;
-    margin: 2rem 5rem 2rem auto;
+    gap: .2rem;
 }
-.main-sub-menu ul li{
-    list-style: none;
-}
-.main-menu a:hover{
-    color: rgb(130,73,140);
-}
-.highlight{
-    color: rgb(186,104,200);
-}
-
-
-.home{
-    background-color: #ffffff;
-     /* background-color: #3d4d54; */
-    padding: 5vh 6vw;
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    gap: 1.5vw;
-}
-.card{
-    /* border: 1px solid #3d4d54; */
-    padding: 5%;
-    padding-bottom: 2%;
-    background-color: white;
-    box-shadow: .2rem .2rem 1.2rem rgb(115, 115, 115);
-    border-radius: 2rem;
-    /* border-left: 10px solid #3d4d54; */
-    transition: all 290ms ease-in-out;
-    /* border: 1px solid rgb(205, 205, 205); */
-}
-.card:hover{
-    box-shadow: .2rem .2rem 1.9rem rgb(50, 50, 50);
-}
-.card-cover-image{
-    height: 12rem;
-    overflow: hidden;
-    border-radius: 1.4rem;
-}
-.cover-image-inside{
-    width: 100%;
+.sort-btn,
+.filter-btn{
+    margin-inline: .2rem;
+    padding: .6rem min(1.5rem, 3.8vw) .6rem min(2rem, 5vw);
+    background-color: #303a41;
+    border-radius: 5rem;
+    border: none;
+    color: white;
+    transition: background-color 250ms ease-in-out;
     height: 100%;
-    object-fit: cover;
-    transition: transform 600ms ease-out;
 }
-.card:hover
-.card-cover-image
-.cover-image-inside{
-    transform: scale(1.2);
+.sort-btn:hover,
+.filter-btn:hover{
+    background-color: rgb(186 104 200);
+    cursor: pointer;
 }
-.name{
-    font-size : 1.3rem;
-    font-weight : 900;
-    color: black;
-    margin-bottom: .2rem;
-}
-.name::before{
-    content: "";
-    --size: 1.5rem;
-    background-image: url(../images/money-check.png);
+.sort-btn::after,
+.filter-btn::after{
+     content: "";
+    --size: 1.1rem;
+    background-image: url(../images/caret-down.png);
     display: inline-block;
     width: var(--size);
     height: var(--size);
     background-size: contain;
     background-repeat: no-repeat;
-    padding-right: calc(var(--size)/8);
-    transform: translateY(calc(var(--size)/7.5));
+    margin-left: calc(var(--standard-size)*1.5);
+    transform: translateY(calc(var(--size)/6.5)) rotate(0deg);
+    transition: transform 450ms ease-in-out;
 }
-.shop-details-wrapper{
-    height: fit-content;
-    padding-inline: .8rem;
-    padding-block-start: .2rem;
-    margin-left: .6rem;
-    border-left: 3px solid #303a41;
-    margin-bottom: .5rem;
-    font-weight: 600;
+.btn-container-inside:has(div[show=true])>
+button::after{
+    transform: translateY(calc(var(--size)/6.5)) rotate(180deg);
 }
-.rating{
-    margin-left: .75%;
-    font-weight: 550;
-    font-weight: 700;
+.btn-container-inside{
+    position: relative;
 }
-#Layer_1{
-    width: 1em;
-    aspect-ratio: 1/1;
-    margin-left: -1.5%;
-    transform: translateY(10%);
+.sort-options-container,
+.category-options-container{
+    position: absolute;
+    background-color: rgb(186 104 200);
+    color: white;
+    padding: .8rem 1.2rem;
+    border-radius: 1.8rem;
+    top: calc(100% + .5rem);
+    right: 0;
+    z-index: 50;
 }
-.total-rating{
-    font-weight: 700;
-    margin-left: 0%;
-    font-size: 60%;
-    color: rgb(120, 120, 120);
+.category-options-container{
+    height: 16.75rem;
+    overflow-y: scroll;
 }
-.category-d{
-    font-size : .92rem;
-    padding-bottom:3.5%;
-    margin-top:5%;
+.category-options-container::-webkit-scrollbar{
+    display: none;
 }
-td:nth-child(odd){
-    padding-right: 1vw;
+.btn-container-inside
+option{
+    padding: .75rem 2.5rem;
+    border-radius: 50rem;
+    text-align: center;
 }
-.home-delivery-icon{
-    transform: translateY(-1vh);
-    padding-left: 0.5%;
-    width: 12%;
-    aspect-ratio: 1/1;
+.btn-container-inside
+option:hover{
+    cursor: pointer;
+    background-color: #303a41;
 }
-@media (max-width : 1011px){
-    .home{
-        grid-template-columns: repeat(3 , 1fr);
-        padding: 5vh 5.8vw;
-        gap: 3vh;
-    }
-}
-
-@media (max-width : 750px){
-    .home{
-        grid-template-columns: repeat(2 , 1fr);
-        padding: 5vh 4.5vw;
-        gap: 3vh;
-    }
-}
-
-@media (max-width : 480px){
-    .home{
-        grid-template-columns: repeat(1 , 1fr);
-        padding: 5vh 3.5vw;
-        gap: 3vh;
-    }
+.search-bar::placeholder{
+    content: "Lazy search...";
 }

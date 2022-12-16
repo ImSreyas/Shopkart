@@ -195,7 +195,7 @@ if (isset($_POST['submit'])) {
                 <form action="" method="POST">
                     <div class="product-list-container">
                         <?php
-                        $sql153 = "select * from product where s_id='$seller_id' order by name";
+                        $sql153 = "SELECT * from product where s_id='$seller_id' && status=1 order by name";
                         $result153 = mysqli_query($conn, $sql153);
                         while ($row = $result153->fetch_assoc()) {
                             $id = $row['p_id'];

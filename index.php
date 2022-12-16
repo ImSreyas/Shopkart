@@ -125,7 +125,7 @@
                 <div class="category-container">Footwear</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
-                <div class="category-container">Fasion Accessories</div>
+                <div class="category-container">Fashion Accessories</div>
             </a>
         </div>
 
@@ -135,7 +135,7 @@
                 <div class="category-container">Jewellery</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
-                <div class="category-container">Health & Beauty Suppliments</div>
+                <div class="category-container">Health & Beauty Supplements</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Ladies Center</div>
@@ -194,7 +194,7 @@
 
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
-                <div class="category-container">Restorents</div>
+                <div class="category-container">Restaurants</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Bakery</div>
@@ -212,7 +212,7 @@
         </div>
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
-                <div class="category-container">Furnitures</div>
+                <div class="category-container">Furniture</div>
             </a>
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Showrooms</div>
@@ -225,3 +225,4 @@
     </div>
     <!--footer-->
     <?php include('elements/footer.html') ?>
+    
