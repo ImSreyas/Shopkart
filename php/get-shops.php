@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('../data-base/constant.php');
 $sort_filter = $_POST['sort'];
 $category_filter = $_POST['category'];

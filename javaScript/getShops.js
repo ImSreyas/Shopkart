@@ -73,7 +73,7 @@ const sortChild = document.getElementById("s1").children
 Array.prototype.forEach.call(sortChild, (option) => {
     option.addEventListener("click", () =>{
         document.querySelector(".sort-btn").innerHTML = option.innerHTML
-        option.parentElement.setAttribute("show", false)
+        option.parentElement.setAttribute("show1", false)
         collector()
     })
 })
@@ -82,7 +82,7 @@ const filterChild = document.getElementById("s2").children
 Array.prototype.forEach.call(filterChild, (option) => {
     option.addEventListener("click", () =>{
         document.querySelector(".filter-btn").innerHTML = option.innerHTML
-        option.parentElement.setAttribute("show", false)
+        option.parentElement.setAttribute("show1", false)
         collector()
     })
 })

@@ -160,7 +160,7 @@ option:hover{
     content: "Lazy search...";
 }
 
-/* -overriding show attribute  */
+/* -animation for the option containers */
 div.category-options-container[show1=false],
 div.sort-options-container[show1=false]{
     visibility: hidden;
