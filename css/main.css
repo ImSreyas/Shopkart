@@ -64,13 +64,13 @@ html{
 .sre-profile-image-small-container{
     width: 1.6em;
     border-radius: 5rem;
+    /* border: .2rem solid #303a41; */
 }
 .sre-img{
     width: inherit;
     aspect-ratio: 1/1;
     border-radius: 5rem;
     object-fit: cover;
-    border: .2rem solid #3d4d54;
 }
 .sre-icon-list{
     display: flex;

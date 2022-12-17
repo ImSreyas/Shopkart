@@ -17,7 +17,7 @@ function search(item){
         j = 0
         nameText = name.innerHTML.toLowerCase()
         for(i=0; i<text.length; i++){
-            if(nameText.includes(text[i], j)){
+            if(nameText.includes(text[i], j) || text[i] == " "){
                 j = nameText.indexOf(text[i], j) + 1
                 continue
             }

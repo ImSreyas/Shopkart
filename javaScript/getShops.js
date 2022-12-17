@@ -2,6 +2,9 @@
 let searchBar = document.querySelector(".search-bar")
 searchBar.setAttribute("placeholder", 'Lazy search...')
 
+//*focusing the search bar when the page loads
+searchBar.focus()
+
 //*getting the CUSTOMER ID 
 let customerId = document.querySelector(".body1")
 customerId = customerId.getAttribute("customer-id")
@@ -9,6 +12,7 @@ if(customerId == 0) document.querySelector(".my-location-option").style.display 
 
 //-search functionalities : START
 function search(item){
+    item.focus() //?focusing the input field when the search icon is clicked
     const cards2 = document.querySelectorAll(".shop-container-link")
     Array.prototype.forEach.call(cards2, (card) => {
         card.setAttribute('show',false)
@@ -19,15 +23,16 @@ function search(item){
     const names = document.querySelectorAll(".name")
     const location = document.querySelectorAll(".sl")
     const category = document.querySelectorAll(".sc")
+    const phone = document.querySelectorAll(".sp1")
     for(k = 0; k<names.length; k++){
-        arr.push("".concat(names[k].innerHTML,location[k].innerHTML,category[k].innerHTML))
+        arr.push("".concat(names[k].innerHTML,location[k].innerHTML,category[k].innerHTML,phone[k].innerHTML))
     }
     Array.prototype.forEach.call(arr, (con, index) => {
         let check = true
         j = 0
         conText = con.toLowerCase()
         for(i=0; i<text.length; i++){
-            if(conText.includes(text[i], j)){
+            if(conText.includes(text[i], j) || text[i] == " "){
                 j = conText.indexOf(text[i], j) + 1
                 continue
             }

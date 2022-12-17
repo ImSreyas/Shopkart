@@ -120,7 +120,7 @@ span{
     transform: translateY(calc(var(--size)/6.5)) rotate(0deg);
     transition: transform 450ms ease-in-out;
 }
-.btn-container-inside:has(div[show=true])>
+.btn-container-inside:has(div[show1=true])>
 button::after{
     transform: translateY(calc(var(--size)/6.5)) rotate(180deg);
 }

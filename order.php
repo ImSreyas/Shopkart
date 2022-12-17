@@ -10,13 +10,12 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
     <title>Customer</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/ORDER.css">
-    <link rel="stylesheet" href="css/load.css">
     <script src="jquery/jquery.js"></script>
+    <?php include('loader/loading-div.html'); ?>
+    <script src="js/loading-div-too-slow.js"></script>
 </head>
 
 <body>
-    <?php include('loader/loading-div.html'); ?>
-    <script src="js/loading-div-too-slow.js"></script>
     <script>
         window.history.replaceState({}, '', 'order.php')
     </script>
