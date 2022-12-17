@@ -96,7 +96,10 @@ $seller_id = $_GET['id'];
             <?php
             if (isset($_POST['cancel_order'])) {
                 $sql_cancel_order = mysqli_query($conn, "DELETE FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' && id='$final'");
-                header('location:product-page.php?id=' . $seller_id);
+                echo "
+                <script>location.href = 'product-page.php?id=".$seller_id."'</script>
+                ";
+                // header('location:product-page.php?id=' . $seller_id);
             }
             ?>
 
