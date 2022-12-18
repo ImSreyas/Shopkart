@@ -5,10 +5,12 @@
     grid-template-rows:min-content;
     margin-inline: 4vw;
     gap: 1.2rem 1.4rem;
+    min-height: 60vh;
+    padding-block-end: .6rem;
     /* position: relative; */
 }
 .btn-container-wrapper{
-    padding: 0.3rem 6vw 1.4rem;
+    padding: 0.3rem 5vw 1.2rem 4vw;
     display: flex;
     justify-content: space-between;
     /* position: sticky;
@@ -17,7 +19,7 @@
     z-index: 10;
 }
 .search-bar-wrapper{
-    width: 44vw;
+    width: 50vw
 }
 .btn-container{
     display: flex;
