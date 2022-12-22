@@ -10,6 +10,8 @@
     border-radius: 2rem;
     color: white;
     font-weight: 500;
+    margin-block-end: 1rem;
+    break-inside: avoid;
 }
 .seller-card-request-container{
     display: grid;
@@ -20,6 +22,8 @@
     border-radius: 2rem;
     color: white;
     font-weight: 500;
+    margin-block-end: 1rem;
+    break-inside: avoid;
 }
 .request-btn,
 .sellers-btn,

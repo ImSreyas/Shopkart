@@ -1,13 +1,14 @@
 @import url('../../search-bar/css/search-bar.css');
 .body{
-    display: grid;
+    margin-inline: 4vw;
+    columns: 2;
+    padding-block: .3rem .6rem;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows:min-content;
-    margin-inline: 4vw;
     gap: 1.2rem 1.4rem;
     min-height: 60vh;
-    padding-block-end: .6rem;
-    /* position: relative; */
+    position: relative; */
 }
 .btn-container-wrapper{
     padding: 0.3rem 5vw 1.2rem 4vw;
@@ -53,6 +54,8 @@
     border-radius: 2rem;
     color: white;
     font-weight: 500;
+    margin-block-end: 1rem;
+    break-inside: avoid;
 }
 .profile-and-name-container{
     display: grid;
@@ -144,7 +147,7 @@ img{
     background-color: rgb(186 104 200);
 }
 .body:has(.animation){
-    grid-template-columns: 1fr;
+    columns: 1;
 }
 .animation{
     display: flex;
