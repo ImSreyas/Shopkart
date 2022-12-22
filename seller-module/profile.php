@@ -169,7 +169,7 @@ include("../data-base/constant.php");
                             echo "
 
                       
-                      <form action='?from=updating_details' method='POST' id='profile-form' autocomplete='off' enctype='multipart/form-data'>
+                      <form action='?from=updating_details&duration=1500' method='POST' id='profile-form' autocomplete='off' enctype='multipart/form-data'>
 
                       <div class='profile-image-container'>
                       <div class='circle'><img src='../" . $row['cover_img'] . "' class='img'>

@@ -62,7 +62,7 @@
         <?php
         if (isset($_POST['submit'])) {
             unset($_SESSION['customer-id']);
-            header("location:index.php?from=logging_out");
+            header("location:index.php?from=logging_out&duration=2000");
         }
         ?>
 

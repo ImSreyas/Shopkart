@@ -15,14 +15,12 @@ if ($_SESSION['admin-id'] != 1) {
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="css/se-ma.css">
-    <link rel="stylesheet" href="../css/load.css">
+    <?php include('../loader/loading-div.html') ?>
     <script src="../jquery/jquery.js"></script>
     <script src="js/manage-seller.js" defer></script>
 </head>
 
 <body class="real-body">
-    <?php include('../loader/loading-div.html');?>
-    <script src="../js/loading-div-slow.js"></script>
     <script>history.replaceState({},'','manage-seller.php')</script>
     <!-- menu -->
     <nav class="nav-bar">

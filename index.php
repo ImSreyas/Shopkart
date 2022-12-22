@@ -5,17 +5,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer</title>
-    <link rel="stylesheet" type="text/CSS" href="css/load.css">
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/home.css">
+    <?php include('loader/loading-div.html') ?>
 </head>
 
 <body>
-
-    <?php
-    include('loader/loading-div.html');
-    ?>
-    <script src="js/loading-div-slow.js"></script>
     <script defer>
         history.replaceState({}, '', 'http://localhost/shop-finder/index.php')
     </script>
@@ -66,8 +61,6 @@
 
     <!--body-->
     <div class="body1 main-height">
-
-
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Grocery</div>
@@ -82,7 +75,6 @@
         <div class="image-container fir">
             <?php include('animated/category-image-1.html'); ?>
         </div>
-
         <div class="image-container">
             <?php include('animated/category-image-2.html'); ?>
         </div>
@@ -97,8 +89,6 @@
                 <div class="category-container">Mobile Phones</div>
             </a>
         </div>
-
-
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Electronics</div>
@@ -113,7 +103,6 @@
         <div class="image-container">
             <?php include('animated/category-image-3.html'); ?>
         </div>
-
         <div class="image-container">
             <?php include('animated/category-image-4.html'); ?>
         </div>
@@ -128,8 +117,6 @@
                 <div class="category-container">Fashion Accessories</div>
             </a>
         </div>
-
-
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Jewellery</div>
@@ -159,9 +146,6 @@
                 <div class="category-container">Baby Care Products</div>
             </a>
         </div>
-
-
-
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Medical shops</div>
@@ -176,7 +160,6 @@
         <div class="image-container">
             <?php include('animated/category-image-7.html'); ?>
         </div>
-
         <div class="image-container">
             <?php include('animated/category-image-8.html'); ?>
         </div>
@@ -191,7 +174,6 @@
                 <div class="category-container">Printing Store</div>
             </a>
         </div>
-
         <div class="category-main-container">
             <a href="category-page.php?category=''" class="category-link">
                 <div class="category-container">Restaurants</div>
@@ -206,7 +188,6 @@
         <div class="image-container">
             <?php include('animated/category-image-9.html'); ?>
         </div>
-
         <div class="image-container">
             <?php include('animated/category-image-10.html'); ?>
         </div>
@@ -221,8 +202,12 @@
                 <div class="category-container">Workshops</div>
             </a>
         </div>
-
     </div>
+    <script>
+        Array.prototype.forEach.call(document.querySelectorAll(".category-container"),
+            (name, index) => {
+                name.parentElement.setAttribute("href", "search.php?category="+name.innerHTML)
+            })
+    </script>
     <!--footer-->
     <?php include('elements/footer.html') ?>
-    

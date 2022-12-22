@@ -11,18 +11,13 @@ if (!isset($_SESSION['seller-id'])) {
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seller</title>
-    <link rel="stylesheet" href="../css/load.css">
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <!-- <link rel="stylesheet" type="text/CSS" href="css/product-page.css"> -->
     <link rel="stylesheet" type="text/CSS" href="css/product.css">
-
+    <?php include('../loader/loading-div.html') ?>
 </head>
 
 <body class="my-body">
-    <?php
-    include('../loader/loading-div.html');
-    ?>
-    <script src="../js/loading-div-normal.js"></script>
     <script defer>
         history.replaceState({}, '', 'http://localhost/shop-finder/seller-module/product.php')
     </script>

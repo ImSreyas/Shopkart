@@ -25,7 +25,7 @@ if ($_SESSION['admin-id'] != 1) {
     <?php
     if (isset($_POST['submit'])) {
         unset($_SESSION['admin-id']);
-        header("location:../index.php?from=logging_out");
+        header("location:../index.php?from=logging_out&duration=2000");
     }
     ?>
 
@@ -54,7 +54,7 @@ if ($_SESSION['admin-id'] != 1) {
         <?php
         if (isset($_POST['submit'])) {
             session_destroy();
-            header("location:../index.php?from=logging_out");
+            header("location:../index.php?from=logging_out&duration=2000");
         }
         ?>
 

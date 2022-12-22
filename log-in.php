@@ -71,7 +71,7 @@
                 if (md5($password) == $password_check) {
                     unset($_SESSION['username']);
                     $_SESSION['customer-id'] = $id;
-                    header('location:index.php?from=logging_in');
+                    header('location:index.php?from=logging_in&duration=2500');
                 } else {
                     $passwordErr = "*Wrong password";
                 }

@@ -68,7 +68,7 @@
                 if (md5($password) == $password_check) {
                     session_start();
                     $_SESSION['admin-id'] = $id;
-                    header('location:admin/manage-seller.php?from=logging_in');
+                    header('location:admin/manage-seller.php?from=logging_in&duration=2500');
                 } else {
                     $passwordErr = "*Invalid password";
                 }

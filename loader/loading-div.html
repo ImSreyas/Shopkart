@@ -24,3 +24,47 @@
         </div>
     </div>
 </div>
+<script>
+    function getParameter(parameterName){
+        let parameter= new URLSearchParams(window.location.search)
+        return parameter.get(parameterName)
+    }
+    const duration = getParameter("duration")
+    const arr = [
+        "logging_in",
+        "logging_out",
+        "product_updating",
+        "updating_details",
+        "deleting_seller",
+        "order"
+    ]
+    const arr_val = [
+        "Logging in...please wait",
+        "Logging out...please wait",
+        "Updating products...please wait",
+        "Updating details...please wait",
+        "Deleting account...please wait",
+        "Placing order...please wait"
+    ]
+    if(arr.includes(getParameter("from"))){
+        document.getElementById("loader").style.display = "block"
+        document.querySelector("body").style.overflow = "hidden"
+        document.getElementById("loading-message").innerHTML = arr_val[arr.indexOf(getParameter("from"))]
+        window.addEventListener("load" , () => {
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none"
+            document.querySelector("body").style.overflow = "visible"
+        }, duration)
+    })
+    }
+    else{
+        document.getElementById("loader").style.display = "block"
+        document.querySelector("body").style.overflow = "hidden"
+        window.addEventListener("load" ,() => {
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none"
+            document.querySelector("body").style.overflow = "visible"
+        }, duration)
+    })
+    }
+</script>

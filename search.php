@@ -7,12 +7,11 @@ include('data-base/constant.php');
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer</title>
-    <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/search.css">
+    <?php include('loader/loading-div.html') ?>
+    <script src="js/searchEngine.js"></script>
     <script src="javaScript/getShops.js" defer></script>
     <script src="jquery/jquery.js"></script>
-    <?php include('loader/loading-div.html') ?>
-    <script src="js/loading-div-real.js"></script>
 </head>
 
 <body>
@@ -64,8 +63,15 @@ include('data-base/constant.php');
 
 <!--body-->
 <div class="btn-container-wrapper">
-    <div class="search-bar-wrapper">
-        <?php include('search-bar/search-bar.html')?>
+    <div class="search-bar-main-wrapper">
+        <button class="shop-or-product-btn" onclick="btnClicked(-1)">Shop</button>
+        <div show1='false' class="shop-or-product-options-container" id='s0'>
+            <option>Shop</option>
+            <option>Product</option>
+        </div>
+        <div class="search-bar-wrapper">
+            <?php include('search-bar/search-bar.html') ?>
+        </div>
     </div>
     <div class="btn-container">
         <div class="btn-container-inside">

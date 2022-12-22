@@ -86,7 +86,7 @@ $seller_id = $_GET['id'];
                 echo $lar;
 
                 $sql734 = mysqli_query($conn, "UPDATE order_list SET location='$location_select',delivery='$delivery_method',total='$sum',active='1' WHERE c_id='$customer_id' && s_id='$seller_id' && id='$lar'");
-                header('location:../order.php?from=order');
+                header('location:../order.php?from=order&duration=2000');
             }
             ?>
         </div>
@@ -97,7 +97,7 @@ $seller_id = $_GET['id'];
             if (isset($_POST['cancel_order'])) {
                 $sql_cancel_order = mysqli_query($conn, "DELETE FROM order_list WHERE s_id='$seller_id' && c_id='$customer_id' && id='$final'");
                 echo "
-                <script>location.href = 'product-page.php?id=".$seller_id."'</script>
+                <script>location.href = 'product-page.php?id=" . $seller_id . "'</script>
                 ";
                 // header('location:product-page.php?id=' . $seller_id);
             }

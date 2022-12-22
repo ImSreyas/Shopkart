@@ -8,11 +8,9 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer</title>
-    <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/ORDER.css">
-    <script src="jquery/jquery.js"></script>
     <?php include('loader/loading-div.html'); ?>
-    <script src="js/loading-div-too-slow.js"></script>
+    <script src="jquery/jquery.js"></script>
 </head>
 
 <body>

@@ -156,7 +156,7 @@ if (!isset($_SESSION['seller-id'])) {
                 image = '$fileDestination_new' where p_id='$parameter'
                 ";
                 mysqli_query($conn, $sql2);
-                header('location:product.php?from=product_updating');
+                header('location:product.php?from=product_updating&duration=1000');
             } elseif ($coverImageError == "*") {
                 $sql2 = "update product set 
                 name='$name',
@@ -168,7 +168,7 @@ if (!isset($_SESSION['seller-id'])) {
                 stock = '$stock' where p_id='$parameter'
                 ";
                 mysqli_query($conn, $sql2);
-                header('location:product.php?from=product_updating');
+                header('location:product.php?from=product_updating&duration=1000');
             }
         }
     }

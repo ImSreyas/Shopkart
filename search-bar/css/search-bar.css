@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 .search-bar::placeholder{
-    color: #4c5c67;
+    color: #7e9aab;
 }
 .search-icon{
     height: 100%;

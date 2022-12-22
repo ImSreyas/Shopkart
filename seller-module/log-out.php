@@ -53,7 +53,7 @@ if (!isset($_SESSION['seller-id'])) {
         <?php
         if (isset($_POST['submit'])) {
             unset($_SESSION['seller-id']);
-            header("location:../index.php?from=logging_out");
+            header("location:../index.php?from=logging_out&duration=2000");
         }
         ?>
 

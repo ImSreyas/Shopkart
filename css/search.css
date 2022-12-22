@@ -1,8 +1,13 @@
+@import url('main.css');
 @import url('../admin/css/se-ma.css');
 :root{
     --standard-size: 1rem;
     --size: 1.1rem;
-    --primary-dark: #222930;
+}
+body,
+.nav-bar,
+.btn-container-wrapper{
+    background-color: var(--primary-background);
 }
 .body1{
     margin-block: 0;
@@ -14,7 +19,7 @@
     width: fit-content;
     background-color: white;
     border-radius: 50rem;
-    padding: .13rem .8rem .08rem;
+    padding: .27rem .7rem .2rem;
 }
 .rating{
     font-weight: 900;
@@ -61,11 +66,11 @@ svg{
 div{
     width: fit-content;
     display: inline-block;
-    margin-block: .25rem;
+    margin-block: .3rem;
 }
 .details>
 span{
-    background-color: var(--primary-dark);
+    background-color: var(--dark-8);
     width: 5rem;
     height: 1rem;
     padding: .2rem .75rem;
@@ -79,17 +84,28 @@ span{
     content: "";
     width: calc(var(--standard-size)*.7);
     aspect-ratio: 1/1;
-    background-color: var(--primary-dark);
+    background-color: var(--dark-8);
     position: absolute;
     left: 0;
     top: 50%;
     transform: translate(-.25rem,-50%) rotate(45deg);
+}
+.search-bar-main-wrapper{
+    display: grid;
+    grid-template-columns: max-content auto;
+    position: relative;
+    width: 50.2vw;
+}
+.search-bar-wrapper{
+    margin-left: .2rem;
+    width: auto;
 }
 .btn-container{
     display: flex;
     justify-content: flex-end;
     gap: .2rem;
 }
+.shop-or-product-btn,
 .sort-btn,
 .filter-btn{
     margin-inline: .2rem;
@@ -101,11 +117,13 @@ span{
     transition: background-color 250ms ease-in-out;
     height: 100%;
 }
+.shop-or-product-btn:hover,
 .sort-btn:hover,
 .filter-btn:hover{
     background-color: rgb(186 104 200);
     cursor: pointer;
 }
+.shop-or-product-btn::after,
 .sort-btn::after,
 .filter-btn::after{
      content: "";
@@ -120,13 +138,16 @@ span{
     transform: translateY(calc(var(--size)/6.5)) rotate(0deg);
     transition: transform 450ms ease-in-out;
 }
-.btn-container-inside:has(div[show1=true])>
+.search-bar-main-wrapper:has(div[show1=true])
+button::after,
+.btn-container-inside:has(div[show1=true])
 button::after{
     transform: translateY(calc(var(--size)/6.5)) rotate(180deg);
 }
 .btn-container-inside{
     position: relative;
 }
+.shop-or-product-options-container,
 .sort-options-container,
 .category-options-container{
     position: absolute;
@@ -138,6 +159,10 @@ button::after{
     right: 0;
     z-index: 50;
 }
+.shop-or-product-options-container{
+    left: 0;
+    right: auto;
+}
 .category-options-container{
     height: 16.5rem;
     overflow-y: scroll;
@@ -145,13 +170,14 @@ button::after{
 .category-options-container::-webkit-scrollbar{
     display: none;
 }
-.btn-container-inside
+
+.btn-container-wrapper
 option{
     padding: .75rem 2.5rem;
     border-radius: 50rem;
     text-align: center;
 }
-.btn-container-inside
+.btn-container-wrapper
 option:hover{
     cursor: pointer;
     background-color: #303a41;
@@ -161,15 +187,27 @@ option:hover{
 }
 
 /* -animation for the option containers */
+div.shop-or-product-options-container[show1=false],
 div.category-options-container[show1=false],
 div.sort-options-container[show1=false]{
     visibility: hidden;
     opacity: 0;
     transition: all 60ms ease-in-out;
 }
+div.shop-or-product-options-container[show1=true],
 div.category-options-container[show1=true],
 div.sort-options-container[show1=true]{
     visibility: visible;
     opacity: 1;
     transition: all 120ms ease-in-out;
+}
+
+
+@media (width <= 900px){
+    .search-bar-main-wrapper{
+        width: 100%;
+    }
+    .search-bar-wrapper{
+        width: auto;
+    }
 }

@@ -1,3 +1,4 @@
+@import url('main.css');
 .user-not-found{
     margin: 0 auto;
     display: flex;
@@ -68,7 +69,7 @@
 .options>button{
     width: 100%;
     border: none;
-    padding: 3%;
+    padding: .75rem;
     background-color: transparent;
     color: #808f96;
     transition: color 250ms ease-in-out;
@@ -229,15 +230,17 @@ button:hover{
 .single-order-container[selected='true'] 
 .total-money::first-letter{
     color: #191e21;
+    color: rgb(244, 181, 255);
 }
 /* ?circle before the delivery status  */
 .dot{
-    --circle-size : .75rem;
+    --circle-size : .9rem;
     display: inline-block;
     width: var(--circle-size);
     height: var(--circle-size);
     border-radius: 100rem;
     margin-right: .4rem;
+    transform: translateY(calc(var(--circle-size)*.1));
 }
 /* ?color palette  */
 .low-visibility{
@@ -417,7 +420,7 @@ input{
     font-size: .9rem;
 }
 .d[vs='true']{
-    background-color: rgb(186,104,200);
+    background-color: var(--purple);
     padding: .2rem .5rem;
     width: fit-content;
     border-radius: .2rem;
@@ -431,7 +434,7 @@ input{
     display: inline-block;
     width: var(--size);
     height: var(--size);
-    background-color: rgb(186,104,200);
+    background-color: var(--purple);
     transform: translateX(calc(var(--size)*-.6)) 
     rotate(45deg)
     translateY(calc(var(--size)/5));
@@ -439,7 +442,7 @@ input{
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 .d[vs='false']{
-    background-color: #222930;
+    background-color: var(--dark-8);
     padding: .2rem .5rem;
     width: fit-content;
     border-radius: .2rem;
@@ -453,7 +456,7 @@ input{
     display: inline-block;
     width: var(--size);
     height: var(--size);
-    background-color: #222930;
+    background-color: var(--dark-8);
     transform: translateX(calc(var(--size)*-.6)) 
     rotate(45deg)
     translateY(calc(var(--size)/5));

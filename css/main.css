@@ -7,6 +7,19 @@ html{
     zoom: 90%;
 }
 *{
+    --primary-background: #fffffe;
+    --purple: rgb(186 104 200);
+    --dark-0: #80aaba;
+    --dark-1: #7799a6;
+    --dark-2: #67818c;
+    --dark-3: #617781;
+    --dark-4: #576c75;
+    --dark-5: #4a5c64;
+    --dark-6: #3d4d54;
+    --dark-7: #303a41;
+    --dark-8: #222930;
+    --dark-9: #1e2429;
+    --dark-10: #151a1d;
     margin: 0;
     padding: 0;
     font-family: my-font;

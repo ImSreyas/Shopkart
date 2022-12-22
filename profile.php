@@ -5,16 +5,12 @@ include('data-base/constant.php');
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer</title>
-<link rel="stylesheet" type="text/CSS" href="css/load.css">
 <link rel="stylesheet" type="text/CSS" href="css/main.css">
 <link rel="stylesheet" type="text/CSS" href="css/profile.css">
+<?php include('loader/loading-div.html') ?>
 </head>
 
 <body>
-    <?php
-    include('loader/loading-div.html');
-    ?>
-    <script src="js/loading-div-normal.js"></script>
     <!-- menu start -->
     <nav class="nav-bar">
         <ul>

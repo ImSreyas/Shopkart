@@ -81,7 +81,7 @@
                     }
                     if ($status == 1) {
                         $_SESSION['seller-id'] = $id;
-                        header('location:seller-module/seller-index.php?from=logging_in');
+                        header('location:seller-module/seller-index.php?from=logging_in&duration=2500');
                     } else {
                         header('location:seller/seller-request.php');
                     }

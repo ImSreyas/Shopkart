@@ -59,7 +59,7 @@ include('../data-base/constant.php');
             $sql859 = "delete from seller_login where id=$id";
             mysqli_query($conn, $sql859);
             unset($_SESSION['seller-id']);
-            header("location:../index.php?from=deleting_seller");
+            header("location:../index.php?from=deleting_seller&duration=1000");
         }
         ?>
 

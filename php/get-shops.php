@@ -17,13 +17,13 @@ $category_filter = ($category_filter == "All")
 : "&& category='$category_filter'";
 
 switch($sort_filter){
-    case 0: $ex = "SELECT * FROM seller WHERE removed=false && shop_status=1 $category_filter ORDER BY rating DESC";
+    case 0: $ex = "SELECT * FROM seller WHERE removed=false && status=1 $category_filter ORDER BY rating DESC";
     break;
-    case 1: $ex = "SELECT * FROM seller WHERE removed=false && shop_status=1 $category_filter ORDER BY shop_name";
+    case 1: $ex = "SELECT * FROM seller WHERE removed=false && status=1 $category_filter ORDER BY shop_name";
     break;
-    case 2: $ex = "SELECT * FROM seller WHERE removed=false && shop_status=1 $category_filter ORDER BY total_rating DESC";
+    case 2: $ex = "SELECT * FROM seller WHERE removed=false && status=1 $category_filter ORDER BY total_rating DESC";
     break;
-    case 3: $ex = "SELECT * FROM seller WHERE removed=false && shop_status=1 $category_filter && location='$customer_location'";
+    case 3: $ex = "SELECT * FROM seller WHERE removed=false && status=1 $category_filter && location='$customer_location'";
     break;
 }
 $seller_details = mysqli_query($conn, $ex);
@@ -86,7 +86,12 @@ while($seller = $seller_details->fetch_assoc()){
                 </div>
             </div>
         </div>
-    </div></a>
-    ";
+        <div class='products' list='
+        ";
+        $product_list = mysqli_query($conn, "SELECT name FROM product WHERE s_id=$seller_id && status=1");
+        while($productName = $product_list->fetch_assoc()){
+            echo $productName['name'].",";
+        }
+        echo "'></div></div></a>";
 }
 ?>
