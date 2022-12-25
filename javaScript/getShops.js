@@ -162,6 +162,18 @@ function getShops(sort, category){
         data: {sort: sort,category: category},
         success: (data) => {
             $(".body").html(data)
+            // layout()
         }
     })
 }
+
+// function layout(){
+//     const container = document.querySelector(".body")
+//     // console.log(container.childElementCount)
+//     for(let i = 0; i < container.childElementCount; i++){
+//         let height = container.children[i].offsetHeight
+//         console.log(height)
+//         container.children[i].style.gridRowEnd = "span " + height
+//     }
+// }
+

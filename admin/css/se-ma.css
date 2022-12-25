@@ -4,6 +4,7 @@
     grid-template-rows: 37.74% 62.26%;
     width: 100%;
     height: 100%;
+    /* grid-row-end: span 26; */
     background-color: #303a41;
     /* background-color: #3d4d54; */
     padding: 1.5rem 2rem;
@@ -11,7 +12,7 @@
     color: white;
     font-weight: 500;
     margin-block-end: 1rem;
-    break-inside: avoid;
+    /* break-inside: avoid; */
 }
 .seller-card-request-container{
     display: grid;

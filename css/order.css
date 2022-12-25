@@ -119,14 +119,14 @@
     display: grid;
     grid-template-rows: 9fr 2fr;
     margin-top: 1.56vw;
-    height: 56vh;
+    height: 51vh;
     border-radius: 1.3rem;
     background-color: #303a41;
     overflow: hidden;
 }
 .no-list-available{
     margin-top: 1.56vw;
-    height: 56vh;
+    height: 51vh;
     border-radius: 1.3rem;
     background-color: #303a41;
     overflow: hidden;
@@ -139,12 +139,21 @@
     align-items: center;
     color: #808f96;
     padding: 5%;
+    padding-block-end: 0;
     box-sizing: border-box;
+}
+.no-list-button-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-block-end: 1.2rem;
+    padding-inline-end: 1.5rem;
 }
 .no-list-button-container
 button{
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    padding: .8rem 2rem;
+    height: fit-content;
+    border-radius: 100rem;
     background-color: rgb(186,104,200);
     border: none;
     color: white;

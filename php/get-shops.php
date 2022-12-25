@@ -49,7 +49,7 @@ while($seller = $seller_details->fetch_assoc()){
     $seller_phone_two = $seller['phone2'];
     $ph = ($seller_phone_two == "" || $seller_phone_two == 0)
     ? ""
-    : "<div>phone 2</div><span class='sp2'>$seller_phone_two</span>";
+    : " , $seller_phone_two";
     $seller_profile_image = $seller['cover_img'];
 
     if ($rating >= 3.5) $rating_color_class = 'rating-green';
@@ -57,7 +57,7 @@ while($seller = $seller_details->fetch_assoc()){
     else $rating_color_class = 'rating-red';
 
     echo "
-    <a href='shop/product-page.php?id=$seller_id' class='shop-container-link'>
+    <a href='shop/product-page.php?id=$seller_id' class='pinterest-layout shop-container-link '>
     <div class='seller-card-container' show=true>
         <div class='profile-and-name-container'>
             <div class='profile-container'>
@@ -81,8 +81,7 @@ while($seller = $seller_details->fetch_assoc()){
                     <div>category</div><span class='sc'>$seller_category</span><br>
                     <div>status</div><span class='s'>$status</span><br>
                     <div>home delivery</div><span class='hd'>$home_delivery</span><br>
-                    <div>phone 1</div><span class='sp1'>$seller_phone_one</span><br>
-                    $ph
+                    <div>phone 1</div><span class='sp1'>$seller_phone_one$ph</span><br>
                 </div>
             </div>
         </div>

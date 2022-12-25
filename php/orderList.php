@@ -136,7 +136,7 @@ while ($row = $res->fetch_assoc()) {
 if ($res->num_rows == 0 && $num == 100) {
     echo "
     <div class='no-list-available-1'>
-    <div class='no-list-container'>It seems like you don't purchased anything...!</div>
+    <div class='no-list-container'>It seems like you didn't purchased anything...!</div>
     <div class='no-list-button-container'><a href='search.php' class='go-to-purchase-link'><button class='go-to-purchase-button'>Go to purchase</button></a></div>
     </div>
     ";

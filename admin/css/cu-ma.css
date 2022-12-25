@@ -1,14 +1,18 @@
 @import url('../../search-bar/css/search-bar.css');
 .body{
     margin-inline: 4vw;
-    columns: 2;
+    /* columns: 2; */
     padding-block: .3rem .6rem;
-    /* display: grid;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, calc(50% - .7rem)); */
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:min-content;
+    /* grid-auto-rows: 1px; */
+    grid-template-rows: min-content;
     gap: 1.2rem 1.4rem;
     min-height: 60vh;
-    position: relative; */
+    /* max-height: fit-content; */
+    /* height: 1000vh; */
+    position: relative;
 }
 .btn-container-wrapper{
     padding: 0.3rem 5vw 1.2rem 4vw;
@@ -163,6 +167,7 @@ svg{
 
 @media (width <= 900px){
     .body{
+        /* columns: 1; */
         grid-template-columns: 1fr;
     }
     .btn-container-wrapper{

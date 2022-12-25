@@ -5,9 +5,11 @@ $shop_id = $_POST['shop_id'];
 $shop_name = $_POST['shop_name'];
 $id = $_POST['id'];
 //-rating selection
+
 $rating = mysqli_query($conn, "SELECT rating FROM rating WHERE c_id=$customer_id && s_id=$shop_id");
-$rating_row = $rating->fetch_assoc();
-$rating_value = $rating_row['rating'];
+if($rating_row = $rating->fetch_assoc()){
+    $rating_value = $rating_row['rating'];
+}
 // -MAIN CONTENT starts here 
 echo "
 <div class='cover-padding'>
