@@ -28,11 +28,39 @@ switch($sort_filter){
 }
 $seller_details = mysqli_query($conn, $ex);
 if($seller_details->num_rows == 0){ 
+    echo "
+    <div class='not-found-message-o'>
+        <content-head>No <content-word-label>shops</content-word-label> available</content-head>
+        <content-body>
+            <span>We</span>
+            <span>are</span>
+            <span>really</span>
+            <span>sorry</span>
+            <span>for</span>
+            <span>the</span>
+            <span>inconvenience.</span> 
+            <span>More</span>
+            <span>shops</span>
+            <span>will</span>
+            <span>be</span>
+            <span>available</span>
+            <span>soon.</span> 
+            <span>Please</span>
+            <span>search</span>
+            <span>for</span>
+            <span>other</span>
+            <span>shops.</span> 
+            <span>Have</span>
+            <span>a</span>
+            <span>nice</span>
+            <span>day...!</span>
+            <span>😉</span>
+        </content-body>
+    </div>";
     echo "<div class='animation'>";
     include('../animated/no-user.html');
     echo"</div>";
 }
-$counter = 0;
 while($seller = $seller_details->fetch_assoc()){
     $seller_id = $seller['id'];
     $seller_name = $seller['shop_name'];
@@ -57,12 +85,8 @@ while($seller = $seller_details->fetch_assoc()){
     else if($rating >= 2) $rating_color_class = 'rating-yellow';
     else $rating_color_class = 'rating-red';
 
-    $counter++;
-    if($counter % 2 == 0) $delay = 'scroll-animation-delay';
-    else $delay = '';
-
     echo "
-    <a href='shop/product-page.php?id=$seller_id' class='pinterest-layout shop-container-link scroll-animation-hidden $delay'>
+    <a href='shop/product-page.php?id=$seller_id' class='pinterest-layout shop-container-link scroll-animation-hidden'>
     <div class='seller-card-container' show=true>
         <div class='profile-and-name-container'>
             <div class='profile-container'>
