@@ -32,6 +32,7 @@ if($seller_details->num_rows == 0){
     include('../animated/no-user.html');
     echo"</div>";
 }
+$counter = 0;
 while($seller = $seller_details->fetch_assoc()){
     $seller_id = $seller['id'];
     $seller_name = $seller['shop_name'];
@@ -56,8 +57,12 @@ while($seller = $seller_details->fetch_assoc()){
     else if($rating >= 2) $rating_color_class = 'rating-yellow';
     else $rating_color_class = 'rating-red';
 
+    $counter++;
+    if($counter % 2 == 0) $delay = 'scroll-animation-delay';
+    else $delay = '';
+
     echo "
-    <a href='shop/product-page.php?id=$seller_id' class='pinterest-layout shop-container-link '>
+    <a href='shop/product-page.php?id=$seller_id' class='pinterest-layout shop-container-link scroll-animation-hidden $delay'>
     <div class='seller-card-container' show=true>
         <div class='profile-and-name-container'>
             <div class='profile-container'>
@@ -81,7 +86,7 @@ while($seller = $seller_details->fetch_assoc()){
                     <div>category</div><span class='sc'>$seller_category</span><br>
                     <div>status</div><span class='s'>$status</span><br>
                     <div>home delivery</div><span class='hd'>$home_delivery</span><br>
-                    <div>phone 1</div><span class='sp1'>$seller_phone_one$ph</span><br>
+                    <div>phone</div><span class='sp1'>$seller_phone_one$ph</span><br>
                 </div>
             </div>
         </div>

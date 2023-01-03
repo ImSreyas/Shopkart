@@ -1,0 +1,9 @@
+.scroll-animation-hidden{
+    opacity: 0;
+    transform:translate(0, 8%) scale(0.75);
+    transition: all 600ms ease-out;
+}
+.scroll-animation-show{
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}

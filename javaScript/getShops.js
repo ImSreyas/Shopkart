@@ -162,14 +162,26 @@ function getShops(sort, category){
         data: {sort: sort,category: category},
         success: (data) => {
             $(".body").html(data)
-            // layout()
+            scrollAnimation()
         }
     })
 }
 
+function scrollAnimation(){
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) entry.target.classList.add('scroll-animation-show')
+            else entry.target.classList.remove('scroll-animation-show')
+        })
+    })
+    const hiddenElements = document.querySelectorAll('.scroll-animation-hidden')
+        hiddenElements.forEach((element) => {
+        observer.observe(element)
+    })
+}
 // function layout(){
 //     const container = document.querySelector(".body")
-//     // console.log(container.childElementCount)
+//     //console.log(container.childElementCount)
 //     for(let i = 0; i < container.childElementCount; i++){
 //         let height = container.children[i].offsetHeight
 //         console.log(height)

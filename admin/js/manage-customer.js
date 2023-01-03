@@ -58,6 +58,7 @@ function getUsers(value){
         data: {wh: value},
         success: (data) => {
             $(".body").html(data)
+            scrollAnimation()
         }
     })
 }
@@ -81,5 +82,17 @@ function undoRemove(item){
         success: () => {
             getUsers(2)
         }
+    })
+}
+function scrollAnimation(){
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) entry.target.classList.add('scroll-animation-show')
+            else entry.target.classList.remove('scroll-animation-show')
+        })
+    })
+    const hiddenElements = document.querySelectorAll('.scroll-animation-hidden')
+        hiddenElements.forEach((element) => {
+        observer.observe(element)
     })
 }

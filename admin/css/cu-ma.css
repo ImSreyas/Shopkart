@@ -1,4 +1,5 @@
 @import url('../../search-bar/css/search-bar.css');
+@import url('../../css/not-found-message-o.css');
 .body{
     margin-inline: 4vw;
     /* columns: 2; */
@@ -8,11 +9,12 @@
     grid-template-columns: 1fr 1fr;
     /* grid-auto-rows: 1px; */
     grid-template-rows: min-content;
-    gap: 1.2rem 1.4rem;
+    gap: 1rem 1.2rem;
     min-height: 60vh;
     /* max-height: fit-content; */
     /* height: 1000vh; */
     position: relative;
+    align-items: center;
 }
 .btn-container-wrapper{
     padding: 0.3rem 5vw 1.2rem 4vw;
@@ -53,6 +55,7 @@
     display: grid;
     grid-template-rows: 52.5% 47.5%;
     width: 100%;
+    height: 100%;
     background-color: #303a41;
     padding: 1.5rem 2rem;
     border-radius: 2rem;
@@ -150,9 +153,9 @@ img{
     cursor: pointer;
     background-color: rgb(186 104 200);
 }
-.body:has(.animation){
-    columns: 1;
-}
+/* .body:has(.animation){
+    grid-template-columns: 2fr;
+} */
 .animation{
     display: flex;
     justify-content: center;
@@ -164,11 +167,22 @@ svg{
     max-width: 36vw;
     min-width: 25rem;
 }
-
+ /* -media queries  */
 @media (width <= 900px){
     .body{
         /* columns: 1; */
         grid-template-columns: 1fr;
+    }
+    .animation{
+        display: none;
+    }
+    .not-found-message-o{
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        height: fit-content;
+        animation: none;
+        rotate: 0deg;
     }
     .btn-container-wrapper{
         display: grid;

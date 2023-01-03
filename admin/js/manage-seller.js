@@ -63,6 +63,7 @@ function getRequest(){
         type:'POST',
         success: (data) => {
             $(".body").html(data)
+            scrollAnimation()
         }
     })
 }
@@ -73,6 +74,7 @@ function getSellers(value){
         data: {wh: value},
         success: (data) => {
             $(".body").html(data)
+            scrollAnimation()
         }
     })
 }
@@ -89,7 +91,7 @@ function removeSeller(item){
 }
 function acceptOrReject(item, value){
     const id = item.getAttribute("id")
-    value = (value == 1) ? 1 : -1
+    value = value == 1 ? 1 : -1
     if(value == 1){
         $.ajax({
             url:'php/accept-or-reject-request.php',
@@ -119,5 +121,19 @@ function undoRemove(item){
         success: () => {
             getSellers(2)
         }
+    })
+}
+
+
+function scrollAnimation(){
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) entry.target.classList.add('scroll-animation-show')
+            else entry.target.classList.remove('scroll-animation-show')
+        })
+    })
+    const hiddenElements = document.querySelectorAll('.scroll-animation-hidden')
+        hiddenElements.forEach((element) => {
+        observer.observe(element)
     })
 }

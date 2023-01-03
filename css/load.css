@@ -180,6 +180,12 @@ body .dribble img {
     font-size: 1.15rem;
     font-weight: 900;
 }
+.lod-message-container> span {
+    background-color: var(--dark-6);
+    padding: .2rem .8rem;
+    border-radius: .5rem;
+    color: var(--purple);
+}
 @font-face {
     font-family: poppins;
     src: url(../font/Poppins-Regular.ttf);
@@ -187,4 +193,43 @@ body .dribble img {
 @font-face {
     font-family: comfortaa;
     src: url(../font/Comfortaa-VariableFont_wght.ttf);
+}
+.loading-slider {
+  position: relative;
+  width: 100%;
+  height: .5rem;
+  background: #43535a;
+  border-radius: 100rem;
+  overflow: hidden;
+  margin: .8rem auto;
+}
+
+.slider-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100rem;
+    background: var(--purple);
+    animation: loading-animation 500ms linear;
+}
+
+@keyframes loading-animation {
+  0% {
+    left: calc(calc(100% - 0%) * -1);
+  }
+  50% {
+    left: calc(calc(100% - 55%) * -1);
+  }
+  60%{
+    left: calc(calc(100% - 55%) * -1);
+  }
+  70%{
+    left: calc(calc(100% - 75%) * -1);
+  }
+  80%{
+    left: calc(calc(100% - 75%) * -1);
+  }
+  100% {
+    left: calc(calc(100% - 100%) * -1);
+  }
 }

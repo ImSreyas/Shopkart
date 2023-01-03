@@ -9,7 +9,7 @@ function searchEngine(word, search){
             backOff = word.indexOf(search[i], backOff) + 1
             continue
         }
-        if(mistake <= 2){
+        if(mistake <= 1){
             mistake++
             continue
         }

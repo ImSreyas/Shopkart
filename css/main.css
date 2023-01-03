@@ -1,4 +1,5 @@
 @import url('load.css');
+@import url('scrollAnimation.css');
 @font-face{
     font-family: my-font;
     src: url(../font/Poppins-Regular.ttf);
@@ -312,3 +313,4 @@ div[show=true],
 a[show=true]{
     display: block;
 }
+
