@@ -228,6 +228,7 @@ function cardLink(){
                     const index = sliced.indexOf(clip)
                     const copyIndex = index - 1 
                     navigator.clipboard.writeText(parent.children[copyIndex].innerHTML)
+                    popup('phone number <u>'+parent.children[copyIndex].innerHTML+'</u> copied to clipboard', 'green')
                 }
             })
         })

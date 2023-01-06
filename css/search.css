@@ -223,4 +223,7 @@ div.sort-options-container[show1=true]{
     .search-bar-wrapper{
         width: auto;
     }
+    .ph{
+        font-size: .8rem;
+    }
 }

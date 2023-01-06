@@ -1,5 +1,6 @@
 @import url('load.css');
 @import url('scrollAnimation.css');
+@import url('../popup-notification/popup-notification.css');
 @font-face{
     font-family: my-font;
     src: url(../font/Poppins-Regular.ttf);

@@ -7,6 +7,7 @@
     <title>Customer</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/home.css">
+    <script src="popup-notification/popup-notification.js"></script>
     <?php include('loader/loading-div.html') ?>
 </head>
 

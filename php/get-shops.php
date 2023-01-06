@@ -78,7 +78,7 @@ while($seller = $seller_details->fetch_assoc()){
     $seller_phone_two = $seller['phone2'];
     $ph = ($seller_phone_two == "" || $seller_phone_two == 0)
     ? ""
-    : " , <span>$seller_phone_two</span><span class='clipboard-icon-container clipboard2'></span>";
+    : " , <span class='ph'>$seller_phone_two</span><span class='clipboard-icon-container clipboard2'></span>";
     $seller_profile_image = $seller['cover_img'];
 
     if ($rating >= 3.5) $rating_color_class = 'rating-green';
@@ -112,7 +112,7 @@ while($seller = $seller_details->fetch_assoc()){
                     <div>home delivery</div><span class='hd'>$home_delivery</span><br>
                     <div>phone</div>
                     <span class='sp1'>
-                        <span>$seller_phone_one</span>
+                        <span class='ph'>$seller_phone_one</span>
                         <span class='clipboard-icon-container clipboard1'></span>
                         $ph
                     </span><br>

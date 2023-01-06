@@ -93,8 +93,10 @@ if($delivery_stage == 4){
                 starChildren[i].setAttribute('checked', 'true')
                 if(item == starChildren[i])break
             }
+            let j = i+1
             $.ajax({url:'php/rate-shop.php', type:'POST', data:{rating:i+1, shop_id:$shop_id, customer_id:$customer_id},success: (data) =>{
                 $('#rating-success-holder').html(data)
+                popup('successfully given '+j+' star to shop', 'blue')
             }})
         }
         fullVal = Math.round($rating_value)

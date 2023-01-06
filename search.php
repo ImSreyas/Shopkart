@@ -13,6 +13,7 @@ include('data-base/constant.php');
     <script src="javaScript/getShops.js" defer></script>
     <script src="jquery/jquery.js"></script>
     <script src="js/pinterestLayout.js" defer></script>
+    <script src="popup-notification/popup-notification.js" async></script>
 </head>
 
 <body>
