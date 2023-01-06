@@ -57,7 +57,7 @@ content-body span{
         transform: translateY(1rem) rotate(5deg);
     }
     100%{
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
     /* 25%{
         transform: scale(1.1);

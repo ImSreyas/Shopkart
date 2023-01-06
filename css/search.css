@@ -201,8 +201,21 @@ div.sort-options-container[show1=true]{
     opacity: 1;
     transition: all 120ms ease-in-out;
 }
-
-
+ /* -clipboard copy  */
+ .clipboard-icon-container{
+    --size: 1rem;
+    margin-inline: .3rem;
+    width: var(--size);
+    aspect-ratio: 1/1;
+    display: inline-block;
+    background-image: url('../images/purple_clipboard.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(calc(var(--size) * .1));
+    position: relative;
+}
+/* -media queries  */
 @media (width <= 900px){
     .search-bar-main-wrapper{
         width: 100%;

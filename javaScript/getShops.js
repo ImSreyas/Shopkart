@@ -8,7 +8,6 @@ searchBar.focus()
 //*getting argument CATEGORY
 const param = new URLSearchParams(window.location.search)
 const cat = param.get("category")
-console.log(cat)
 
 
 //*getting the CUSTOMER ID 
@@ -32,8 +31,19 @@ function search(item){
     const category = document.querySelectorAll(".sc")
     const phone = document.querySelectorAll(".sp1")
     const products = document.querySelectorAll(".products")
+    let p = ""
+    let phoneArray = []
+    Array.prototype.forEach.call(phone, (phn)=> {
+        phn = phn.children
+        Array.prototype.forEach.call(phn, (ph, index) => {
+            p = p.concat(ph.innerHTML)
+        })
+        phoneArray.push(p)
+        console.log(p)
+        p = ""
+    })
     for(k = 0; k<names.length; k++){
-        arr1.push("".concat(category[k].innerHTML,"-",names[k].innerHTML,"-",location[k].innerHTML,"-",phone[k].innerHTML))
+        arr1.push("".concat(category[k].innerHTML,"-",names[k].innerHTML,"-",location[k].innerHTML,"-",phoneArray[k]))
     }
     if(sp == true){
         Array.prototype.forEach.call(arr1, (con, index) => {
@@ -129,7 +139,23 @@ Array.prototype.forEach.call(filterChild, (option) => {
         collector()
     })
 })
-
+//-hide OPTIONS when clicking on somewhere else other than the options 
+document.addEventListener("click", function(e){
+    let isButton = false
+    let optionButtons = document.querySelectorAll('.btn-container-wrapper button')
+    optionButtons.forEach((button) => {
+        if(e.target == button) {
+            isButton = true
+        }
+    })
+    if(!isButton){
+        let optionContainer = document.querySelectorAll('[show1=true]')
+         optionContainer.forEach((container) => {
+            e.preventDefault()
+            container.setAttribute('show1', false)
+        })
+    }
+})
 //-FUNCTION THAT CALLS THE MAIN FUNCTION when the option is clicked
 function collector(){
     let sort = document.querySelector(".sort-btn").innerHTML
@@ -162,7 +188,9 @@ function getShops(sort, category){
         data: {sort: sort,category: category},
         success: (data) => {
             $(".body").html(data)
+            showSelectedItems(4)
             scrollAnimation()
+            cardLink()
         }
     })
 }
@@ -179,6 +207,34 @@ function scrollAnimation(){
         observer.observe(element)
     })
 }
+
+function showSelectedItems(value){
+    const cards = document.querySelectorAll(".shop-container-link")
+    cards.forEach((card, index) => {
+        if(index < value) card.classList.add('_scroll-animation-show')
+    })
+}
+//- card link event listener 
+function cardLink(){
+    let cards = document.querySelectorAll('.shop-container-link')
+    cards.forEach((card) => {
+        card.addEventListener('click', function(e) {
+            let clipboard = document.querySelectorAll('.clipboard-icon-container')
+            clipboard.forEach((clip) => {
+                if(e.target == clip) {
+                    e.preventDefault()
+                    const parent = clip.parentElement
+                    const sliced = Array.prototype.slice.call(parent.children)
+                    const index = sliced.indexOf(clip)
+                    const copyIndex = index - 1 
+                    navigator.clipboard.writeText(parent.children[copyIndex].innerHTML)
+                }
+            })
+        })
+    })
+}
+
+
 // function layout(){
 //     const container = document.querySelector(".body")
 //     //console.log(container.childElementCount)

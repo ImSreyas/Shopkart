@@ -63,6 +63,7 @@
     font-weight: 500;
     margin-block-end: 1rem;
     break-inside: avoid;
+    position: relative;
 }
 .profile-and-name-container{
     display: grid;
@@ -107,8 +108,8 @@ img{
     transform: translateY(calc(var(--size)/7.5));
 }
 .details-and-remove-btn-container{
-    display: grid;
-    grid-template-columns: 60% 40%;
+    /* display: grid;
+    grid-template-columns: 60% 40%; */
     padding-block: .4rem;
 }
 .customer-details-container
@@ -134,14 +135,17 @@ img{
     border-left: 3px solid rgb(186 104 200);
     word-wrap: break-word;
 }
-.remove-btn-container{
+/* .remove-btn-container{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-}
+} */
 .remove-btn{
-    width: 100%;
+    position: absolute;
+    right: 2rem;
+    bottom: 1.8rem;
+    width: 40%;
     background-color: #252d32;
     color: white;
     border: none;

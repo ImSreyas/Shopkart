@@ -7,3 +7,16 @@
     opacity: 1;
     transform: translate(0, 0) scale(1);
 }
+._scroll-animation-show{
+    animation: show 600ms ease-out;
+}
+@keyframes show {
+    0%{
+        opacity: 0;
+        transform: translate(0, 8%) scale(.75);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
