@@ -39,8 +39,7 @@ function search(item){
             p = p.concat(ph.innerHTML)
         })
         phoneArray.push(p)
-        console.log(p)
-        p = ""
+         p = ""
     })
     for(k = 0; k<names.length; k++){
         arr1.push("".concat(category[k].innerHTML,"-",names[k].innerHTML,"-",location[k].innerHTML,"-",phoneArray[k]))
@@ -234,6 +233,11 @@ function cardLink(){
         })
     })
 }
+
+document.addEventListener('click', e => {
+    console.log(e.target.offsetLeft)
+    console.log(e.target.offsetTop)
+})
 
 
 // function layout(){

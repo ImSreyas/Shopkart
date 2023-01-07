@@ -30,6 +30,7 @@ html{
     letter-spacing: .1px;
     font-size: 100.5%;
     box-sizing: border-box;
+    cursor: url('../images/icons8-cursor-20.png'), auto;
 }
 ::selection{
     background-color: rgb(245, 188, 255);
