@@ -7,6 +7,7 @@
     <title>Seller</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/seller-form.css">
+    <script src="../js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="my-body">

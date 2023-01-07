@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="../customer/css/ca-pass.css">
+    <script src="js/responsiveNavigation.js" defer></script>
 </head>
 <?php include('../nav-bar/nav.html'); ?>
 <!--body-->

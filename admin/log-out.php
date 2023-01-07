@@ -17,6 +17,7 @@ if ($_SESSION['admin-id'] != 1) {
     <link rel="stylesheet" href="../css/log-out.css">
 
 
+    <script src="../js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="real-body">
@@ -31,7 +32,7 @@ if ($_SESSION['admin-id'] != 1) {
 
 
     <!-- menu -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="manage-seller.php" class="no-text-decoration">
                 <li class="category">manage seller</li>
@@ -46,6 +47,7 @@ if ($_SESSION['admin-id'] != 1) {
                 <li class="login highlight">log out</li>
             </a>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- body -->
     <div class="body1 main-height">

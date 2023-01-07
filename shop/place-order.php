@@ -13,6 +13,7 @@ $seller_id = $_GET['id'];
     <title>Shop</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" href="css/place-order.css">
+    <script src="../js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="my-body">

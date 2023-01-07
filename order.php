@@ -12,6 +12,7 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
     <script src="popup-notification/popup-notification.js"></script>
     <?php include('loader/loading-div.html'); ?>
     <script src="jquery/jquery.js"></script>
+    <script src="js/responsiveNavigation.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
     </script>
 
     <!-- menu start -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="index.php" class="no-text-decoration">
                 <li class="index ">home</li>
@@ -59,6 +60,7 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
             }
             ?>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- menu end -->
 
@@ -85,91 +87,94 @@ $customer_id = (isset($_SESSION['customer-id'])) ? $_SESSION['customer-id'] : 0;
 
         <div class="order-main-body">
             <!-- // -js comes here  -->
-        <script defer>
-        //*DECLARATIONS 
-        let j, fullVal, starChildren
-        //*OTHER things
-        let responsive = false
-        window.addEventListener("resize", () => {
-            if (document.body.clientWidth <= 800) makeResponsive()
-            else notMakeResponsive()
-        })
-        if (document.body.clientWidth <= 800) makeResponsive() 
-        else notMakeResponsive()
+            <script defer>
+                //*DECLARATIONS 
+                let j, fullVal, starChildren
+                //*OTHER things
+                let responsive = false
+                window.addEventListener("resize", () => {
+                    if (document.body.clientWidth <= 800) makeResponsive()
+                    else notMakeResponsive()
+                })
+                if (document.body.clientWidth <= 800) makeResponsive()
+                else notMakeResponsive()
 
-        function notMakeResponsive() {
-            // -ajax to call the list of orders from the server 
-            $.ajax({
-                url: 'php/orderList.php',
-                type: 'POST',
-                data: {
-                    customer_id: <?php echo $customer_id ?>
-                },
-                success: (data) => {
-                    $("#listContainer").html(data)
+                function notMakeResponsive() {
+                    // -ajax to call the list of orders from the server 
+                    $.ajax({
+                        url: 'php/orderList.php',
+                        type: 'POST',
+                        data: {
+                            customer_id: <?php echo $customer_id ?>
+                        },
+                        success: (data) => {
+                            $("#listContainer").html(data)
+                        }
+                    })
                 }
-            })
-        }
-        function makeResponsive() {
-            // -responsive ajax call to get all orders from the server
-            $.ajax({
-                url: 'php/orderList.php',
-                type: 'POST',
-                data: {
-                    customer_id: <?php echo $customer_id ?>,
-                    responsive: true
-                },
-                success: (data) => {
-                    $("#listContainer").html(data)
-                }
-            })
-        }
-        function getCode(item) {
-            let allButtons = document.querySelector(".options").children
-            Array.prototype.forEach.call(allButtons, button => {
-                button.setAttribute("selected", "false")
-            })
-            item.setAttribute("selected", "true")
-            window.addEventListener("resize", () => {
-            if (document.body.clientWidth <= 800) ajax2(item)
-            else ajax1(item)
-            })
-            if (document.body.clientWidth <= 800) ajax2(item) 
-            else ajax1(item)
-        }
-        function ajax1(item){
-            $.ajax({
-            url: 'php/orderList.php',
-            type: 'POST',
-            data: {
-                button: item.value,
-                customer_id: <?php echo $customer_id ?>
-            },
-            success: (data, status) => {
-                $("#listContainer").html(data)
-            }
-        })
-        }
-        function ajax2(item){
-            $.ajax({
-            url: 'php/orderList.php',
-            type: 'POST',
-            data: {
-                button: item.value,
-                responsive: true,
-                customer_id: <?php echo $customer_id ?>
-            },
-            success: (data, status) => {
-                $("#listContainer").html(data)
-            }
-        })
-        }
-        // -function that will call when an order is selected 
-        function selectedList(item) {
-        Array.prototype.forEach.call(document.querySelector(".list-container").children, (s) => s.setAttribute("selected", "false"))
-            item.setAttribute("selected", "true");
-        }
 
+                function makeResponsive() {
+                    // -responsive ajax call to get all orders from the server
+                    $.ajax({
+                        url: 'php/orderList.php',
+                        type: 'POST',
+                        data: {
+                            customer_id: <?php echo $customer_id ?>,
+                            responsive: true
+                        },
+                        success: (data) => {
+                            $("#listContainer").html(data)
+                        }
+                    })
+                }
+
+                function getCode(item) {
+                    let allButtons = document.querySelector(".options").children
+                    Array.prototype.forEach.call(allButtons, button => {
+                        button.setAttribute("selected", "false")
+                    })
+                    item.setAttribute("selected", "true")
+                    window.addEventListener("resize", () => {
+                        if (document.body.clientWidth <= 800) ajax2(item)
+                        else ajax1(item)
+                    })
+                    if (document.body.clientWidth <= 800) ajax2(item)
+                    else ajax1(item)
+                }
+
+                function ajax1(item) {
+                    $.ajax({
+                        url: 'php/orderList.php',
+                        type: 'POST',
+                        data: {
+                            button: item.value,
+                            customer_id: <?php echo $customer_id ?>
+                        },
+                        success: (data, status) => {
+                            $("#listContainer").html(data)
+                        }
+                    })
+                }
+
+                function ajax2(item) {
+                    $.ajax({
+                        url: 'php/orderList.php',
+                        type: 'POST',
+                        data: {
+                            button: item.value,
+                            responsive: true,
+                            customer_id: <?php echo $customer_id ?>
+                        },
+                        success: (data, status) => {
+                            $("#listContainer").html(data)
+                        }
+                    })
+                }
+                // -function that will call when an order is selected 
+                function selectedList(item) {
+                    Array.prototype.forEach.call(document.querySelector(".list-container").children, (s) => s.setAttribute("selected", "false"))
+                    item.setAttribute("selected", "true");
+                }
             </script>
             <!-- this container contains all the orders placed by the customer  -->
             <div class="list-container-wrapper">

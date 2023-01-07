@@ -32,6 +32,7 @@
             }
         }
     </style>
+    <script src="js/responsiveNavigation.js" defer></script>
 </head>
 <?php include('../nav-bar/nav.html'); ?>
 <!--body-->

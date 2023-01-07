@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
     <script>
         window.history.replaceState({}, '', window.location.href)
     </script>
+    <script src="../js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="my-body">

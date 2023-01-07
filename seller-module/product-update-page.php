@@ -23,12 +23,13 @@ if (!isset($_SESSION['seller-id'])) {
         }
     </style>
 
+    <script src="../js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="my-body">
 
     <!-- menu start -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="seller-index.php" class="no-text-decoration">
                 <li class="request">request</li>
@@ -52,6 +53,7 @@ if (!isset($_SESSION['seller-id'])) {
                 <li class="log-out">log out</li>
             </a>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- menu end -->
 

@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/CSS" href="../css/main.css">
     <link rel="stylesheet" type="text/CSS" href="../customer/css/otp-varify.css">
+    <script src="js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="my-body">

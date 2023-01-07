@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/CSS" href="css/home.css">
     <script src="popup-notification/popup-notification.js"></script>
     <?php include('loader/loading-div.html') ?>
+    <script src="js/responsiveNavigation.js" defer></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         history.replaceState({}, '', 'http://localhost/shop-finder/index.php')
     </script>
     <!-- menu start -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="index.php" class="no-text-decoration">
                 <li class="index highlight">home</li>
@@ -56,6 +57,7 @@
             }
             ?>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- menu end -->
 
@@ -207,7 +209,7 @@
     <script>
         Array.prototype.forEach.call(document.querySelectorAll(".category-container"),
             (name, index) => {
-                name.parentElement.setAttribute("href", "search.php?category="+name.innerHTML)
+                name.parentElement.setAttribute("href", "search.php?category=" + name.innerHTML)
             })
     </script>
     <!--footer-->

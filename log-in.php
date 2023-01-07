@@ -6,13 +6,14 @@
     <title>Customer</title>
     <link rel="stylesheet" type="text/CSS" href="css/main.css">
     <link rel="stylesheet" type="text/CSS" href="css/log-in.css">
+    <script src="js/responsiveNavigation.js" defer></script>
 </head>
 
 <body>
 
 
     <!-- menu start -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="index.php" class="no-text-decoration">
                 <li class="index ">home</li>
@@ -30,6 +31,7 @@
                 <li class="login highlight">log in</li>
             </a>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- menu end -->
 

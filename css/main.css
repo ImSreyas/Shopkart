@@ -7,6 +7,8 @@
 }
 html{
     zoom: 90%;
+    margin: 0;
+    border: 0;
 }
 *{
     --primary-background: #fffffe;
@@ -76,6 +78,67 @@ html{
     color: #000000;
     transition: color 200ms ease-in-out;
 }
+.nav-button{
+    --size: 3.4rem;
+    display: none;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    top: calc(1.2vw + .6rem);
+    right: 4vw;
+    background-color: var(--purple);
+    border: none;
+    background-image: url('../images/symbol.png');
+    background-size: calc(var(--size) * .5);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100rem;
+    transition: all 100ms ease-out;
+    cursor: pointer;
+}
+ /* *NAVIGATION MEDIA QUERIES  */
+@media (width <= 500px){
+    .nav-bar{
+        height: 4.8rem;
+        display: flex;
+        justify-content: flex-end;
+        background-color: transparent !important;
+    }
+    .nav-bar ul{
+        width: 75vw;
+        height: 100%;
+        flex-direction: column;
+        margin-right: 0 !important;
+        position: fixed;
+        background-color: var(--dark-7);
+        justify-content: flex-start !important;
+        padding: 4.5rem 1.5rem;
+        transform: translateX(100%);
+        transition: all 500ms ease-out;
+    }
+    .nav-bar a{
+        padding: .5rem !important;
+        color: white !important;
+    }
+    .nav-bar li{
+        font-size: 1.1rem;
+    }
+    .nav-button{
+        display: block !important;
+    }
+    body:has([responsiveNavigation=true])
+    .nav-button{
+        background-image: url('../images/cross-small.png') !important;
+    }
+    body:has([responsiveNavigation=true])
+    .nav-bar ul{
+        transform: translateX(0);
+    }
+    .sre-profile-image-small-container{
+        display: none;
+    }
+}
+
 .sre-profile-image-small-container{
     width: 1.6em;
     border-radius: 5rem;
@@ -99,14 +162,14 @@ html{
 
 
 .highlight{
-    color: rgb(186,104,200);
+    color: rgb(186,104,200) !important;
     transition: color 200ms ease-in-out;
 }
 .nav-bar a:hover >.highlight{
-    color: rgb(130,73,140);
+    color: rgb(130,73,140) !important;
 }
 .nav-bar a:hover{
-    color: rgb(130,73,140);
+    color: rgb(130,73,140) !important;
 } 
 li:focus{
     outline: none;
@@ -304,7 +367,7 @@ label{
 }
 .text-balck{
     color: black;
-
+    
 }
 div[show=false],
 a[show=false]{
@@ -314,4 +377,5 @@ div[show=true],
 a[show=true]{
     display: block;
 }
+
 

@@ -18,12 +18,15 @@ if ($_SESSION['admin-id'] != 1) {
     <?php include('../loader/loading-div.html') ?>
     <script src="../jquery/jquery.js"></script>
     <script src="js/manage-seller.js" defer></script>
+    <script src="../js/responsiveNavigation.js" defer></script>
 </head>
 
 <body class="real-body">
-    <script>history.replaceState({},'','manage-seller.php')</script>
+    <script>
+        history.replaceState({}, '', 'manage-seller.php')
+    </script>
     <!-- menu -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="manage-seller.php" class="no-text-decoration">
                 <li class="category highlight">manage seller</li>
@@ -38,11 +41,12 @@ if ($_SESSION['admin-id'] != 1) {
                 <li class="login">log out</li>
             </a>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- body -->
     <div class="btn-container-wrapper">
         <div class="search-bar-wrapper">
-            <?php include('../search-bar/search-bar.html')?>
+            <?php include('../search-bar/search-bar.html') ?>
         </div>
         <div class="btn-container">
             <button class="request-btn" selected=true onclick="btnClicked(0)">Request</button>

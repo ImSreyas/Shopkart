@@ -8,11 +8,12 @@ include('data-base/constant.php');
 <link rel="stylesheet" type="text/CSS" href="css/main.css">
 <link rel="stylesheet" type="text/CSS" href="css/profile.css">
 <?php include('loader/loading-div.html') ?>
+<script src="js/responsiveNavigation.js" defer></script>
 </head>
 
 <body>
     <!-- menu start -->
-    <nav class="nav-bar">
+    <nav class="nav-bar" responsiveNavigation=false>
         <ul>
             <a href="index.php" class="no-text-decoration">
                 <li class="index ">home</li>
@@ -52,6 +53,7 @@ include('data-base/constant.php');
             }
             ?>
         </ul>
+        <button class="nav-button"></button>
     </nav>
     <!-- menu end -->
 
