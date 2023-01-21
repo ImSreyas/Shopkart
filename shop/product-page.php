@@ -84,43 +84,40 @@ if (isset($_POST['submit'])) {
 
 
         <div class="top-header-container">
-            <div class="color-half">
-                <div class="shop-name-text-container"><?php echo ucfirst($shop_name); ?></div>
-            </div>
-            <div class="transparent-half"></div>
             <div class="shop-cover-image"><img src="../<?php echo $shop_cover_image; ?>" class="shop-cover-image-image"></div>
-            <div class="product-details-container">
-                <div class="product-details">
-                    <div class="container-one">
-                        <div class="location-container">
-                            <?php echo ucfirst($shop_location); ?>
-                        </div>
-                        <div class="category-container">
-                            <?php echo ucfirst($shop_category); ?>
-                        </div>
+            <div class="shop-name-text-container"><?php echo ucfirst($shop_name); ?></div>
+        </div>
+        <div class="product-details-container">
+            <div class="product-details">
+                <div class="container-one">
+                    <div class="location-container">
+                        <?php echo ucfirst($shop_location); ?>
                     </div>
-                    <div class="container-two">
-                        <div class="container-two-inside-container-one">
-                            <span class="phone1-container">
-                                <?php echo $shop_phone_one; ?>
-                            </span>
-                            <span class="copy-image" id="ci1"></span>
-                        </div>
-                        <div class="container-two-inside-container-two">
-                            <span class="phone2-container" id="phone2-container">
-                                <?php echo $shop_phone_two; ?>
-                            </span>
-                            <span class="copy-image" id="ci2"></span>
-                        </div>
+                    <div class="category-container">
+                        <?php echo ucfirst($shop_category); ?>
                     </div>
-                    <div class="container-three">
-                        <span class="shop-rating-container">
-                            <?php echo $shop_rating; ?>
+                </div>
+                <div class="container-two">
+                    <div class="container-two-inside-container-one">
+                        <span class="phone1-container">
+                            <?php echo $shop_phone_one; ?>
                         </span>
-                        <span class="shop-total-rating-container">
-                            (<?php echo $shop_t_rating; ?>)
-                        </span>
+                        <span class="copy-image" id="ci1"></span>
                     </div>
+                    <div class="container-two-inside-container-two">
+                        <span class="phone2-container" id="phone2-container">
+                            <?php echo $shop_phone_two; ?>
+                        </span>
+                        <span class="copy-image" id="ci2"></span>
+                    </div>
+                </div>
+                <div class="container-three">
+                    <span class="shop-rating-container">
+                        <?php echo $shop_rating; ?>
+                    </span>
+                    <span class="shop-total-rating-container">
+                        (<?php echo $shop_t_rating; ?>)
+                    </span>
                 </div>
             </div>
         </div>
