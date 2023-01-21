@@ -10,16 +10,20 @@
 }
 @keyframes fadeInOut {
     0%{
+        transform: translateX(100%);
         opacity: 0;
         visibility: visible;
     }
     8%{
+        transform: translateX(0);
         opacity: 1;
     }
     92%{
         opacity: 1;
+        transform: translateX(0);
     }
     100%{
+        transform: translateX(100%);
         opacity: 0;
     }
 }
@@ -35,7 +39,7 @@
     display: inline-block;
     width: var(--size);
     aspect-ratio: 1/1;
-    background-image: url('../images/icons8-checkmark-480.png');
+    background-image: url('../images/icons8-checkmark-1600.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
