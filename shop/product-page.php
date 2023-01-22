@@ -156,14 +156,14 @@ if (isset($_POST['submit'])) {
         </script>
 
         <div class="image-purchase-container">
-            <a href="#product-section" class="purchase-container-a">
+            <!-- <a href="#product-section" class="purchase-container-a">
                 <div class="purchase-product-container" hidden>
                     <img src="" class="purchase-product-image-inside">
                     <div class="purchase">purchase</div>
                 </div>
-            </a>
+            </a> -->
 
-            <div class="shop-images-container-main">
+            <!-- <div class="shop-images-container-main">
                 <button class="move-btn prev" moveBtn="prev"></button>
                 <button class="move-btn next" moveBtn="next"></button>
                 <ul data-slides>
@@ -181,6 +181,19 @@ if (isset($_POST['submit'])) {
                     }
                     ?>
                 </ul>
+            </div> -->
+            <div class="circle-images-wrapper">
+                <?php
+                $sql462 = "select image from shop_images where s_id='$seller_id'";
+                $res462 = mysqli_query($conn, $sql462);
+                if ($res462->num_rows > 0) {
+                    while ($row462 = $res462->fetch_assoc()) {
+                        echo "<div class='__images'><img src='../" . $row462['image'] . "'></div>";
+                    }
+                } else {
+                    echo "<div class='no-shop-images'></div>";
+                }
+                ?>
             </div>
 
         </div>
@@ -207,7 +220,7 @@ if (isset($_POST['submit'])) {
         <section id="product-section">
             <div class="product-list-main">
                 <div class="product-head-container">
-                    <div class="products-head">Products</div>
+                    <div class="products-head">PRODUCTS</div>
                 </div>
                 <form action="" method="POST">
                     <div class="product-list-container">
@@ -231,7 +244,7 @@ if (isset($_POST['submit'])) {
 
                             
                             <div class='product-container'>
-                            <div class='image-container'><img src='../img/product-images/" . $row['image'] . "' class='image-container-inside'></div>
+                            <div class='product-image-container'><img src='../img/product-images/" . $row['image'] . "' class='image-container-inside'></div>
                             <div class='data-container'>
 
                             <div class='container-1'>
