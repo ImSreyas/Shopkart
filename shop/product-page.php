@@ -85,9 +85,21 @@ if (isset($_POST['submit'])) {
 
         <div class="top-header-container">
             <div class="shop-name-main-container">
-                <div class="shop-name-text-container"><?php echo ucfirst($shop_name); ?></div>
+                <div class="shop-name-text-container">
+                    <span class="shopName-wrapper">
+                        <span class="show-images"></span>
+                        <span class="show-images"></span>
+                        <span class="show-images"></span>
+                        <span class="shopName-wrapper-content"><?php echo ucfirst($shop_name); ?></span>
+                    </span>
+                    <a href="#product-section" class="to-productSection-link">
+                        <span class="goto-shopping-link">
+                            purchase
+                        </span>
+                    </a>
+                </div>
             </div>
-            <div class="image-and-details-container">
+            
                 <div class="image-container">
                     <img src="../<?php echo $shop_cover_image; ?>" class="shop-cover-image">
                 </div>
@@ -96,39 +108,22 @@ if (isset($_POST['submit'])) {
                         <div class="product-details">
                             <div class="location-container">
                                 <span class="setImageBackground"></span>
-                                <span>location</span>
+                                <span class="details-label">location</span>
                                 <span>
                                     <?php echo ucfirst($shop_location); ?>
                                 </span>
                             </div>
                             <div class="category-container">
                                 <span class="setImageBackground"></span>
-                                <span>category</span>
+                                <span class="details-label">category</span>
                                 <span>
                                     <?php echo ucfirst($shop_category); ?>
                                 </span>
                             </div>
-                            <div class="phone1-container">
-                                <span class="setImageBackground"></span>
-                                <span>phone 1</span>
-                                <span class="phone1-container-content">
-                                    <?php echo $shop_phone_one; ?>
-                                    <span class="copy-image" id="ci1"></span>
-                                </span>
-                            </div>
-                            <span class="phone2-container" id="phone2-container">
-                                <span class="setImageBackground"></span>
-                                <span>phone 2</span>
-                                <span class="phone2-container-content" isThere=
-                                <?php if($shop_phone_two == '') echo 'false'; else echo 'true' ?>
-                                >
-                                    <?php echo $shop_phone_two; ?>
-                                    <span class="copy-image" id="ci2"></span>
-                                </span>
-                            </span>
+
                             <span class="shop-rating-container">
                                 <span class="setImageBackground"></span>
-                                <span>rating</span>
+                                <span class="details-label">rating</span>
                                 <span>
                                     <?php echo $shop_rating; ?>
                                     <span class="setImageBackground star-icon"></span>
@@ -139,8 +134,28 @@ if (isset($_POST['submit'])) {
                             </span>
                         </div>
                     </div>
+                    <div class="product-details-container-2">
+                        <div class="phone1-container">
+                            <span class="setImageBackground"></span>
+                            <span class="details-label">phone 1</span>
+                            <span class="phone1-container-content">
+                                <?php echo $shop_phone_one; ?>
+                                <span class="copy-image" id="ci1"></span>
+                            </span>
+                        </div>
+                        <span class="phone2-container" id="phone2-container">
+                            <span class="setImageBackground"></span>
+                            <span class="details-label">phone 2</span>
+                            <span class="phone2-container-content" isThere=
+                            <?php if($shop_phone_two == '') echo 'false'; else echo 'true' ?>
+                            >
+                                <?php echo $shop_phone_two; ?>
+                                <span class="copy-image" id="ci2"></span>
+                            </span>
+                        </span>
+                    </div>
                 </div>
-            </div>
+           
         </div>
 
         <script>
