@@ -12,7 +12,8 @@ body{
     grid-template-columns: 1fr 1fr;
     background-color: var(--dark-9);
     padding-block-end: 3rem;
-    /* border: 1px solid black; */
+    /* border: 1px solid black;
+     */
 }
 
 .image-container{
@@ -22,6 +23,7 @@ body{
     border-radius: 0 0 12rem 0;
     overflow: hidden;
     background-color: var(--purple);
+    
 }
 .shop-cover-image{
     height: 100%;
