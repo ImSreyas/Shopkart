@@ -6,38 +6,39 @@ body{
     font-family: poppins;
 }
 .top-header-container{
-    min-height: 111vh;
-    max-height: fit-content;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-    background-color: var(--dark-9);
-    padding-block-end: 3rem;
+    grid-template-rows: 20% 80%;
+    border-radius: 3rem;
+    background-color: var(--dark-10);
+    padding: 3rem;
+    width: 95%;
+    margin: 0 auto;
+    margin-block-start: 2rem;
     /* border: 1px solid black;
      */
 }
+.image-and-details-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    position: relative;
+}
 
 .image-container{
+    display: block;
     box-sizing: border-box;
-    height: 103vh;
+    height: 100%;
     width: 100%;
-    border-radius: 0 0 12rem 0;
+    border-radius: 3rem;
     overflow: hidden;
     background-color: var(--purple);
 
 }
 .shop-cover-image{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 0 0 24rem 0;
-    background-color: var(--dark-9);
-}
-.shop-cover-image-image{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 0 0 50rem 0;
     border: 1px solid var(--dark-9);
     border-left: none;
     border-top: none;
