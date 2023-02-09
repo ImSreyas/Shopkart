@@ -65,6 +65,7 @@ if (isset($_POST['submit'])) {
         $res129 = mysqli_query($conn, $sql129);
         while ($row129 = $res129->fetch_assoc()) {
             $shop_name = $row129['shop_name'];
+            $shop_description = $row129['description'];
             $shop_cover_image = $row129['cover_img'];
             $shop_location = $row129['location'];
             $shop_rating = $row129['rating'];
@@ -72,6 +73,8 @@ if (isset($_POST['submit'])) {
             $shop_category = $row129['category'];
             $shop_phone_one = $row129['phone1'];
             $shop_phone_two = $row129['phone2'];
+            $shop_status = ($row129['shop_status'])? 'opened' : 'closed';
+            $discount = $row129['discount'];
         }
         ?>
         <!-- menu start -->
@@ -100,41 +103,59 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
             
-                <div class="image-container">
-                    <img src="../<?php echo $shop_cover_image; ?>" class="shop-cover-image">
-                </div>
-                <div class="details-container">
-                    <div class="product-details-container">
-                        <div class="product-details">
-                            <div class="location-container">
-                                <span class="setImageBackground"></span>
-                                <span class="details-label">location</span>
-                                <span>
-                                    <?php echo ucfirst($shop_location); ?>
-                                </span>
-                            </div>
-                            <div class="category-container">
-                                <span class="setImageBackground"></span>
-                                <span class="details-label">category</span>
-                                <span>
-                                    <?php echo ucfirst($shop_category); ?>
-                                </span>
-                            </div>
-
-                            <span class="shop-rating-container">
-                                <span class="setImageBackground"></span>
-                                <span class="details-label">rating</span>
-                                <span>
-                                    <?php echo $shop_rating; ?>
-                                    <span class="setImageBackground star-icon"></span>
-                                    <span class="shop-total-rating-container">
-                                        ( <?php echo $shop_t_rating; ?> ) 
-                                    </span>
-                                </span>
+                <div class="image-container-parent">
+                    <div class="image-container">
+                        <img src="../<?php echo $shop_cover_image; ?>" class="shop-cover-image">
+                    </div>
+                    <div class="other-info-container">
+                        <div class="status-container">
+                            <span class="circle-container status-image"></span>
+                            <span class="status-content-container">
+                                <?php echo $discount ?>% off
+                            </span>
+                        </div>
+                        <div class="off-container">
+                            <span class="circle-container off-image"></span>
+                            <span class="off-content-container">
+                                <?php echo $shop_status ?>
                             </span>
                         </div>
                     </div>
-                    <div class="product-details-container-2">
+                    <div class="shop-description">
+                        <header>Description</header>
+                        <content>
+                            <?php echo $shop_description ?>
+                        </content>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <div class="product-details">
+                        <div class="location-container">
+                            <span class="setImageBackground"></span>
+                            <span class="details-label">location</span>
+                            <span>
+                                <?php echo ucfirst($shop_location); ?>
+                            </span>
+                        </div>
+                        <div class="category-container">
+                            <span class="setImageBackground"></span>
+                            <span class="details-label">category</span>
+                            <span>
+                                <?php echo ucfirst($shop_category); ?>
+                            </span>
+                        </div>
+
+                        <span class="shop-rating-container">
+                            <span class="setImageBackground"></span>
+                            <span class="details-label">rating</span>
+                            <span>
+                                <?php echo $shop_rating; ?>
+                                <span class="setImageBackground star-icon"></span>
+                                <span class="shop-total-rating-container">
+                                    ( <?php echo $shop_t_rating; ?> ) 
+                                </span>
+                            </span>
+                        </span>
                         <div class="phone1-container">
                             <span class="setImageBackground"></span>
                             <span class="details-label">phone 1</span>
@@ -155,7 +176,6 @@ if (isset($_POST['submit'])) {
                         </span>
                     </div>
                 </div>
-           
         </div>
 
         <script>
