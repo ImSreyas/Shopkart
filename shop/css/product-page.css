@@ -6,7 +6,8 @@ body{
     font-family: poppins;
 }
 .top-header-container{
-    height: 100vh;
+    height: 92vh;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 13% 80%;
@@ -14,10 +15,9 @@ body{
     border-radius: 3rem;
     background-color: var(--dark-9);
     padding: 3rem;
-    width: 95%;
     margin: 0 auto;
-    margin-block: 2.2rem;
-    margin-block-end: 3rem;
+    margin-block-start: 3.8rem;
+    margin-block-end: 5rem;
     /* border: 1px solid black;
      */
 }
@@ -190,23 +190,31 @@ content{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
-.show-images:nth-child(1){
+.search-page-link{
+    width: fit-content;
+    height: 100%;
+}
+.show-images{
     content: '';
     display: inline-block;
-    height: 1.7em;
+    height: 100%;
     aspect-ratio: 1/1;
     border-radius: 100%;
     background-color: var(--dark-10);
     margin-right: 1rem;
-    background-image: url('../../images/loveIcon.svg');
+    background-image: url('../../images/homeIcon.svg');
     background-repeat: no-repeat;
-    background-size: .7em;
+    background-size: .58em;
     background-position: center;
+}
+.button-main-container{
+    width: fit-content;
 }
 .to-productSection-link{
     display: flex;
     align-items: center;
     width : fit-content;
+    height: 100%;
     background-color: var(--purple);
     border-radius: 50rem;
     padding: 1rem 2rem;
@@ -719,8 +727,33 @@ input[type="checkbox"]:checked{
 
 
 
-@media (max-width : 720px) {
-    
+@media (max-width : 900px) {
+    .top-header-container{
+        grid-template-columns: calc(100% - 1.5rem);
+        /* grid-template-rows: 33% 33% 33%; */
+        padding: 1.5rem;
+        margin-bottom: 100%;
+    }
+    .image-container-parent{
+        grid-template-columns: 1fr;
+        grid-column: span 2;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .shop-description{
+        grid-column: span 1;
+    }
+    .shop-name-text-container
+    a.to-productSection-link{
+        display: none;
+    }
+
+    .shopName-wrapper-content{
+        padding: 1rem;
+    }
+    .details-container{
+        background-color: var(--dark-9);
+        width: calc(100% + 1.5rem);
+    }
 }
 @media (max-width : 600px){ 
     

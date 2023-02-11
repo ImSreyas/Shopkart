@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
     <title>Shop</title>
     <link rel="stylesheet" href="../seller-module/css/product.css">
     <link rel="stylesheet" type="text/CSS" href="css/product-page.css">
-
+    <script src='../js/popup-notification.js'></script>
     <script>
         window.history.replaceState({}, '', window.location.href)
     </script>
@@ -90,16 +90,16 @@ if (isset($_POST['submit'])) {
             <div class="shop-name-main-container">
                 <div class="shop-name-text-container">
                     <span class="shopName-wrapper">
-                        <span class="show-images"></span>
-                        <span class="show-images"></span>
-                        <span class="show-images"></span>
+                        <a class="search-page-link" href='../search.php'><span class="show-images"></span></a>
                         <span class="shopName-wrapper-content"><?php echo ucfirst($shop_name); ?></span>
                     </span>
-                    <a href="#product-section" class="to-productSection-link">
-                        <span class="goto-shopping-link">
-                            purchase
-                        </span>
-                    </a>
+                    <span class="button-main-container">
+                        <a href="#product-section" class="to-productSection-link">
+                            <span class="goto-shopping-link">
+                                purchase
+                            </span>
+                        </a>
+                    </span>
                 </div>
             </div>
             
@@ -111,13 +111,13 @@ if (isset($_POST['submit'])) {
                         <div class="status-container">
                             <span class="circle-container status-image"></span>
                             <span class="status-content-container">
-                                <?php echo $discount ?>% off
+                                <?php echo $shop_status ?>
                             </span>
                         </div>
                         <div class="off-container">
                             <span class="circle-container off-image"></span>
                             <span class="off-content-container">
-                                <?php echo $shop_status ?>
+                                <?php echo $discount ?>% off
                             </span>
                         </div>
                     </div>
@@ -184,10 +184,12 @@ if (isset($_POST['submit'])) {
             if (number.length < 55) document.getElementById("ci2").style.display = "none"
 
             document.getElementById("ci1").addEventListener("click", () => {
-                navigator.clipboard.writeText(document.querySelector(".phone1-container").innerHTML)
+                navigator.clipboard.writeText(document.querySelector(".phone1-container-content").textContent)
+                popup(string=`phone number <u>${document.querySelector(".phone1-container-content").textContent}</u> copied to clipboard`, color='blue')
             });
             document.getElementById("ci2").addEventListener("click", () => {
-                navigator.clipboard.writeText(document.querySelector(".phone2-container").innerHTML)
+                navigator.clipboard.writeText(document.querySelector(".phone2-container-content").textContent)
+                popup(string=`phone number <u>${document.querySelector(".phone2-container-content").textContent}</u> copied to clipboard`, color='blue')
             });
             const phn2 = document.querySelector('.phone2-container-content')
             if(phn2.getAttribute('isThere') === 'false')
