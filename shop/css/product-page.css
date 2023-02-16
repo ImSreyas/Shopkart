@@ -308,6 +308,7 @@ span:first-child{
     background-image: url('../../images/comet.png');
     background-size: contain;
     display: inline-block;
+    display: inline-block;
 }
 .shop-rating-container>
 span:last-child>

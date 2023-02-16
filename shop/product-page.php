@@ -55,6 +55,7 @@ if (isset($_POST['submit'])) {
         window.history.replaceState({}, '', window.location.href)
     </script>
     <script src="../js/responsiveNavigation.js" defer></script>
+    <script src='js/productPage.js' defer></script>
 </head>
 
 <body class="my-body">
@@ -94,7 +95,7 @@ if (isset($_POST['submit'])) {
                         <span class="shopName-wrapper-content"><?php echo ucfirst($shop_name); ?></span>
                     </span>
                     <span class="button-main-container">
-                        <a href="#product-section" class="to-productSection-link">
+                        <a href="" class="to-productSection-link">
                             <span class="goto-shopping-link">
                                 purchase
                             </span>
@@ -177,7 +178,7 @@ if (isset($_POST['submit'])) {
                     </div>
                 </div>
         </div>
-
+        
         <script>
             let number = document.getElementById("phone2-container").innerHTML
 
