@@ -198,14 +198,7 @@ if (isset($_POST['submit'])) {
         </script>
 
         <div class="image-purchase-container">
-            <!-- <a href="#product-section" class="purchase-container-a">
-                <div class="purchase-product-container" hidden>
-                    <img src="" class="purchase-product-image-inside">
-                    <div class="purchase">purchase</div>
-                </div>
-            </a> -->
-
-            <!-- <div class="shop-images-container-main">
+            <div class="shop-images-container-main">
                 <button class="move-btn prev" moveBtn="prev"></button>
                 <button class="move-btn next" moveBtn="next"></button>
                 <ul data-slides>
@@ -223,22 +216,10 @@ if (isset($_POST['submit'])) {
                     }
                     ?>
                 </ul>
-            </div> -->
-            <div class="circle-images-wrapper">
-                <?php
-                $sql462 = "select image from shop_images where s_id='$seller_id'";
-                $res462 = mysqli_query($conn, $sql462);
-                if ($res462->num_rows > 0) {
-                    while ($row462 = $res462->fetch_assoc()) {
-                        echo "<div class='__images'><img src='../" . $row462['image'] . "'></div>";
-                    }
-                } else {
-                    echo "<div class='no-shop-images'></div>";
-                }
-                ?>
             </div>
 
         </div>
+
         <script>
             document.querySelectorAll(".slide")[0].setAttribute('data-active', '')
             const buttons = document.querySelectorAll(".move-btn")
@@ -257,6 +238,7 @@ if (isset($_POST['submit'])) {
                 })
             })
         </script>
+        
 
 
         <section id="product-section">
