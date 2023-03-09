@@ -599,10 +599,10 @@ img:hover{
 .product-list-main{
     height: fit-content;  
 }
-.product-head-container{
-    /* display: flex;
-    justify-content: center; */
-}
+/* .product-head-container{
+    display: flex;
+    justify-content: center;
+} */
 .products-head{
     width: fit-content;
     font-size: 3rem;
