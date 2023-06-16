@@ -1,3 +1,45 @@
+<?php
+session_start();
+$flag = 0;
+$username = "";
+$password = "";
+$usernameErr = "";
+$passwordErr = "";
+$password_check = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include('data-base/constant.php');
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM admin WHERE username='$username'";
+    $res = mysqli_query($conn, $sql);
+    if ($res->num_rows > 0) {
+        while ($row = $res->fetch_assoc()) {
+            $id = $row["id"];
+            $password_check = $row["password"];
+            if ($row["username"] == $username) {
+                $flag = 1;
+            }
+        }
+    }
+    if ($flag == 0) {
+        $usernameErr = "*Invalid username";
+    }
+    if ($username == "") {
+        $usernameErr = "*Fill the username";
+    }
+    if ($flag == 1) {
+        if (md5($password) == $password_check) {
+            $_SESSION['admin-id'] = $id;
+            header('location:admin/manage-seller.php?from=logging_in&duration=2500');
+        } else {
+            $passwordErr = "*Invalid password";
+        }
+        if ($password == "") {
+            $passwordErr = "*Fill the password";
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -38,48 +80,6 @@
 
     <!--body-->
     <div class="body1 body2">
-        <?php
-        $flag = 0;
-        $username = "";
-        $password = "";
-        $usernameErr = "";
-        $passwordErr = "";
-        $password_check = "";
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            include('data-base/constant.php');
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $sql = "SELECT * FROM admin WHERE username='$username'";
-            $res = mysqli_query($conn, $sql);
-            if ($res->num_rows > 0) {
-                while ($row = $res->fetch_assoc()) {
-                    $id = $row["id"];
-                    $password_check = $row["password"];
-                    if ($row["username"] == $username) {
-                        $flag = 1;
-                    }
-                }
-            }
-            if ($flag == 0) {
-                $usernameErr = "*Invalid username";
-            }
-            if ($username == "") {
-                $usernameErr = "*Fill the username";
-            }
-            if ($flag == 1) {
-                if (md5($password) == $password_check) {
-                    session_start();
-                    $_SESSION['admin-id'] = $id;
-                    header('location:admin/manage-seller.php?from=logging_in&duration=2500');
-                } else {
-                    $passwordErr = "*Invalid password";
-                }
-                if ($password == "") {
-                    $passwordErr = "*Fill the password";
-                }
-            }
-        }
-        ?>
         <div class="log-in-body">
             <form action="" method="POST">
                 <label class="text-left" for="username">Username </label>
