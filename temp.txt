@@ -191,3 +191,7 @@
 
     ?>
 </div>
+class theMain(){
+    let data = "sreyas"
+    let setData = (data) => data.json()
+}

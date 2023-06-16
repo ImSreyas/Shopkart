@@ -760,6 +760,9 @@ input[type="checkbox"]:checked{
         background-color: var(--dark-9);
         width: calc(100% + 1.5rem);
     }
+    .product-list-container{
+        grid-template-columns: 1fr;
+    }
 }
 @media (max-width : 600px){ 
     
