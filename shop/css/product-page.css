@@ -758,7 +758,8 @@ input[type="checkbox"]:checked{
     }
     .details-container{
         background-color: var(--dark-9);
-        width: calc(100% + 1.5rem);
+        width: calc(100% + 4rem);
+        margin-inline-start: -1.2rem;
     }
     .product-list-container{
         grid-template-columns: 1fr;
